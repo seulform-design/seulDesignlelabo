@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko" class="ed" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Santal 33 - 르라보의 상징적인 스모키 우디 향을 만나보세요.">
+  <meta name="theme-color" content="#1a2421">
+  <title>Santal 33 | LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/subpage-layout.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/detail.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/editorial.js" defer></script>
+  <script src="./scripts/detail.js" defer></script>
+</head>
+<body class="page-detail">
+  <div id="wrap">
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH" autocomplete="off" aria-label="프래그런스·기프트 검색" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false" aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false" aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html#shop-grid-title">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="v2-editorial-flow detail-flow-v2">
+
+      <!-- ============ SECTION 01: PRODUCT HERO (Image 3 Standard) ============ -->
+      <nav class="breadcrumb container commerce-breadcrumb" aria-label="경로 탐색">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Fragrance</a></li>
+          <li aria-current="page">Santal 33</li>
+        </ol>
+      </nav>
+      <header class="page-header commerce-page-header cinematic-hero detail-hero-v2" id="detail-hero">
+        <div class="hero-overlay-v2"></div>
+        <div class="container">
+          <div class="hero-content-card fade-up">
+            <p class="section-eyebrow">OLFACTORY DEPTH</p>
+            <h1 class="page-title">Santal 33</h1>
+            <p class="section-desc">카다멈과 아이리스의 조화로운 시작, <br> 그리고 당신의 피부 위에서 완성되는 스모키 우디의 정수.</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ SECTION 02: PRODUCT CONTENT V2 ============ -->
+      <section class="product-hero-v2">
+        <div class="container">
+          <div class="hero-grid-v2">
+            <!-- Left: Gallery -->
+            <div class="product-gallery-v2">
+              <div class="gallery-main-v2 fade-in">
+                <img src="./images/common/SANTAL33-1.jpg" alt="Santal 33 병 이미지" id="main-product-image" width="800" height="1000">
+              </div>
+              <div class="gallery-thumbs-v2" role="tablist" aria-label="제품 이미지 선택">
+                <button type="button" class="thumb-btn is-active" role="tab" aria-selected="true" aria-label="이미지 1"><img src="./images/common/SANTAL33-1.jpg" alt="" loading="lazy" width="152" height="152"></button>
+                <button type="button" class="thumb-btn" role="tab" aria-selected="false" aria-label="이미지 2"><img src="./images/common/SANTAL33-2.jpg" alt="" loading="lazy" width="152" height="152"></button>
+                <button type="button" class="thumb-btn" role="tab" aria-selected="false" aria-label="이미지 3"><img src="./images/common/santal33.png" alt="" loading="lazy" width="152" height="152"></button>
+              </div>
+            </div>
+            
+            <!-- Right: Buy Box -->
+            <div class="product-buy-v2 fade-up">
+              <p class="section-eyebrow">EAU DE PARFUM · WOODY</p>
+              <h2 class="buy-title-v2">Santal 33</h2>
+              <p class="buy-desc-v2">샌달우드와 시더우드의 묵직한 잔향이 12시간 이상 지속되는 시그니처 프래그런스.</p>
+              
+              <p class="buy-price-v2 detail-price" aria-live="polite">
+                <span id="detail-price-amount">₩210,000</span>
+                <small id="detail-price-unit">/ 50ml</small>
+              </p>
+
+              <div class="buy-options-v2">
+                <div class="size-group-v2" role="group" aria-label="용량 선택">
+                  <button type="button" class="btn-v2 btn-ghost btn-size" data-price="120000" data-size="15" aria-pressed="false">15ML</button>
+                  <button type="button" class="btn-v2 btn-solid btn-size" data-price="210000" data-size="50" aria-pressed="true">50ML</button>
+                  <button type="button" class="btn-v2 btn-ghost btn-size" data-price="310000" data-size="100" aria-pressed="false">100ML</button>
+                </div>
+              </div>
+
+              <div class="detail-qty-v2" aria-label="수량">
+                <span class="detail-qty-label-v2">QTY</span>
+                <div class="detail-qty-controls-v2">
+                  <button type="button" class="qty-btn" data-action="decrease" aria-label="수량 감소">−</button>
+                  <span class="qty-value" aria-live="polite">1</span>
+                  <button type="button" class="qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                </div>
+              </div>
+
+              <div class="detail-gift-inline-v2">
+                <label for="gift-name" class="detail-gift-label-v2">라벨 미리보기 (선택)</label>
+                <input type="text" id="gift-name" class="input-v2 detail-gift-input-v2" maxlength="12" placeholder="이름 또는 문구 (최대 12자)" autocomplete="off">
+                <p class="gift-preview-text detail-gift-preview-v2" aria-live="polite">YOUR LABEL</p>
+              </div>
+
+              <div class="buy-actions-v2">
+                <a href="cart.html" class="btn-v2 btn-solid is-wide is-large">ADD TO BAG</a>
+                <a href="gift.html" class="btn-v2 btn-ghost is-wide">PERSONALIZE LABEL</a>
+              </div>
+
+              <div class="buy-perks-v2">
+                <div class="perk-v2">
+                  <strong>LAB VERIFIED</strong>
+                  <p>모든 향은 주문 즉시 랩에서 핸드 블렌딩됩니다.</p>
+                </div>
+                <div class="perk-v2">
+                  <strong>SAMPLE READY</strong>
+                  <p>동일 계열 샘플 2종이 함께 배송됩니다. (데모)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 02B: PDP META (상품 상세 안내) ============ -->
+      <section class="section ed-section detail-pdp-meta-v2" id="detail-pdp-meta" aria-labelledby="detail-pdp-meta-title">
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap">
+              <p class="eyebrow">PRODUCT DETAIL</p>
+              <h2 id="detail-pdp-meta-title">상품 정보</h2>
+              <p class="lead">구성·용기·배송 안내를 한 블록에서 확인할 수 있습니다.</p>
+            </div>
+            <ul class="detail-pdp-meta-list-v2">
+              <li>
+                <strong>구성</strong>
+                <span>오 드 퍼퓸 본품, 시그니처 샘플 스틱 2종 (데모 구성)</span>
+              </li>
+              <li>
+                <strong>용기</strong>
+                <span>재활용 유리병 · 자석 캡. 직사광선을 피해 보관해 주세요.</span>
+              </li>
+              <li>
+                <strong>배송</strong>
+                <span>결제 확인 후 영업일 기준 2–3일 내 출고. 무료 배송·반품은 상단 배너 기준 안내입니다.</span>
+              </li>
+              <li>
+                <strong>교환·환불</strong>
+                <span>개봉 후 향료 특성상 단순 변심 교환은 제한될 수 있습니다. 자세한 내용은 <a href="terms.html">이용약관</a>을 참고해 주세요.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 02: SCENT ARCHITECTURE V2 ============ -->
+      <section class="editorial-spine-v2 scent-notes-v2">
+        <div class="container">
+          <div class="spine-head-v2">
+            <p class="eyebrow-v2">NOTE ARCHITECTURE</p>
+            <h2 class="title-v2">The Scent Progress</h2>
+          </div>
+          <div class="note-spine-v2">
+            <div class="note-row-v2">
+              <div class="note-time-v2">0-15 MIN</div>
+              <div class="note-body-v2">
+                <h3>TOP: SPICY OPENING</h3>
+                <p>Cardamom, Iris, Violet. 코끝을 스치는 스파이시함과 아이리스의 부드러움.</p>
+              </div>
+            </div>
+            <div class="note-row-v2">
+              <div class="note-time-v2">1-2 HOURS</div>
+              <div class="note-body-v2">
+                <h3>MID: SMOKY HEART</h3>
+                <p>Sandalwood, Cedarwood. 가죽처럼 묵직하게 피어오르는 나무의 숨결.</p>
+              </div>
+            </div>
+            <div class="note-row-v2">
+              <div class="note-time-v2">12 HOURS+</div>
+              <div class="note-body-v2">
+                <h3>BASE: ANIMALIC DEPTH</h3>
+                <p>Leather Accord, Musk. 체온과 만나 완성되는 거칠고도 자유로운 잔향.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03: MANIFESTO V2 ============ -->
+      <section class="editorial-spine-v2 manifesto-v2">
+        <div class="container">
+          <div class="trust-matrix-v2">
+            <div class="trust-item-v2">
+              <h3>100% VEGAN</h3>
+              <p>동물성 원료를 일절 사용하지 않는 윤리적 포뮬러.</p>
+            </div>
+            <div class="trust-item-v2">
+              <h3>CRUELTY FREE</h3>
+              <p>동물 실험을 반대하며 사람에게 안전한 원료만을 사용합니다.</p>
+            </div>
+            <div class="trust-item-v2">
+              <h3>HAND BLENDED</h3>
+              <p>주문 즉시 랩에서 신선하게 블렌딩되는 고유의 가치.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03B: KEY FACTS (메인 톤 · KPI) ============ -->
+      <section class="section ed-section detail-kpi-v2" id="detail-kpi" aria-labelledby="detail-kpi-title">
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap is-center">
+              <p class="eyebrow accent">PRODUCT FACTS</p>
+              <h2 id="detail-kpi-title">이 향을 한눈에</h2>
+              <p class="lead">지속력, 실루엣, 계절 적합도를 메인 페이지와 동일한 리듬으로 정리했습니다.</p>
+            </div>
+            <div class="trust-matrix-v2 ingredient-metrics-v2">
+              <div class="matrix-grid-v2">
+                <div class="matrix-item-v2">
+                  <span class="matrix-label-v2">SILLAGE</span>
+                  <span class="matrix-value-v2">중간–강함</span>
+                  <p class="matrix-desc-v2">피부에 안착한 뒤에도 실루엣이 남습니다.</p>
+                </div>
+                <div class="matrix-item-v2">
+                  <span class="matrix-label-v2">LONGEVITY</span>
+                  <span class="matrix-value-v2">12h+</span>
+                  <p class="matrix-desc-v2">체온과 섬유에 따라 잔향은 더 길게 느껴질 수 있습니다.</p>
+                </div>
+                <div class="matrix-item-v2">
+                  <span class="matrix-label-v2">SEASON</span>
+                  <span class="matrix-value-v2">가을 · 겨울</span>
+                  <p class="matrix-desc-v2">건조한 공기에서 우디 노트가 더 또렷해집니다.</p>
+                </div>
+                <div class="matrix-item-v2">
+                  <span class="matrix-label-v2">BEST FOR</span>
+                  <span class="matrix-value-v2">이브닝 · 포멀</span>
+                  <p class="matrix-desc-v2">데일리보다 무게감 있는 장면에 어울립니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03C: HOW TO WEAR (메인 pillars 리듬) ============ -->
+      <section class="section ed-section pillars-row ed-pillars-row detail-wear-v2" id="detail-wear" aria-labelledby="detail-wear-title">
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap is-center">
+              <h2 id="detail-wear-title">웨어링 가이드</h2>
+              <p class="lead">한 번의 분사로도 레이어링 없이 완성도 있는 실루엣을 만들 수 있습니다.</p>
+            </div>
+            <ol class="brand-pillars" aria-label="웨어링 3단계">
+              <li class="brand-pillar">
+                <div class="brand-pillar-text">
+                  <h3 class="brand-pillar-title">맥락을<br>정하다</h3>
+                  <p class="brand-pillar-desc">실내·야외, 체온이 오르는 상황을 먼저 정하면 <br>분사 횟수를 줄일 수 있습니다.</p>
+                </div>
+                <div class="brand-pillar-image">
+                  <img src="./images/common/situation4.jpg" alt="저녁 실내 분위기" loading="lazy">
+                </div>
+              </li>
+              <li class="brand-pillar">
+                <div class="brand-pillar-text">
+                  <h3 class="brand-pillar-title">분사를<br>최소화하다</h3>
+                  <p class="brand-pillar-desc">목선·손목 안쪽 등 맥밍 포인트에만 가볍게. <br>스모키 우디는 과분사 시 압도적일 수 있습니다.</p>
+                </div>
+                <div class="brand-pillar-image">
+                  <img src="./images/common/Usage.jpg" alt="향수 분사" loading="lazy">
+                </div>
+              </li>
+              <li class="brand-pillar">
+                <div class="brand-pillar-text">
+                  <h3 class="brand-pillar-title">레이어를<br>고려하다</h3>
+                  <p class="brand-pillar-desc">바디 제품과 함께 쓸 때는 무스크·우디 계열이 안전합니다. <br><a href="shop.html" class="brand-pillar-cta">바디 케어 보기 <span aria-hidden="true">→</span></a></p>
+                </div>
+                <div class="brand-pillar-image">
+                  <img src="./images/common/body-cream-1.jpg" alt="바디 케어" loading="lazy">
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03D: INGREDIENTS & CARE ============ -->
+      <section class="section ed-section detail-ingredient-list-v2" id="detail-ingredients" aria-labelledby="detail-ingredients-title">
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap">
+              <p class="eyebrow">FORMULA</p>
+              <h2 id="detail-ingredients-title">성분 &amp; 보관</h2>
+              <p class="lead">알코올 베이스 오 드 퍼퓸. 직사광선과 고온을 피해 보관해 주세요.</p>
+            </div>
+            <div class="body-wrap">
+              <dl class="detail-spec-dl-v2">
+                <div>
+                  <dt>주요 노트</dt>
+                  <dd>Cardamom, Iris, Violet, Sandalwood, Cedarwood, Leather accord, Musk</dd>
+                </div>
+                <div>
+                  <dt>알코올</dt>
+                  <dd>Denat. (향료 용매)</dd>
+                </div>
+                <div>
+                  <dt>사용 기한</dt>
+                  <dd>개봉 후 36개월 권장 (직사광선·습기 피하기)</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03E: FAQ ============ -->
+      <section class="section ed-section detail-faq-v2" id="detail-faq" aria-labelledby="detail-faq-title">
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap is-center">
+              <h2 id="detail-faq-title">자주 묻는 질문</h2>
+              <p class="lead">배송·교환·라벨링에 대한 빠른 안내입니다.</p>
+            </div>
+            <ul class="detail-faq-list-v2">
+              <li>
+                <h3>배송은 얼마나 걸리나요?</h3>
+                <p>결제 확인 후 영업일 기준 2–3일 내 출고됩니다. (데모 페이지 기준 안내)</p>
+              </li>
+              <li>
+                <h3>라벨 각인은 어디서 하나요?</h3>
+                <p><a href="gift.html">Gift</a> 페이지에서 각인 옵션을 선택할 수 있습니다.</p>
+              </li>
+              <li>
+                <h3>향이 너무 강하게 느껴져요.</h3>
+                <p>분사 횟수를 줄이거나, 피부 대신 옷깃에 가볍게 뿌려 보세요.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 04: RECOMMENDATIONS V2 ============ -->
+      <section class="editorial-spine-v2 recommendations-v2">
+        <div class="container">
+          <div class="spine-head-v2">
+            <p class="eyebrow-v2">CURATION</p>
+            <h2 class="title-v2">You May Also Like</h2>
+          </div>
+          <div class="card-grid-v2 product-grid">
+            <article class="pick-card-v2 card product-card">
+              <a href="detail.html" class="card-link">
+                <div class="card-media">
+                  <img src="./images/common/body-cream-1.jpg" alt="Body Lotion">
+                </div>
+                <div class="card-body">
+                  <div class="product-info">
+                    <p class="product-lab-tag card-meta">LAB VERIFIED · BATCH 33S</p>
+                    <h3 class="product-title card-title">Santal 33 Body Lotion</h3>
+                    <p class="product-price">₩98,000</p>
+                  </div>
+                </div>
+              </a>
+              <footer class="card-footer card-action">
+                <a href="detail.html" class="btn-v2 btn-ghost is-wide">VIEW PRODUCT</a>
+              </footer>
+            </article>
+            <article class="pick-card-v2 card product-card">
+              <a href="detail.html" class="card-link">
+                <div class="card-media">
+                  <img src="./images/common/cade-26-1.jpg" alt="Santal 26 Candle">
+                </div>
+                <div class="card-body">
+                  <div class="product-info">
+                    <p class="product-lab-tag card-meta">HOME FRAGRANCE · 245g</p>
+                    <h3 class="product-title card-title">Santal 26 Candle</h3>
+                    <p class="product-price">₩110,000</p>
+                  </div>
+                </div>
+              </a>
+              <footer class="card-footer card-action">
+                <a href="detail.html" class="btn-v2 btn-ghost is-wide">VIEW PRODUCT</a>
+              </footer>
+            </article>
+            <article class="pick-card-v2 card product-card">
+              <a href="detail.html" class="card-link">
+                <div class="card-media">
+                  <img src="./images/common/gift-product.png" alt="Discovery Set">
+                </div>
+                <div class="card-body">
+                  <div class="product-info">
+                    <p class="product-lab-tag card-meta">DISCOVERY · 5 × 1.5ml</p>
+                    <h3 class="product-title card-title">Discovery Set</h3>
+                    <p class="product-price">₩120,000</p>
+                  </div>
+                </div>
+              </a>
+              <footer class="card-footer card-action">
+                <a href="detail.html" class="btn-v2 btn-ghost is-wide">VIEW PRODUCT</a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- STICKY ACTION BAR V2 -->
+    <div class="sticky-action-v2" id="sticky-buy" data-visible="false">
+      <div class="container">
+        <div class="sticky-inner-v2">
+          <div class="sticky-info-v2">
+            <span class="sticky-name-v2">SANTAL 33</span>
+            <span class="sticky-price-v2" id="sticky-detail-price">₩210,000</span>
+          </div>
+          <div class="sticky-btns-v2">
+            <a href="cart.html" class="btn-v2 btn-solid">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html">Body Care</a></li>
+                <li><a href="shop.html">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS" autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="footer-news-status" id="footer-news-status" role="status" aria-live="polite"></p>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector" aria-label="현재 지역 및 통화 정보">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+              <ul class="footer-social" aria-label="소셜 링크">
+                <li>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"></rect><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"></path></svg>
+                    <span class="sr-only">YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

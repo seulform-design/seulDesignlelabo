@@ -1,0 +1,1591 @@
+/**
+ * LE LABO · subpage-layout.css
+ * Shared layout + editorial typography for every route except `page-index`.
+ *
+ * Load order: reset.css → common.css → page-shell.css → subpage-layout.css
+ *             → index.css → (page).css → responsive.css
+ *
+ * Contract (aligned with index editorial sections):
+ *   #wrap > main#main-content > section.section(.ed-section …) > .container
+ *           > .content | (.content-header + .content-body)
+ *           | .section-content (.section-head + .section-body) — finder/shop bands (common.css)
+ *
+ * Commerce shell (Cart · Checkout · Order + Shop / Finder / Ingredient /
+ * Journal / Gift): `.breadcrumb.commerce-breadcrumb` + `.page-header.commerce-page-header`.
+ * Overrides `common.css` `.page-header` border/background so every route matches.
+ *
+ * Global chrome (디렉터 기준): 모든 라우트는 `common.css`의 3열 헤더 그리드
+ * (`logo | gnb | header-actions`) 계약을 맞추기 위해, 메인과 동일하게
+ * 공지 바(선택) + 검색·카트·메가 메뉴 + `#mega-menu-panel` + `#mega-backdrop`를
+ * 포함하는 것을 권장합니다. 누락 시 스티키/메가 스크립트(`layout-system.js`)와
+ * 정렬이 깨질 수 있습니다.
+ *
+ * Tokens live in common.css :root (--container, --container-padding,
+ * --section-padding, --section-head-gap, --grid-gap, typography).
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Shell — prevent flex/grid overflow from collapsing the main column         */
+/* -------------------------------------------------------------------------- */
+/*
+ * page-shell.css sets `#wrap, main#main-content { overflow-x: clip }` to tame
+ * horizontal bleed. On editorial subpages that also breaks `position: sticky`
+ * (e.g. detail gallery) and can clip section edges. Keep the mall guard on
+ * `page-index`; relax overflow on subpages while retaining min-width: 0.
+ */
+body:not(.page-index) #wrap {
+  overflow-x: visible;
+}
+
+body:not(.page-index) main#main-content {
+  min-width: 0;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+/* V2 routes often use `<section class="*-v2">` without `.section`; min-width:auto
+   on flex/grid tracks otherwise collapses columns on mid viewports. */
+body:not(.page-index) main#main-content.v2-editorial-flow > section:not(.section),
+body:not(.page-index) main#main-content.v2-editorial-flow > section:not(.section) > .container {
+  min-width: 0;
+}
+
+body:not(.page-index):not(.page-login) .section > .container,
+body:not(.page-index):not(.page-login) .section .content,
+body:not(.page-index):not(.page-login) .section .content-header,
+body:not(.page-index):not(.page-login) .section .content-body,
+body:not(.page-index):not(.page-login) .section .body-wrap,
+body:not(.page-index):not(.page-login) .section .section-content,
+body:not(.page-index):not(.page-login) .section .section-body {
+  min-width: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Section titles — shared hierarchy (excludes login split layout)            */
+/* -------------------------------------------------------------------------- */
+
+body:not(.page-index):not(.page-login) .section .title-wrap > h2,
+body:not(.page-index):not(.page-login) .section .content-header .title-wrap > h2 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Subpage section rhythm — uniform vertical spacing across all editorial bands */
+/* -------------------------------------------------------------------------- */
+body:not(.page-index) main#main-content > section.section,
+body:not(.page-index) main#main-content.v2-editorial-flow > section:not(.cinematic-hero):not(.page-header) {
+  padding-block: clamp(64px, 8vw, 96px);
+}
+
+body:not(.page-index) main#main-content > section.section + section.section,
+body:not(.page-index) main#main-content.v2-editorial-flow > section + section:not(.cinematic-hero):not(.page-header) {
+  padding-top: clamp(64px, 8vw, 96px);
+}
+
+/* Section content stack — gap between title block & body grid */
+body:not(.page-index) .section .content,
+body:not(.page-index) .section .section-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 48px);
+}
+
+/* Section header stack — eyebrow → title → lead rhythm */
+body:not(.page-index) .section .title-wrap,
+body:not(.page-index) .section .section-head-v2,
+body:not(.page-index) .section .section-header,
+body:not(.page-index) .section .spine-head-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+body:not(.page-index) .section .title-wrap.is-center,
+body:not(.page-index) .section .section-head-v2.is-center,
+body:not(.page-index) .section .section-header.align-center {
+  align-items: center;
+  text-align: center;
+}
+
+/* Eyebrow → mono caption rhythm */
+body:not(.page-index) .section .eyebrow,
+body:not(.page-index) .section .eyebrow-v2 {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+body:not(.page-index) .section .eyebrow.accent,
+body:not(.page-index) .section .eyebrow-v2.accent {
+  color: var(--color-accent);
+}
+
+/* Lead paragraph */
+body:not(.page-index) .section .lead,
+body:not(.page-index) .section .section-lead,
+body:not(.page-index) .section .section-lead-v2 {
+  font-size: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text-sub);
+  max-width: 52ch;
+  margin: 0;
+  word-break: keep-all;
+}
+
+body:not(.page-index) .section .title-wrap.is-center .lead,
+body:not(.page-index) .section .section-header.align-center .section-lead,
+body:not(.page-index) .section .section-head-v2.is-center .section-lead-v2 {
+  margin-inline: auto;
+}
+
+/* Korean-friendly subsection title rhythm — h2/h3 polish */
+body:not(.page-index) .section .section-title,
+body:not(.page-index) .section .section-title-v2,
+body:not(.page-index) .section .title-wrap > h2,
+body:not(.page-index) .section .spine-head-v2 > .title-v2 {
+  word-break: keep-all;
+  line-height: 1.25;
+}
+
+/* Section eyebrow — inline mono stack (no hairline markers) */
+body:not(.page-index) main#main-content.v2-editorial-flow .section .eyebrow-v2,
+body:not(.page-index) main#main-content.v2-editorial-flow > section .eyebrow-v2,
+body:not(.page-index) main#main-content.v2-editorial-flow > section .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+body:not(.page-index) main#main-content.v2-editorial-flow .section .eyebrow-v2.accent::before,
+body:not(.page-index) main#main-content.v2-editorial-flow > section .eyebrow-v2.accent::before {
+  content: none;
+  display: none;
+}
+
+/* Centered head — type only (hairline rules removed) */
+body:not(.page-index) .section .section-head-v2.is-center .eyebrow-v2,
+body:not(.page-index) .section .section-header.align-center .eyebrow {
+  position: relative;
+  padding: 0;
+}
+
+body:not(.page-index) .section .section-head-v2.is-center .eyebrow-v2::before,
+body:not(.page-index) .section .section-head-v2.is-center .eyebrow-v2::after,
+body:not(.page-index) .section .section-header.align-center .eyebrow::before,
+body:not(.page-index) .section .section-header.align-center .eyebrow::after {
+  content: none;
+  display: none;
+}
+
+/* Body paragraph default rhythm */
+body:not(.page-index) .section p {
+  word-break: keep-all;
+}
+
+/* Breadcrumb — refined */
+body:not(.page-index) .breadcrumb.commerce-breadcrumb {
+  padding-block: var(--space-20) var(--space-12);
+}
+
+body:not(.page-index) .breadcrumb.commerce-breadcrumb ol {
+  display: flex;
+  column-gap: var(--space-6);
+  row-gap: var(--space-6);
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+body:not(.page-index) .breadcrumb.commerce-breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-inline: var(--space-10) var(--space-6);
+  font-weight: 500;
+  color: color-mix(in srgb, var(--color-line-strong) 70%, var(--color-text-muted));
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+body:not(.page-index) .breadcrumb.commerce-breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+body:not(.page-index) .breadcrumb.commerce-breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+body:not(.page-index) .breadcrumb.commerce-breadcrumb a:focus-visible {
+  color: var(--color-primary);
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 65%, var(--color-primary));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+body:not(.page-index) .breadcrumb.commerce-breadcrumb [aria-current="page"] {
+  color: var(--color-primary);
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap > .lead,
+body:not(.page-index):not(.page-login) .section .content-header .title-wrap > .lead {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-sub);
+  max-width: 52ch;
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap.is-center > .lead {
+  margin-inline: auto;
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap.is-center > h2 {
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+/* Hero / depth titles — in-section h1 (editorial routes use `.page-title` in page-header) */
+body:not(.page-index):not(.page-login) .section:not(.ed-hero) .title-wrap > h1,
+body:not(.page-index):not(.page-login) .section:not(.ed-hero) .content-header .title-wrap > h1 {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+body:not(.page-index):not(.page-login) .section:not(.ed-hero) .title-wrap > .eyebrow + h1,
+body:not(.page-index):not(.page-login) .section:not(.ed-hero) .content-header .title-wrap > .eyebrow + h1 {
+  margin-top: 4px;
+}
+
+/* section-head layout: common.css — typography below matches .title-wrap (index) */
+
+body:not(.page-index):not(.page-login) .section .section-head > .section-eyebrow {
+  margin: 0;
+}
+
+body:not(.page-index):not(.page-login) .section .section-head > .section-eyebrow + .section-title {
+  margin-top: 4px;
+}
+
+body:not(.page-index):not(.page-login) .section .section-head > .section-title,
+body:not(.page-index):not(.page-login) .section .section-head > h2.section-title {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+body:not(.page-index):not(.page-login) .section .section-head-center > .section-title,
+body:not(.page-index):not(.page-login) .section .section-head-center > h2.section-title {
+  max-width: 18ch;
+}
+
+body:not(.page-index):not(.page-login) .section .section-head > .section-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-sub);
+  max-width: 52ch;
+}
+
+body:not(.page-index):not(.page-login) .section .section-head-center > .section-desc {
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  body:not(.page-index):not(.page-login) .section .section-head > .section-title,
+  body:not(.page-index):not(.page-login) .section .section-head > h2.section-title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+}
+
+/* Flush editorial overlay — same type scale on all routes */
+body:not(.page-index) .editorial .overlay .title-wrap > h2 {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+body:not(.page-index) .editorial .overlay .title-wrap > p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 46ch;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Commerce shell — Cart · Checkout · Order + editorial routes                */
+/* One column: neutral surface, no stacked borders vs `common.css` `.page-header` */
+/* -------------------------------------------------------------------------- */
+
+/* Breadcrumb strip — wins over `common.css` `.breadcrumb` padding */
+.breadcrumb.commerce-breadcrumb {
+  position: relative;
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+  margin-bottom: 0;
+  border-bottom: 0;
+  background: var(--color-surface);
+}
+
+/* Hairline under breadcrumb — container-width only so `100vw` + centered column
+   does not force horizontal scroll when `#wrap` uses overflow-x: visible (sticky). */
+.breadcrumb.commerce-breadcrumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  transform: none;
+  height: 1px;
+  background: var(--commerce-breadcrumb-rule, var(--color-line));
+  pointer-events: none;
+}
+
+.breadcrumb.commerce-breadcrumb::before {
+  content: "";
+  position: absolute;
+  left: var(--container-padding);
+  bottom: 0;
+  width: min(4rem, 22vw);
+  height: 2px;
+  background: var(--commerce-breadcrumb-accent, rgba(201, 138, 83, 0.55));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.breadcrumb.commerce-breadcrumb ol {
+  row-gap: var(--space-6);
+}
+
+.page-header.commerce-page-header {
+  background: var(--color-surface);
+  border-bottom: 0;
+  padding: var(--space-20) 0 var(--space-20);
+}
+
+/* --- Global Cinematic Hero Variant (Image 3 Standard) --- */
+.cinematic-hero {
+  position: relative !important;
+  min-height: 440px !important;
+  height: 50vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background-image: var(--hero-bg) !important;
+  border-bottom: 0 !important;
+}
+
+.cinematic-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg, rgba(14, 20, 18, 0.88) 0%, rgba(14, 20, 18, 0.45) 55%, rgba(14, 20, 18, 0.15) 100%) !important;
+  z-index: 1 !important;
+}
+
+.cinematic-hero .container {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cinematic-hero .hero-content-card {
+  max-width: 640px !important;
+  padding: var(--space-64) 0 !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.cinematic-hero .section-eyebrow {
+  font-family: var(--font-family-mono) !important;
+  font-size: var(--font-label) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.32em !important;
+  color: var(--color-accent) !important;
+  margin: 0 0 var(--space-16) !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--space-8) !important;
+}
+
+.cinematic-hero .section-eyebrow::before {
+  content: none !important;
+  display: none !important;
+}
+
+.cinematic-hero .page-title {
+  color: var(--color-white) !important;
+  font-family: var(--font-family-display) !important;
+  font-style: italic !important;
+  font-size: clamp(1.75rem, 2.6vw, 2.4rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35) !important;
+  margin: 0 0 var(--space-16) !important;
+  text-align: left !important;
+  word-break: keep-all !important;
+}
+
+.cinematic-hero .section-desc {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: var(--font-body) !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  max-width: 46ch !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+  word-break: keep-all !important;
+}
+
+.cinematic-hero .subpage-hero-actions {
+  margin-top: var(--space-32) !important;
+  display: flex !important;
+  gap: var(--space-12) !important;
+  flex-wrap: wrap !important;
+}
+
+/* Primary button inside cinematic hero */
+.cinematic-hero .subpage-hero-actions .btn.btn-primary,
+.cinematic-hero .subpage-hero-actions .btn-v2.btn-solid {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 24px !important;
+  font-family: var(--font-family-mono) !important;
+  font-size: var(--font-label) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  background: var(--color-accent, #c98a53) !important;
+  color: var(--color-white) !important;
+  border: 1px solid var(--color-accent, #c98a53) !important;
+  border-radius: 1px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18) !important;
+  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease !important;
+  text-decoration: none !important;
+  min-height: 40px !important;
+}
+
+.cinematic-hero .subpage-hero-actions .btn.btn-primary:hover,
+.cinematic-hero .subpage-hero-actions .btn-v2.btn-solid:hover {
+  background: #a87240 !important;
+  border-color: #a87240 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+}
+
+/* Secondary / ghost button inside cinematic hero */
+.cinematic-hero .subpage-hero-actions .btn.btn-secondary,
+.cinematic-hero .subpage-hero-actions .btn-v2.btn-ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 24px !important;
+  font-family: var(--font-family-mono) !important;
+  font-size: var(--font-label) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  color: var(--color-white) !important;
+  border: 1px solid rgba(255,255,255,0.45) !important;
+  border-radius: 1px !important;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease !important;
+  text-decoration: none !important;
+  min-height: 40px !important;
+}
+
+.cinematic-hero .subpage-hero-actions .btn.btn-secondary:hover,
+.cinematic-hero .subpage-hero-actions .btn-v2.btn-ghost:hover {
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.9) !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (max-width: 768px) {
+  .cinematic-hero {
+    min-height: 360px !important;
+    height: auto !important;
+  }
+
+  .cinematic-hero .hero-content-card {
+    max-width: 100% !important;
+    padding: var(--space-48) 0 !important;
+  }
+
+  .cinematic-hero .page-title {
+    font-size: clamp(1.5rem, 5vw, 1.85rem) !important;
+  }
+
+  .cinematic-hero .section-desc {
+    font-size: var(--font-caption) !important;
+  }
+}
+
+/* Page Specific Hero Backgrounds */
+.page-shop .cinematic-hero { --hero-bg: url("../images/common/shop_hero_bg.png"); }
+.page-finder .cinematic-hero { --hero-bg: url("../images/common/finder_hero_bg.png"); }
+.page-ingredient .cinematic-hero { --hero-bg: url("../images/common/ingredient_hero_bg.png"); }
+.page-journal .cinematic-hero { --hero-bg: url("../images/common/journal_hero_bg.png"); }
+.page-gift .cinematic-hero { --hero-bg: url("../images/common/gift_hero_bg.png"); }
+.page-detail .cinematic-hero { --hero-bg: url("../images/common/SANTAL33-1.jpg"); }
+.page-login .cinematic-hero,
+.page-cart .cinematic-hero,
+.page-checkout .cinematic-hero,
+.page-order-complete .cinematic-hero { --hero-bg: url("../images/common/checkout_hero_bg.png"); }
+.page-login .cinematic-hero { --hero-bg: url("../images/common/login_hero_bg.png"); }
+
+/* Steps inside cinematic hero (Commerce Progress) */
+.commerce-steps-v2 {
+  display: flex !important;
+  gap: var(--space-32) !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: var(--space-32) 0 0 0 !important;
+  justify-content: flex-start !important;
+}
+
+.commerce-steps-v2 .step {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--space-12) !important;
+  font-family: var(--font-family-mono) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  letter-spacing: 0.15em !important;
+}
+
+.commerce-steps-v2 .step.is-active {
+  color: var(--color-white) !important;
+}
+
+.commerce-steps-v2 .step-num {
+  width: 20px !important;
+  height: 20px !important;
+  border: 1px solid currentColor !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 9px !important;
+  transition: all 0.3s ease !important;
+}
+
+.commerce-steps-v2 .step.is-active .step-num {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-white) !important;
+}
+
+.commerce-steps-v2 .step-label {
+  text-transform: uppercase !important;
+}
+
+
+.page-header.commerce-page-header :is(.checkout-steps, .cart-steps, .order-steps) {
+  margin-top: var(--commerce-hero-body-steps, var(--space-24));
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.page-header.commerce-page-header .cart-shipping-meter {
+  margin-top: var(--space-32);
+}
+
+@media (max-width: 767px) {
+  .page-header.commerce-page-header {
+    text-align: left;
+    padding: var(--space-20) 0 var(--space-20);
+  }
+
+  .breadcrumb.commerce-breadcrumb {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+}
+
+/* Finder privacy note now lives inside `.section-desc .section-desc-note` (finder.html) */
+
+
+/* -------------------------------------------------------------------------- */
+/* Dark CTA band — `ed-cta` is not `.cta` in reset; align type + rhythm       */
+/* -------------------------------------------------------------------------- */
+
+body:not(.page-index):not(.page-login) .section.ed-cta.section {
+  background: var(--color-band-dark);
+  color: var(--color-white);
+  text-align: center;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vh, 32px);
+  align-items: center;
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap {
+  color: var(--color-white);
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap > .eyebrow {
+  color: var(--color-accent);
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap > h1,
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap > h2 {
+  color: #fff;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap > p:not(.eyebrow),
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap > .lead {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.72;
+  max-width: 52ch;
+  margin: 0;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap.is-center > p:not(.eyebrow),
+body:not(.page-index):not(.page-login) .section.ed-cta .title-wrap.is-center > .lead {
+  margin-inline: auto;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--grid-gap);
+  align-items: center;
+  justify-content: center;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .body-wrap {
+  width: 100%;
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .trust-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap) var(--space-32);
+  max-width: 640px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .trust-list li {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  body:not(.page-index):not(.page-login) .section.ed-cta .trust-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark CTA / proof band → next light section: one hairline (token: --band-seam-on-light) */
+body:not(.page-index):not(.page-login) .section.ed-cta.section + .section {
+  border-top: var(--band-seam-on-light);
+}
+
+/* -------------------------------------------------------------------------- */
+/* KPI / snapshot — `ed-depth` rows (journal snapshot, ingredient quality)    */
+/* Descendant `.body-wrap` supports both flat `.content` and                 */
+/* `.content > .content-body > .body-wrap` shells.                           */
+/* -------------------------------------------------------------------------- */
+
+body:not(.page-index):not(.page-login) .section.ed-depth .content .body-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  body:not(.page-index):not(.page-login) .section.ed-depth .content .body-wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  body:not(.page-index):not(.page-login) .section.ed-depth .content .body-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Process rows — reset targets `.section.process`; subpages use `ed-process` */
+/* Exclude bands that define their own grid in page CSS.                      */
+/* -------------------------------------------------------------------------- */
+
+body:not(.page-index):not(.page-login)
+  .section.ed-process:not(.ingredient-note-pyramid):not(.journal-reading-path)
+  > .container
+  > .content
+  > .body-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--grid-gap);
+  align-items: stretch;
+}
+
+@media (min-width: 1100px) {
+  body:not(.page-index):not(.page-login)
+    .section.ed-process:not(.ingredient-note-pyramid):not(.journal-reading-path)#gift-flow
+    > .container
+    > .content
+    > .body-wrap {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body:not(.page-index):not(.page-login)
+    .section.ed-process:not(.ingredient-note-pyramid):not(.journal-reading-path)#sourcing-title-section
+    > .container
+    > .content
+    > .body-wrap {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cards — hover without layout shift (shadow + border only, no translateY) */
+/* -------------------------------------------------------------------------- */
+
+body:not(.page-index):not(.page-login) .section .card:hover,
+body:not(.page-index):not(.page-login) .section .product-card:hover {
+  transform: none;
+}
+
+/* Editorial cards without .card (e.g. journal related links) — same shell as .card */
+body:not(.page-index):not(.page-login) .section .ed-card:not(.card):not(.product-card) {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+body:not(.page-index):not(.page-login) .section .ed-card:not(.card):not(.product-card):hover {
+  transform: none;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-line-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.page-index):not(.page-login) .section .card:hover,
+  body:not(.page-index):not(.page-login) .section .product-card:hover {
+    transform: none;
+  }
+
+  body:not(.page-index):not(.page-login) .section .ed-card:not(.card):not(.product-card):hover {
+    transform: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Commerce route eyebrow — mono label (shared with Cart/Checkout)             */
+/* -------------------------------------------------------------------------- */
+
+.page-header.commerce-page-header .section-eyebrow {
+  font-family: var(--font-family-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 100%;
+  line-height: 1.35;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Login — light panel breadcrumb + route eyebrow                             */
+/* -------------------------------------------------------------------------- */
+
+body.page-login .login-breadcrumb {
+  text-align: left;
+  padding: var(--space-12) 0 var(--space-14);
+  margin: 0 0 var(--space-12);
+  border-bottom: 1px solid var(--color-line);
+}
+
+body.page-login .login-breadcrumb ol {
+  justify-content: flex-start;
+}
+
+body.page-login .login-eyebrow {
+  font-family: var(--font-family-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-10);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout contract: Lab Picks uses reset-style asym (7fr | 5fr + feature span 2) */
+/* via `.page-shop #lab-picks-panel` in shop.css; tab `order` rules stay valid */
+/* -------------------------------------------------------------------------- */
+
+/* ========== Subpage system lock (non-index, non-login) ===================== */
+
+body:not(.page-index):not(.page-login) .section > .container > .content {
+  gap: var(--content-gap);
+  justify-items: start;
+  width: 100%;
+}
+
+body:not(.page-index):not(.page-login) .section .section-content {
+  gap: var(--subpage-head-body-gap);
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap {
+  margin-bottom: 0;
+  gap: var(--grid-gap);
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap > .eyebrow {
+  margin-bottom: var(--text-gap-md);
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap > .eyebrow + h2,
+body:not(.page-index):not(.page-login) .section .title-wrap > .eyebrow + h1 {
+  margin-top: 0;
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap > h2 {
+  margin-bottom: var(--text-gap-sm);
+}
+
+body:not(.page-index):not(.page-login) .section .title-wrap > p:not(.eyebrow),
+body:not(.page-index):not(.page-login) .section .title-wrap > .lead {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+body:not(.page-index):not(.page-login) .section .ed-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0;
+}
+
+body:not(.page-index):not(.page-login) .section .ed-card > .card-body {
+  flex: 1;
+  min-height: 0;
+}
+
+body:not(.page-index):not(.page-login) .section .ed-card .card-body h3,
+body:not(.page-index):not(.page-login) .section .ed-card .card-body .card-title {
+  font-size: 16px;
+  line-height: 1.22;
+  font-weight: 600;
+}
+
+body:not(.page-index):not(.page-login) .section .ed-card .card-body p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-sub);
+}
+
+/* =============================================================================
+   Commerce-grade polish — non-index subpages (mall-like grids + section runway)
+   ============================================================================= */
+
+/* Section runway: mono label only (accent hairline removed) */
+body:not(.page-index):not(.page-login) .section-head > .section-eyebrow {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 var(--space-10);
+  padding-bottom: 0;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+}
+
+body:not(.page-index):not(.page-login) .section-head > .section-eyebrow::after {
+  content: none;
+  display: none;
+}
+
+body:not(.page-index):not(.page-login) .section:not(.ed-hero):not(.ed-cta) .content-header .title-wrap > .eyebrow {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-10);
+  padding-bottom: 0;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+body:not(.page-index):not(.page-login) .section:not(.ed-hero):not(.ed-cta) .content-header .title-wrap > .eyebrow::after {
+  content: none;
+  display: none;
+}
+
+/* Product grid — baseline tile chrome (Shop / Detail reco / Cart picks; page CSS may override) */
+body:not(.page-index):not(.page-login) .shop-grid > .ed-card.product-card,
+body:not(.page-index):not(.page-login) .shop-grid > article.product-card {
+  position: relative;
+  border: 1px solid var(--color-line);
+  border-top: var(--commerce-card-top);
+  background: var(--color-surface);
+  box-shadow: var(--commerce-card-shadow);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:not(.page-index):not(.page-login) .shop-grid > .ed-card.product-card:hover,
+  body:not(.page-index):not(.page-login) .shop-grid > article.product-card:hover {
+    border-color: var(--color-line-strong);
+    box-shadow: var(--commerce-card-shadow-hover);
+  }
+}
+
+body:not(.page-index):not(.page-login) .shop-grid > .ed-card.product-card:focus-within,
+body:not(.page-index):not(.page-login) .shop-grid > article.product-card:focus-within {
+  border-color: var(--color-line-strong);
+  box-shadow: var(--commerce-card-shadow-hover);
+}
+
+body:not(.page-index):not(.page-login) .shop-grid > .ed-card.product-card .card-media,
+body:not(.page-index):not(.page-login) .shop-grid > article.product-card .card-media {
+  background: var(--color-surface-soft);
+}
+
+/* Related / editorial card grids — light “shelf” chrome (skip ed-detail-design: own system) */
+body:not(.page-index):not(.page-login) .section:not(.ed-detail-design) .card-grid > .card:not(.product-card),
+body:not(.page-index):not(.page-login) .section:not(.ed-detail-design) .card-grid > article.card:not(.product-card) {
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  box-shadow: var(--commerce-card-shadow);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:not(.page-index):not(.page-login) .section:not(.ed-detail-design) .card-grid > .card:not(.product-card):hover,
+  body:not(.page-index):not(.page-login) .section:not(.ed-detail-design) .card-grid > article.card:not(.product-card):hover {
+    border-color: var(--color-line-strong);
+    box-shadow: var(--commerce-card-shadow-hover);
+  }
+}
+
+/* Process steps — shelf depth */
+body:not(.page-index):not(.page-login) .section.ed-process .ed-card.process-card {
+  border: 1px solid var(--color-line);
+  border-top: var(--commerce-card-top);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-soft) 100%);
+  box-shadow: var(--commerce-card-shadow);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:not(.page-index):not(.page-login) .section.ed-process .ed-card.process-card:hover {
+    border-color: var(--color-line-strong);
+    box-shadow: var(--commerce-card-shadow-hover);
+  }
+}
+
+/* Dark CTA band — trust list reads as policy row */
+body:not(.page-index):not(.page-login) .section.ed-cta .trust-list li {
+  padding: var(--space-8) 0 var(--space-8) var(--space-4);
+  border-left: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+body:not(.page-index):not(.page-login) .section.ed-cta .trust-list li:first-child {
+  border-left-color: rgba(255, 255, 255, 0.28);
+}
+
+/* =============================================================================
+   Detail design band — “경험·서비스 디테일” 공통 (섹션에 ed-detail-design 추가)
+   ============================================================================= */
+
+body:not(.page-index) .section.ed-detail-design {
+  position: relative;
+  background:
+    radial-gradient(ellipse 72% 48% at 50% 0%, rgba(192, 138, 74, 0.09) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(26, 36, 33, 0.045) 0%, rgba(26, 36, 33, 0) 40%),
+    var(--color-bg);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+body:not(.page-index) .section.ed-detail-design::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: min(112px, 16vw);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent) 45%, transparent);
+  pointer-events: none;
+}
+
+body:not(.page-index) .section.ed-detail-design > .container {
+  position: relative;
+  z-index: 1;
+}
+
+body:not(.page-index) .section.ed-detail-design .title-wrap > .eyebrow,
+body:not(.page-index) .section.ed-detail-design .section-head .section-eyebrow {
+  letter-spacing: 0.26em;
+}
+
+body:not(.page-index) .section.ed-detail-design .title-wrap > h2,
+body:not(.page-index) .section.ed-detail-design .section-head .section-title {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* Primary card grid (pillars, services, pyramid, KPI, cart picks) */
+body:not(.page-index) .section.ed-detail-design .body-wrap > .ed-card,
+body:not(.page-index) .section.ed-detail-design .body-wrap > article.ed-card,
+body:not(.page-index) .section.ed-detail-design .body-wrap > .card:not(.result-primary),
+body:not(.page-index) .section.ed-detail-design .section-body .card-grid > .card,
+body:not(.page-index) .section.ed-detail-design .section-body .card-grid > article {
+  border: 1px solid var(--color-line);
+  border-top: 2px solid var(--color-primary);
+  background: linear-gradient(168deg, rgba(255, 255, 255, 0.97) 0%, var(--color-surface-soft) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 22px 52px -38px rgba(17, 17, 17, 0.18);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body:not(.page-index) .section.ed-detail-design .body-wrap > .ed-card:hover,
+body:not(.page-index) .section.ed-detail-design .body-wrap > article.ed-card:hover,
+body:not(.page-index) .section.ed-detail-design .body-wrap > .card:not(.result-primary):hover,
+body:not(.page-index) .section.ed-detail-design .section-body .card-grid > .card:hover,
+body:not(.page-index) .section.ed-detail-design .section-body .card-grid > article:hover {
+  border-color: var(--color-line-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 28px 60px -34px rgba(17, 17, 17, 0.22);
+  transform: translateY(-3px);
+}
+
+/* Finder — 근거 3카드만 (메인 결과 카드는 제외) */
+body.page-finder .section.ed-detail-design .result-detail-grid .result-detail-card {
+  border: 1px solid var(--color-line);
+  border-top: 2px solid var(--color-primary);
+  background: linear-gradient(168deg, rgba(255, 255, 255, 0.97) 0%, var(--color-surface-soft) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 22px 52px -38px rgba(17, 17, 17, 0.18);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.page-finder .section.ed-detail-design .result-detail-grid .result-detail-card:hover {
+  border-color: var(--color-line-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 28px 60px -34px rgba(17, 17, 17, 0.22);
+  transform: translateY(-3px);
+}
+
+body.page-finder .section.ed-detail-design .result-detail-kicker {
+  font-family: var(--font-family-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* PDP — 아이콘 3업 */
+body.page-detail .section.ed-detail-design .ed-card .text-wrap {
+  padding: var(--space-28) var(--space-24);
+  gap: var(--card-stack-gap, 8px);
+}
+
+body.page-detail .section.ed-detail-design .why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--color-primary);
+}
+
+body.page-detail .section.ed-detail-design .why-text-box {
+  margin-top: var(--space-28);
+  padding: var(--space-20) var(--space-24);
+  border: 1px dashed var(--color-line-strong);
+  background: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-family-display);
+  font-style: italic;
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.55;
+  color: var(--color-text);
+  text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Checkout — 폼 내부 신뢰 패널 */
+body.page-checkout .checkout-confidence.ed-detail-design {
+  margin-top: var(--space-32);
+  margin-bottom: var(--space-24);
+  padding: var(--space-28) var(--space-24);
+  border: 1px solid var(--color-line);
+  border-top: 2px solid var(--color-accent);
+  background: linear-gradient(162deg, var(--color-surface) 0%, var(--color-surface-soft) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 18px 44px -32px rgba(17, 17, 17, 0.14);
+}
+
+body.page-checkout .checkout-confidence.ed-detail-design .checkout-section-title {
+  font-family: var(--font-family-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-16);
+}
+
+body.page-checkout .checkout-confidence.ed-detail-design .confidence-list {
+  gap: 10px;
+}
+
+body.page-checkout .checkout-confidence.ed-detail-design .confidence-list li {
+  padding: var(--space-10) var(--space-14) var(--space-10) var(--space-20);
+  border: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 0;
+}
+
+/* Order complete — 다음 단계 패널 */
+body.page-order-complete .order-next.ed-detail-design {
+  position: relative;
+  border-top: 2px solid var(--color-accent);
+  background:
+    linear-gradient(180deg, rgba(192, 138, 74, 0.08) 0%, transparent 38%),
+    var(--color-surface-soft);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 22px 50px -36px rgba(17, 17, 17, 0.16);
+}
+
+body.page-order-complete .order-next.ed-detail-design::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: min(96px, 14vw);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent) 50%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.page-index) .section.ed-detail-design .body-wrap > .ed-card:hover,
+  body:not(.page-index) .section.ed-detail-design .body-wrap > article.ed-card:hover,
+  body:not(.page-index) .section.ed-detail-design .body-wrap > .card:hover,
+  body:not(.page-index) .section.ed-detail-design .section-body .card-grid > .card:hover,
+  body.page-finder .section.ed-detail-design .result-detail-grid .result-detail-card:hover {
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   V2 editorial main shell — shared by Shop, Ingredient, Gift, Finder, …
+   Ensures the same canvas tokens when a route does not ship its own
+   `.v2-editorial-flow { … }` block in a page stylesheet.
+   -------------------------------------------------------------------------- */
+body:not(.page-index) main#main-content.v2-editorial-flow {
+  background: var(--color-surface);
+  color: var(--color-text);
+  isolation: isolate;
+}
+
+/* Hash targets: V2 sections often omit `.section`, so they miss common.css scroll-margin */
+body:not(.page-index) main#main-content.v2-editorial-flow > section[id] {
+  scroll-margin-top: calc(var(--header-height, 72px) + var(--space-16));
+}
+
+/* ============================================================================
+   DIRECTOR-LEVEL UNIFIED DESIGN SYSTEM (subpage-wide)
+   Applied to every body:not(.page-index) page: shop / detail / cart / checkout /
+   order-complete / gift / finder / ingredient / journal / login.
+   Standardizes — section padding, card hover, eyebrow rhythm, card grid gap,
+   focus-visible, button hover, hairline dividers, image zoom timing.
+   ============================================================================ */
+
+/* --- 1. UNIFIED SECTION VERTICAL PADDING ---------------------------------- */
+body:not(.page-index):not(.page-login) main > section,
+body:not(.page-index):not(.page-login) main#main-content.v2-editorial-flow > section:not(.cinematic-hero):not(.page-header):not([class*="hero-v2"]) {
+  padding-block: clamp(72px, 8vw, 112px);
+}
+
+body:not(.page-index):not(.page-login) main > section.is-flush,
+body:not(.page-index):not(.page-login) main > section.editorial.is-flush,
+body:not(.page-index):not(.page-login) main > section.cinematic-hero,
+body:not(.page-index):not(.page-login) main > section.page-header {
+  padding-block: 0;
+}
+
+/* --- 2. UNIFIED CARD HOVER (translateY + shadow) -------------------------- */
+body:not(.page-index):not(.page-login) .card,
+body:not(.page-index):not(.page-login) .product-card,
+body:not(.page-index):not(.page-login) .ed-card,
+body:not(.page-index):not(.page-login) .pick-card-v2,
+body:not(.page-index):not(.page-login) .expert-card-v2,
+body:not(.page-index):not(.page-login) .service-card-v2,
+body:not(.page-index):not(.page-login) .aftercare-item-v2,
+body:not(.page-index):not(.page-login) .matrix-item-v2,
+body:not(.page-index):not(.page-login) .reason-box-v2,
+body:not(.page-index):not(.page-login) .finder-card-v2,
+body:not(.page-index):not(.page-login) .expansion-card,
+body:not(.page-index):not(.page-login) .interface-panel {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+
+body:not(.page-index):not(.page-login) .card:hover,
+body:not(.page-index):not(.page-login) .product-card:hover,
+body:not(.page-index):not(.page-login) .ed-card:hover,
+body:not(.page-index):not(.page-login) .pick-card-v2:hover,
+body:not(.page-index):not(.page-login) .expert-card-v2:hover,
+body:not(.page-index):not(.page-login) .service-card-v2:hover,
+body:not(.page-index):not(.page-login) .aftercare-item-v2:hover,
+body:not(.page-index):not(.page-login) .matrix-item-v2:hover,
+body:not(.page-index):not(.page-login) .reason-box-v2:hover,
+body:not(.page-index):not(.page-login) .finder-card-v2:hover,
+body:not(.page-index):not(.page-login) .expansion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -32px rgba(17, 17, 17, 0.18);
+}
+
+/* --- 3. UNIFIED CARD MEDIA IMAGE ZOOM ON HOVER ---------------------------- */
+body:not(.page-index):not(.page-login) .card .card-media img,
+body:not(.page-index):not(.page-login) .product-card .card-media img,
+body:not(.page-index):not(.page-login) .ed-card .card-media img,
+body:not(.page-index):not(.page-login) .pick-card-v2 .pick-media-v2 img,
+body:not(.page-index):not(.page-login) .expert-card-v2 .expert-media-v2 img,
+body:not(.page-index):not(.page-login) .expert-card-v2 .card-media-v2 img,
+body:not(.page-index):not(.page-login) .finder-card-v2 .card-media-v2 img,
+body:not(.page-index):not(.page-login) .expansion-card .card-media img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body:not(.page-index):not(.page-login) .card:hover .card-media img,
+body:not(.page-index):not(.page-login) .product-card:hover .card-media img,
+body:not(.page-index):not(.page-login) .ed-card:hover .card-media img,
+body:not(.page-index):not(.page-login) .pick-card-v2:hover .pick-media-v2 img,
+body:not(.page-index):not(.page-login) .expert-card-v2:hover .expert-media-v2 img,
+body:not(.page-index):not(.page-login) .expert-card-v2:hover .card-media-v2 img,
+body:not(.page-index):not(.page-login) .finder-card-v2:hover .card-media-v2 img,
+body:not(.page-index):not(.page-login) .expansion-card:hover .card-media img {
+  transform: scale(1.04);
+}
+
+/* --- 4. UNIFIED EYEBROW (mono caption + accent dot/hairline) -------------- */
+body:not(.page-index):not(.page-login) .section .eyebrow,
+body:not(.page-index):not(.page-login) .section .eyebrow-v2,
+body:not(.page-index):not(.page-login) .section .section-eyebrow,
+body:not(.page-index):not(.page-login) main > section .eyebrow,
+body:not(.page-index):not(.page-login) main > section .eyebrow-v2 {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-12);
+}
+
+body:not(.page-index):not(.page-login) .section .eyebrow.accent,
+body:not(.page-index):not(.page-login) .section .eyebrow-v2.accent,
+body:not(.page-index):not(.page-login) main > section .eyebrow.accent,
+body:not(.page-index):not(.page-login) main > section .eyebrow-v2.accent {
+  color: var(--color-accent);
+}
+
+/* --- 5. UNIFIED BUTTON HOVER (translateY consistency) --------------------- */
+body:not(.page-index):not(.page-login) .btn,
+body:not(.page-index):not(.page-login) .btn-v2 {
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+body:not(.page-index):not(.page-login) .btn:hover:not(:disabled),
+body:not(.page-index):not(.page-login) .btn-v2:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* --- 6. UNIFIED FOCUS-VISIBLE ACCESSIBILITY ------------------------------- */
+body:not(.page-index):not(.page-login) .btn:focus-visible,
+body:not(.page-index):not(.page-login) .btn-v2:focus-visible,
+body:not(.page-index):not(.page-login) .chip:focus-visible,
+body:not(.page-index):not(.page-login) .chip-v2:focus-visible,
+body:not(.page-index):not(.page-login) .filter-btn-v2:focus-visible,
+body:not(.page-index):not(.page-login) .option-btn-v2:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+body:not(.page-index):not(.page-login) .card:focus-within,
+body:not(.page-index):not(.page-login) .product-card:focus-within,
+body:not(.page-index):not(.page-login) .pick-card-v2:focus-within,
+body:not(.page-index):not(.page-login) .ed-card:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 24px 48px -32px rgba(17, 17, 17, 0.22);
+}
+
+/* --- 7. UNIFIED CARD GRID GAP --------------------------------------------- */
+body:not(.page-index):not(.page-login) .card-grid,
+body:not(.page-index):not(.page-login) .product-grid,
+body:not(.page-index):not(.page-login) .shop-grid,
+body:not(.page-index):not(.page-login) .picks-grid-v2,
+body:not(.page-index):not(.page-login) .lab-picks-grid,
+body:not(.page-index):not(.page-login) .main-grid-v2,
+body:not(.page-index):not(.page-login) .expert-grid,
+body:not(.page-index):not(.page-login) .expert-grid-v2,
+body:not(.page-index):not(.page-login) .service-grid-v2,
+body:not(.page-index):not(.page-login) .matrix-grid-v2,
+body:not(.page-index):not(.page-login) .aftercare-grid-v2,
+body:not(.page-index):not(.page-login) .similar-grid-v2,
+body:not(.page-index):not(.page-login) .reason-grid-v2,
+body:not(.page-index):not(.page-login) .finder-step-grid-v2,
+body:not(.page-index):not(.page-login) .archive-grid-v2 .card-grid-v2,
+body:not(.page-index):not(.page-login) .recommendations-v2 .card-grid-v2,
+body:not(.page-index):not(.page-login) .cart-cross-sell-v2 .card-grid-v2,
+body:not(.page-index):not(.page-login) .curated-sets-v2 .card-grid-v2 {
+  gap: clamp(20px, 2vw, 28px);
+}
+
+/* --- 8. UNIFIED TITLE-WRAP STACK RHYTHM ----------------------------------- */
+body:not(.page-index):not(.page-login) .title-wrap,
+body:not(.page-index):not(.page-login) .section-head,
+body:not(.page-index):not(.page-login) .section-head-v2,
+body:not(.page-index):not(.page-login) .section-header,
+body:not(.page-index):not(.page-login) .spine-head-v2,
+body:not(.page-index):not(.page-login) .matrix-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+body:not(.page-index):not(.page-login) .title-wrap.is-center,
+body:not(.page-index):not(.page-login) .section-head.section-head-center,
+body:not(.page-index):not(.page-login) .section-head-v2.is-center,
+body:not(.page-index):not(.page-login) .section-header.align-center {
+  align-items: center;
+  text-align: center;
+}
+
+/* --- 9. UNIFIED SUBSECTION TITLE TYPOGRAPHY (h2 / display headings) ------- */
+body:not(.page-index):not(.page-login) .title-wrap > h2,
+body:not(.page-index):not(.page-login) .section-head > .section-title,
+body:not(.page-index):not(.page-login) .section-head-v2 > .section-title-v2,
+body:not(.page-index):not(.page-login) .section-header > .section-title,
+body:not(.page-index):not(.page-login) .spine-head-v2 > .title-v2,
+body:not(.page-index):not(.page-login) .matrix-info > .matrix-title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* --- 10. UNIFIED LEAD/DESC TYPOGRAPHY ------------------------------------- */
+body:not(.page-index):not(.page-login) .title-wrap > .lead,
+body:not(.page-index):not(.page-login) .title-wrap > p:not(.eyebrow),
+body:not(.page-index):not(.page-login) .section-head > .section-lead,
+body:not(.page-index):not(.page-login) .section-head-v2 > .section-lead-v2,
+body:not(.page-index):not(.page-login) .section-header > .section-lead,
+body:not(.page-index):not(.page-login) .matrix-info > .matrix-lead,
+body:not(.page-index):not(.page-login) .spine-head-v2 > .lead {
+  font-size: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text-sub);
+  max-width: 52ch;
+  margin: 0;
+  word-break: keep-all;
+}
+
+body:not(.page-index):not(.page-login) .title-wrap.is-center > .lead,
+body:not(.page-index):not(.page-login) .section-head.section-head-center > .section-lead,
+body:not(.page-index):not(.page-login) .section-head-v2.is-center > .section-lead-v2,
+body:not(.page-index):not(.page-login) .section-header.align-center > .section-lead {
+  margin-inline: auto;
+}
+
+/* --- 11. UNIFIED CARD INNER STACK GAP (title→desc→meta) ------------------- */
+body:not(.page-index):not(.page-login) .card .card-body,
+body:not(.page-index):not(.page-login) .product-card .card-body,
+body:not(.page-index):not(.page-login) .pick-card-v2 .pick-body-v2,
+body:not(.page-index):not(.page-login) .expert-card-v2 .expert-body-v2,
+body:not(.page-index):not(.page-login) .expansion-card .card-body {
+  gap: var(--card-stack-gap, 8px);
+}
+
+/* --- 12. UNIFIED CARD MEDIA — light gradient bottom on hover -------------- */
+body:not(.page-index):not(.page-login) .card .card-media,
+body:not(.page-index):not(.page-login) .product-card .card-media,
+body:not(.page-index):not(.page-login) .pick-card-v2 .pick-media-v2,
+body:not(.page-index):not(.page-login) .expansion-card .card-media {
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- 13. SECTION HAIRLINE DIVIDER (subtle separator between bands) -------- */
+body:not(.page-index):not(.page-login) main > section + section:not(.cinematic-hero):not(.page-header):not(.editorial.is-flush),
+body:not(.page-index):not(.page-login) main#main-content.v2-editorial-flow > section + section:not(.cinematic-hero):not(.page-header):not(.editorial.is-flush) {
+  border-top: 1px solid var(--color-line);
+}
+
+/* --- 14. PRODUCT GRID: AUTO-FILL with consistent minmax --------------------- */
+body:not(.page-index):not(.page-login) .product-grid,
+body:not(.page-index):not(.page-login) .picks-grid-v2,
+body:not(.page-index):not(.page-login) .main-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+@media (max-width: 1080px) {
+  body:not(.page-index):not(.page-login) .product-grid,
+  body:not(.page-index):not(.page-login) .picks-grid-v2,
+  body:not(.page-index):not(.page-login) .main-grid-v2,
+  body:not(.page-index):not(.page-login) .expert-grid-v2,
+  body:not(.page-index):not(.page-login) .service-grid-v2,
+  body:not(.page-index):not(.page-login) .aftercare-grid-v2,
+  body:not(.page-index):not(.page-login) .matrix-grid-v2,
+  body:not(.page-index):not(.page-login) .similar-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  body:not(.page-index):not(.page-login) .product-grid,
+  body:not(.page-index):not(.page-login) .picks-grid-v2,
+  body:not(.page-index):not(.page-login) .main-grid-v2,
+  body:not(.page-index):not(.page-login) .expert-grid-v2,
+  body:not(.page-index):not(.page-login) .service-grid-v2,
+  body:not(.page-index):not(.page-login) .aftercare-grid-v2,
+  body:not(.page-index):not(.page-login) .matrix-grid-v2,
+  body:not(.page-index):not(.page-login) .similar-grid-v2,
+  body:not(.page-index):not(.page-login) .finder-step-grid-v2,
+  body:not(.page-index):not(.page-login) .reason-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 15. CONTENT WRAPPER STACK (.content / .section-content rhythm) ------- */
+body:not(.page-index):not(.page-login) .section > .container > .content,
+body:not(.page-index):not(.page-login) main > section > .container > .content,
+body:not(.page-index):not(.page-login) .section .section-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 48px);
+}
+
+/* Editorial banner content uses absolute layering, not vertical stack */
+body:not(.page-index):not(.page-login) section.editorial.is-flush > .container > .content,
+body:not(.page-index):not(.page-login) section.shop-editorial > .container > .content {
+  display: block;
+  gap: 0;
+}
+
+/* --- 16. REDUCED MOTION SAFETY NET ---------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  body:not(.page-index):not(.page-login) .card,
+  body:not(.page-index):not(.page-login) .product-card,
+  body:not(.page-index):not(.page-login) .ed-card,
+  body:not(.page-index):not(.page-login) .pick-card-v2,
+  body:not(.page-index):not(.page-login) .expert-card-v2,
+  body:not(.page-index):not(.page-login) .service-card-v2,
+  body:not(.page-index):not(.page-login) .expansion-card,
+  body:not(.page-index):not(.page-login) .btn,
+  body:not(.page-index):not(.page-login) .btn-v2 {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    transform: none !important;
+  }
+
+  body:not(.page-index):not(.page-login) .card-media img,
+  body:not(.page-index):not(.page-login) .pick-media-v2 img,
+  body:not(.page-index):not(.page-login) .expert-media-v2 img,
+  body:not(.page-index):not(.page-login) .card-media-v2 img {
+    transition: none !important;
+    transform: none !important;
+  }
+}

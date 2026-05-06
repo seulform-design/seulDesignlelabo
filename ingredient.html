@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko" class="ed" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="르라보 원료 스토리 - 노트 구조와 핵심 원료, 산지-배치 추적 과정.">
+  <meta name="theme-color" content="#1a2421">
+  <meta property="og:title" content="Ingredients · LE LABO · Forest Laboratory">
+  <meta property="og:description" content="르라보 원료 스토리 - 노트 구조와 핵심 원료, 산지-배치 추적 과정.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LE LABO">
+  <title>Ingredients | LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/subpage-layout.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/ingredient.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/editorial.js" defer></script>
+  <script src="./scripts/ingredient.js" defer></script>
+</head>
+
+<body class="page-ingredient">
+  <div id="wrap">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH"
+                  autocomplete="off" aria-label="프래그런스·기프트 검색" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false"
+                aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false"
+              aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html#shop-grid-title">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+    <main id="main-content" class="v2-editorial-flow">
+
+      <!-- ============ SECTION 01: INGREDIENT HERO (Image 3 Standard) ============ -->
+      <nav class="breadcrumb container commerce-breadcrumb" aria-label="경로 탐색">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Ingredients</li>
+        </ol>
+      </nav>
+      <header class="page-header commerce-page-header cinematic-hero">
+        <div class="hero-overlay-v2"></div>
+        <div class="container">
+          <div class="hero-content-card fade-up">
+            <p class="section-eyebrow">THE BOTANY OF SCENT</p>
+            <h1 class="page-title">원료의 본질을 찾아서</h1>
+            <p class="section-desc">산지부터 추출, 배치 검증까지 <br> 향을 구성하는 원료의 전체 생애주기를 투명하게 공개합니다.</p>
+            <div class="subpage-hero-actions">
+              <a href="shop.html" class="btn btn-primary">EXPLORE SHOP</a>
+              <a href="journal.html" class="btn btn-secondary">READ JOURNAL</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ SECTION 02: TRUST MATRIX V2 (KPIs) ============ -->
+      <section class="trust-matrix-v2 ingredient-metrics-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">QUALITY SNAPSHOT</p>
+            <h2 class="section-title-v2">원료 신뢰 지표</h2>
+            <p class="section-lead-v2">감성 설명을 넘어, 실제 선택에 필요한 핵심 품질 지표를 먼저 제시합니다.</p>
+          </div>
+          <div class="matrix-grid-v2" role="list" aria-label="원료 품질 지표 네 가지">
+            <div class="matrix-item-v2" role="listitem">
+              <span class="matrix-label-v2">TRACEABILITY</span>
+              <span class="matrix-value-v2">98<small>%</small></span>
+              <p class="matrix-desc-v2">수급 이력 추적 가능성</p>
+            </div>
+            <div class="matrix-item-v2" role="listitem">
+              <span class="matrix-label-v2">HARVEST WINDOW</span>
+              <span class="matrix-value-v2">21<small>DAYS</small></span>
+              <p class="matrix-desc-v2">최적 수확 유효 기간</p>
+            </div>
+            <div class="matrix-item-v2" role="listitem">
+              <span class="matrix-label-v2">CONSISTENCY</span>
+              <span class="matrix-value-v2">4.7<small>/5</small></span>
+              <p class="matrix-desc-v2">배치별 향료 균일도</p>
+            </div>
+            <div class="matrix-item-v2" role="listitem">
+              <span class="matrix-label-v2">LOW-IMPACT</span>
+              <span class="matrix-value-v2">84<small>%</small></span>
+              <p class="matrix-desc-v2">저영향 수급 방식 채택률</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03: EDITORIAL SPINE V2 (Note Pyramid) ============ -->
+      <section class="experience-expansion-v2 note-structure-v2">
+        <div class="container expansion-container-v2">
+          <div class="expansion-spine-v2">
+            <div class="spine-sticky-v2">
+              <p class="eyebrow-v2">NOTE STRUCTURE</p>
+              <h2 class="section-title-v2">향의 구조</h2>
+              <p class="section-lead-v2">Top · Middle · Base<br>세 층이 만드는 잔향의 깊이</p>
+            </div>
+          </div>
+          <div class="expansion-grid-v2">
+            <!-- Top Note -->
+            <div class="expansion-item-v2">
+              <div class="expansion-num-v2">01</div>
+              <div class="expansion-content-v2">
+                <h3 class="expansion-title-v2">△ TOP NOTE · <small>0–15 min</small></h3>
+                <p class="expansion-desc-v2">가장 먼저 피어나는 향. 시트러스와 허브처럼 휘발성이 강한 원료가 첫인상을 만듭니다.</p>
+                <div class="expansion-media-v2">
+                  <img src="./images/common/TOP.png" alt="Top Note">
+                </div>
+                <p class="note-tags-v2">Bergamot · Neroli · Mint</p>
+              </div>
+            </div>
+            <!-- Middle Note -->
+            <div class="expansion-item-v2">
+              <div class="expansion-num-v2">02</div>
+              <div class="expansion-content-v2">
+                <h3 class="expansion-title-v2">◇ MIDDLE NOTE · <small>15 min – 4 hr</small></h3>
+                <p class="expansion-desc-v2">향의 중심을 지탱하는 층. 플로럴과 스파이스 노트가 체온과 반응하며 본연의 분위기를 완성합니다.</p>
+                <div class="expansion-media-v2">
+                  <img src="./images/common/MIDDLE.png" alt="Middle Note">
+                </div>
+                <p class="note-tags-v2">Rose · Iris · Cardamom</p>
+              </div>
+            </div>
+            <!-- Base Note -->
+            <div class="expansion-item-v2">
+              <div class="expansion-num-v2">03</div>
+              <div class="expansion-content-v2">
+                <h3 class="expansion-title-v2">▽ BASE NOTE · <small>4 hr – 24 hr+</small></h3>
+                <p class="expansion-desc-v2">가장 오래 남는 깊이. 우디와 머스크가 체온과 섞이며 24시간 이상 잔향을 이어갑니다.</p>
+                <div class="expansion-media-v2">
+                  <img src="./images/common/BASE.png" alt="Base Note">
+                </div>
+                <p class="note-tags-v2">Sandalwood · Cedar · Musk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 04: KEY INGREDIENTS V2 ============ -->
+      <section class="expert-guidance-v2 key-ingredients-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">KEY INGREDIENTS</p>
+            <h2 class="section-title-v2">숲의 원료</h2>
+            <p class="section-lead-v2">르라보를 정의하는 핵심 원료 4종 · 산지에서 병까지의 여정</p>
+          </div>
+          <div class="expert-grid-v2">
+            <!-- Ingredient 01 -->
+            <article class="expert-card-v2">
+              <div class="card-media-v2">
+                <img src="./images/common/raw1.jpg" alt="Sandalwood">
+                <div class="card-badge-v2">WOODY · BASE</div>
+              </div>
+              <div class="card-body-v2">
+                <h3 class="card-title-v2">Sandalwood</h3>
+                <p class="card-binom-v2">Santalum spicatum</p>
+                <p class="card-desc-v2">호주 대륙의 거친 자연에서 자라난 샌달우드는 부드러우면서도 깊은 울림을 주는 향의 뼈대가 됩니다.</p>
+                <ul class="card-specs-v2">
+                  <li><span>Origin</span> <strong>Western Australia</strong></li>
+                  <li><span>Harvest</span> <strong>4–6월 · 21일</strong></li>
+                  <li><span>Used in</span> <strong>Santal 33</strong></li>
+                </ul>
+                <footer class="card-footer-v2">
+                  <a href="shop.html" class="btn-v2 btn-ghost">EXPLORE WOODY</a>
+                </footer>
+              </div>
+            </article>
+
+            <!-- Ingredient 02 -->
+            <article class="expert-card-v2">
+              <div class="card-media-v2">
+                <img src="./images/common/raw2.jpg" alt="Bergamot">
+                <div class="card-badge-v2">CITRUS · TOP</div>
+              </div>
+              <div class="card-body-v2">
+                <h3 class="card-title-v2">Bergamot</h3>
+                <p class="card-binom-v2">Citrus bergamia</p>
+                <p class="card-desc-v2">이탈리아 칼라브리아에서 재배되는 베르가못은 시트러스의 <br> 상쾌함과 플로럴의 우아함을 동시에 품고 있습니다.</p>
+                <ul class="card-specs-v2">
+                  <li><span>Origin</span> <strong>Calabria, Italy</strong></li>
+                  <li><span>Harvest</span> <strong>11–2월 · 14일</strong></li>
+                  <li><span>Used in</span> <strong>Bergamote 22</strong></li>
+                </ul>
+                <footer class="card-footer-v2">
+                  <a href="shop.html" class="btn-v2 btn-ghost">EXPLORE CITRUS</a>
+                </footer>
+              </div>
+            </article>
+
+            <!-- Ingredient 03 -->
+            <article class="expert-card-v2">
+              <div class="card-media-v2">
+                <img src="./images/common/raw3.jpg" alt="Rose">
+                <div class="card-badge-v2">FLORAL · MIDDLE</div>
+              </div>
+              <div class="card-body-v2">
+                <h3 class="card-title-v2">Rose Damascena</h3>
+                <p class="card-binom-v2">Rosa × damascena</p>
+                <p class="card-desc-v2">새벽의 짧은 시간에만 수확되는 로즈 다마세나는 꽃잎 한 장 한 장이 향의 밀도를 결정합니다.</p>
+                <ul class="card-specs-v2">
+                  <li><span>Origin</span> <strong>Grasse, France</strong></li>
+                  <li><span>Harvest</span> <strong>5월 · 28일</strong></li>
+                  <li><span>Used in</span> <strong>Rose 31</strong></li>
+                </ul>
+                <footer class="card-footer-v2">
+                  <a href="shop.html" class="btn-v2 btn-ghost">EXPLORE FLORAL</a>
+                </footer>
+              </div>
+            </article>
+
+            <!-- Ingredient 04 -->
+            <article class="expert-card-v2">
+              <div class="card-media-v2">
+                <img src="./images/common/woody.png" alt="Cedarwood">
+                <div class="card-badge-v2">WOODY · BASE</div>
+              </div>
+              <div class="card-body-v2">
+                <h3 class="card-title-v2">Cedarwood</h3>
+                <p class="card-binom-v2">Cedrus atlantica</p>
+                <p class="card-desc-v2">아틀라스 산맥의 시더우드는 건조하면서 따스한 잔향으로, 베이스 노트에 견고한 깊이를 더합니다.</p>
+                <ul class="card-specs-v2">
+                  <li><span>Origin</span> <strong>Atlas Mountains, Morocco</strong></li>
+                  <li><span>Harvest</span> <strong>9–11월 · 30일</strong></li>
+                  <li><span>Used in</span> <strong>Vetiver 46</strong></li>
+                </ul>
+                <footer class="card-footer-v2">
+                  <a href="shop.html" class="btn-v2 btn-ghost">EXPLORE WOODY</a>
+                </footer>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 05: EDITORIAL BANNER V2 ============ -->
+      <section class="editorial-banner-v2">
+        <div class="banner-media-v2">
+          <img src="./images/common/producer.png" alt=" Harvesting Rose">
+          <div class="banner-overlay-v2"></div>
+        </div>
+        <div class="container banner-container-v2">
+          <div class="banner-content-v2 fade-up">
+            <p class="eyebrow-v2">FROM THE FIELD</p>
+            <h2 class="banner-title-v2">새벽 5시, 산지에서 시작되는 향</h2>
+            <p class="banner-desc-v2">그라스의 안개가 걷히기 전 <br> 가장 짧고 가장 정직한 향의 시간을 우리는 기록합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 06: FOREST MATRIX V2 ============ -->
+      <section class="trust-matrix-v2 forest-matrix-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">FOREST MATRIX</p>
+            <h2 class="section-title-v2">원료 비교 매트릭스</h2>
+            <p class="section-lead-v2">강도·지속력·계절 적합도를 한눈에 비교하여 실패 없는 선택을 돕습니다.</p>
+          </div>
+
+          <div class="matrix-table-wrap-v2">
+            <table class="matrix-table-v2">
+              <thead>
+                <tr>
+                  <th>INGREDIENT</th>
+                  <th>SILLAGE</th>
+                  <th>LONGEVITY</th>
+                  <th>SEASON</th>
+                  <th>BEST SCENE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sandalwood</strong><small>Santalum spicatum</small></td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-80"></span></div>
+                  </td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-100"></span></div>
+                  </td>
+                  <td>
+                    <div class="season-chips-v2"><span>F</span><span>W</span></div>
+                  </td>
+                  <td>Night · Formal</td>
+                </tr>
+                <tr>
+                  <td><strong>Bergamot</strong><small>Citrus bergamia</small></td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-40"></span></div>
+                  </td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-60"></span></div>
+                  </td>
+                  <td>
+                    <div class="season-chips-v2"><span>SP</span><span>SU</span></div>
+                  </td>
+                  <td>Day · Office</td>
+                </tr>
+                <tr>
+                  <td><strong>Rose Damascena</strong><small>Rosa × damascena</small></td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-60"></span></div>
+                  </td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-80"></span></div>
+                  </td>
+                  <td>
+                    <div class="season-chips-v2"><span>SP</span><span>SU</span><span>F</span><span>W</span></div>
+                  </td>
+                  <td>Daily · Smart</td>
+                </tr>
+                <tr>
+                  <td><strong>Cedarwood</strong><small>Cedrus atlantica</small></td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-80"></span></div>
+                  </td>
+                  <td>
+                    <div class="score-bar-v2"><span class="score-fill score-fill-80"></span></div>
+                  </td>
+                  <td>
+                    <div class="season-chips-v2"><span>F</span><span>W</span></div>
+                  </td>
+                  <td>Evening · Date</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="matrix-hint-v2" id="forest-matrix-hint" role="status" aria-live="polite">전체 원료 행을 표시 중입니다.</p>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 07: SOURCING PROCESS V2 ============ -->
+      <section class="service-assurance-v2 sourcing-process-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">SOURCING PROCESS</p>
+            <h2 class="section-title-v2">원료가 도착하기까지</h2>
+            <p class="section-lead-v2">검증된 산지에서 연구소의 병까지 이어지는 투명한 여정</p>
+          </div>
+          <div class="service-grid-v2">
+            <!-- Step 01 -->
+            <div class="service-card-v2">
+              <div class="service-icon-v2">01</div>
+              <h3 class="service-title-v2">Origin Selection</h3>
+              <p class="service-desc-v2">산지 선별과 파트너 인증을 통해 <br> 원료 편차 가능성을 사전 차단합니다.</p>
+              <p class="service-tag-v2">⏱ 8 WEEKS</p>
+            </div>
+            <!-- Step 02 -->
+            <div class="service-card-v2">
+              <div class="service-icon-v2">02</div>
+              <h3 class="service-title-v2">Harvest Window</h3>
+              <p class="service-desc-v2">최적 수확 창에서 필요한 만큼만 <br> 채집해 향 농도 손실을 최소화합니다.</p>
+              <p class="service-tag-v2">⏱ 14–28 DAYS</p>
+            </div>
+            <!-- Step 03 -->
+            <div class="service-card-v2">
+              <div class="service-icon-v2">03</div>
+              <h3 class="service-title-v2">Dual Extraction</h3>
+              <p class="service-desc-v2">저온 압착과 증류를 병행해 탑 노트 <br> 선명도와 베이스 잔향을 함께 확보합니다.</p>
+              <p class="service-tag-v2">⏱ 4 WEEKS</p>
+            </div>
+            <!-- Step 04 -->
+            <div class="service-card-v2">
+              <div class="service-icon-v2">04</div>
+              <h3 class="service-title-v2">Batch Verification</h3>
+              <p class="service-desc-v2">연구소 기준으로 배치 검수를 완료한 <br> 뒤 코드 기반으로 추적 가능하게 출고합니다.</p>
+              <p class="service-tag-v2">⏱ 2 WEEKS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 08: FAQ V2 ============ -->
+      <section class="service-assurance-v2 faq-section-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">FAQ</p>
+            <h2 class="section-title-v2">자주 묻는 질문</h2>
+            <p class="section-lead-v2">원료와 수급 정책에 대한 고객의 궁금증을 투명하게 답변합니다.</p>
+          </div>
+          <div class="faq-list-v2">
+            <details class="faq-item-v2" open>
+              <summary class="faq-question-v2">배치마다 향이 미세하게 다른 이유는 무엇인가요?</summary>
+              <div class="faq-answer-v2">
+                <p>자연 원료는 수확 시점의 기후에 따라 미세한 편차가 발생합니다. 르라보는 이를 브랜드의 정체성으로 수용하며, 배치 코드를 통해 모든 이력을 추적 관리합니다.</p>
+              </div>
+            </details>
+            <details class="faq-item-v2">
+              <summary class="faq-question-v2">동물실험 및 비건 인증 상태는 어떻게 되나요?</summary>
+              <div class="faq-answer-v2">
+                <p>모든 르라보 원료는 동물실험을 거치지 않으며, 100% 비건 포뮬러를 원칙으로 합니다.</p>
+              </div>
+            </details>
+            <details class="faq-item-v2">
+              <summary class="faq-question-v2">원료의 보관법과 유효 기간은?</summary>
+              <div class="faq-answer-v2">
+                <p>미개봉 24개월, 개봉 후 12개월을 권장합니다. 직사광선을 피해 15-20°C의 서늘한 곳에 보관하십시오.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 09: FINAL CTA ============ -->
+      <section class="ingredient-final-cta-v2" aria-labelledby="ingredient-cta-title">
+        <div class="container">
+          <div class="final-cta-inner-v2">
+            <p class="hero-eyebrow-v2">FIND YOUR SCENT</p>
+            <h2 class="hero-title-v2" id="ingredient-cta-title">원료에서 당신의 향으로</h2>
+            <p class="hero-desc-v2">좋아하는 원료에서 시작해 르라보의 컬렉션을 탐색하세요.</p>
+            <div class="hero-actions-v2">
+              <a href="finder.html" class="btn-v2 btn-solid">START SCENT FINDER</a>
+              <a href="shop.html" class="btn-v2 btn-ghost">VIEW ALL SCENTS</a>
+            </div>
+            <ul class="final-trust-list-v2" aria-label="원료 기반 탐색 강점">
+              <li>산지·배치 추적 기반 정보</li>
+              <li>원료별 사용 상황 가이드</li>
+              <li>취향 탐색에서 구매까지 연결</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html">Body Care</a></li>
+                <li><a href="shop.html">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS"
+                  autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="footer-news-status" id="footer-news-status" role="status" aria-live="polite"></p>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights
+              reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector" aria-label="현재 지역 및 통화 정보">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+              <ul class="footer-social" aria-label="소셜 링크">
+                <li>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                      aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                      aria-hidden="true">
+                      <rect x="2.5" y="5" width="19" height="14" rx="3"></rect>
+                      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"></path>
+                    </svg>
+                    <span class="sr-only">YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>

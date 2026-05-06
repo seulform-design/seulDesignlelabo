@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko" class="ed" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="르라보 저널 - 향과 사람, 그리고 연구소의 기록을 담은 에디토리얼 아카이브.">
+  <meta name="theme-color" content="#1a2421">
+  <meta property="og:title" content="Journal · LE LABO · Forest Laboratory">
+  <meta property="og:description" content="르라보 저널 - 향과 사람, 그리고 연구소의 기록을 담은 에디토리얼 아카이브.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LE LABO">
+  <title>Journal | LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/subpage-layout.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/journal.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/journal.js" defer></script>
+  <script src="./scripts/editorial.js" defer></script>
+</head>
+
+<body class="page-journal">
+  <div id="wrap">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH"
+                  autocomplete="off" aria-label="프래그런스·기프트 검색" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false"
+                aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false"
+              aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html#shop-grid-title">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="v2-editorial-flow">
+
+      <!-- ============ SECTION 01: JOURNAL HERO (Image 3 Standard) ============ -->
+      <nav class="breadcrumb container commerce-breadcrumb" aria-label="경로 탐색">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Journal</li>
+        </ol>
+      </nav>
+      <header class="page-header commerce-page-header cinematic-hero">
+        <div class="hero-overlay-v2"></div>
+        <div class="container">
+          <div class="hero-content-card fade-up">
+            <p class="section-eyebrow">LABORATORY NOTES</p>
+            <h1 class="page-title">우리의 기록들</h1>
+            <p class="section-desc">향료에 대한 고찰부터 도시의 영감까지. <br> 르라보의 시선으로 담아낸 깊이 있는 에디토리얼을 만나보세요.</p>
+            <div class="subpage-hero-actions">
+              <a href="#featured-stories" class="btn btn-primary">LATEST STORIES</a>
+              <a href="#archive-grid" class="btn btn-secondary">VIEW FULL ARCHIVE</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ SECTION 02: EDITORIAL SNAPSHOT V2 ============ -->
+      <section class="journal-snapshot-v2" aria-labelledby="snapshot-title">
+        <div class="container">
+          <div class="snapshot-head-v2">
+            <p class="snapshot-eyebrow-v2">SPRING ISSUE · APR 2026</p>
+            <h2 class="snapshot-title-v2" id="snapshot-title">이번 호의 기록, 한눈에</h2>
+          </div>
+          <div class="trust-matrix-v2">
+            <div class="trust-item-v2">
+              <span class="trust-val-v2">12</span>
+              <span class="trust-lab-v2">NEW STORIES</span>
+            </div>
+            <div class="trust-item-v2">
+              <span class="trust-val-v2">5.6<small>m</small></span>
+              <span class="trust-lab-v2">AVG READ TIME</span>
+            </div>
+            <div class="trust-item-v2">
+              <span class="trust-val-v2">78<small>%</small></span>
+              <span class="trust-lab-v2">COMPLETION RATE</span>
+            </div>
+            <div class="trust-item-v2">
+              <span class="trust-val-v2">85<small>+</small></span>
+              <span class="trust-lab-v2">ARCHIVED POSTS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03: FEATURED STORIES V2 ============ -->
+      <section class="featured-stories-v2" id="featured-stories">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">FEATURED STORIES</p>
+            <h2 class="section-title-v2">이번 달의 기록</h2>
+            <p class="section-lead-v2">조향사와 에디터가 직접 선정한, <br> 이번 시즌 가장 깊이 있게 읽힌 두 편의 에세이입니다.</p>
+          </div>
+
+          <div class="expert-grid-v2">
+            <article class="expert-card-v2 is-featured">
+              <div class="expert-media-v2">
+                <img src="./images/common/manufacturing-process.jpg" alt="Hand-blending Philosophy">
+                <span class="expert-tag-v2">CRAFT</span>
+                <span class="expert-pin-v2" aria-label="에디터 픽">★ EDITOR'S PICK</span>
+              </div>
+              <div class="expert-body-v2">
+                <ul class="expert-meta-v2" aria-label="기사 메타 정보">
+                  <li><time datetime="2026-04-18">APRIL 18, 2026</time></li>
+                  <li>8m READ</li>
+                  <li>2,400 WORDS</li>
+                </ul>
+                <h3 class="expert-title-v2">완벽한 불완전함 : 핸드 블렌딩 철학</h3>
+                <p class="expert-desc-v2">기계가 대체할 수 없는 인간의 손길, 그 미세한 온도가 향에 미치는 영향에 대하여. <br> 조향사 Hana Kim이 4주간의 배치 기록을
+                  토대로 풀어낸 노트.</p>
+                <div class="expert-author-v2">
+                  <span class="author-avatar-v2" aria-hidden="true">HK</span>
+                  <span class="author-meta-v2">
+                    <span class="author-name-v2">Hana Kim</span>
+                    <span class="author-role-v2">Senior Perfumer · Forest Lab</span>
+                  </span>
+                </div>
+                <div class="expert-actions-v2">
+                  <a href="detail.html" class="btn-v2 btn-solid">READ ARTICLE</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="expert-card-v2 is-featured">
+              <div class="expert-media-v2">
+                <img src="./images/common/lelabo-store.jpg" alt="Forest Inspiration">
+                <span class="expert-tag-v2">LAB</span>
+              </div>
+              <div class="expert-body-v2">
+                <ul class="expert-meta-v2" aria-label="기사 메타 정보">
+                  <li><time datetime="2026-04-12">APRIL 12, 2026</time></li>
+                  <li>6m READ</li>
+                  <li>1,820 WORDS</li>
+                </ul>
+                <h3 class="expert-title-v2">새벽 숲에서 찾은 고요한 영감</h3>
+                <p class="expert-desc-v2">안개가 걷히기 전의 공기, 축축한 흙과 침엽수. <br> 하루의 첫 조향이 시작되는 장면을 Forest Lab이 사진과 함께 기록한
+                  봄의 산책기.</p>
+                <div class="expert-author-v2">
+                  <span class="author-avatar-v2" aria-hidden="true">LE</span>
+                  <span class="author-meta-v2">
+                    <span class="author-name-v2">Lab Editor</span>
+                    <span class="author-role-v2">Forest Lab · Field Notes</span>
+                  </span>
+                </div>
+                <div class="expert-actions-v2">
+                  <a href="detail.html" class="btn-v2 btn-solid">READ ARTICLE</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 04: TOPIC FILTER V2 ============ -->
+      <section class="journal-filter-v2" aria-label="주제별 필터">
+        <div class="container">
+          <div class="filter-band-v2">
+            <span class="filter-label-v2">TOPICS</span>
+            <div class="filter-list-v2" role="tablist">
+              <button type="button" class="filter-btn-v2 is-active" role="tab" aria-selected="true"
+                data-journal-filter="all">ALL <em>85</em></button>
+              <button type="button" class="filter-btn-v2" role="tab" aria-selected="false"
+                data-journal-filter="craft">CRAFT <em>14</em></button>
+              <button type="button" class="filter-btn-v2" role="tab" aria-selected="false" data-journal-filter="lab">LAB
+                <em>22</em></button>
+              <button type="button" class="filter-btn-v2" role="tab" aria-selected="false"
+                data-journal-filter="ingredient">INGREDIENT <em>18</em></button>
+              <button type="button" class="filter-btn-v2" role="tab" aria-selected="false"
+                data-journal-filter="scent">SCENT <em>21</em></button>
+              <button type="button" class="filter-btn-v2" role="tab" aria-selected="false"
+                data-journal-filter="seasonal">SEASONAL <em>10</em></button>
+            </div>
+            <div class="filter-meta-v2">
+              <label for="journal-sort" class="sr-only">정렬</label>
+              <select id="journal-sort" class="filter-sort-v2" aria-label="정렬 기준">
+                <option value="latest">LATEST</option>
+                <option value="popular">MOST READ</option>
+                <option value="oldest">OLDEST</option>
+              </select>
+            </div>
+          </div>
+          <p class="filter-status-v2" id="journal-filter-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 05: ARCHIVE GRID V2 ============ -->
+      <section class="archive-grid-v2" id="archive-grid" aria-labelledby="archive-title">
+        <div class="container">
+          <h2 id="archive-title" class="sr-only">전체 아카이브</h2>
+          <div class="card-grid-v2">
+            <!-- Item 01 -->
+            <article class="pick-card-v2 journal-item-v2" data-topic="ingredient">
+              <a href="detail.html" class="journal-card-link" aria-label="샌달우드 기사 읽기">
+                <div class="pick-media-v2">
+                  <img src="./images/common/santal33.png" alt="Sandalwood" loading="lazy">
+                  <span class="pick-badge-v2" data-cat="ingredient">INGREDIENT</span>
+                </div>
+                <div class="pick-body-v2">
+                  <p class="pick-eyebrow-v2"><time datetime="2026-04-05">APRIL 05</time> · 7m READ</p>
+                  <h3 class="pick-title-v2">샌달우드, 그 깊은 울림의 역사</h3>
+                  <p class="pick-desc-v2">호주 대륙의 거친 땅에서 자라난 나무가 <br> 당신의 살결에 닿기까지의 여정.</p>
+                  <p class="pick-author-v2"><span class="dot" aria-hidden="true"></span>Hana Kim · Senior Perfumer</p>
+                  <span class="btn-v2 btn-ghost">READ ARTICLE</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 02 -->
+            <article class="pick-card-v2 journal-item-v2" data-topic="seasonal">
+              <a href="detail.html" class="journal-card-link" aria-label="장미 기사 읽기">
+                <div class="pick-media-v2">
+                  <img src="./images/common/rose31.png" alt="Rose" loading="lazy">
+                  <span class="pick-badge-v2" data-cat="seasonal">SEASONAL</span>
+                </div>
+                <div class="pick-body-v2">
+                  <p class="pick-eyebrow-v2"><time datetime="2026-03-28">MARCH 28</time> · 5m READ</p>
+                  <h3 class="pick-title-v2">장미가 가장 아름다운 시간</h3>
+                  <p class="pick-desc-v2">그라스의 태양이 절정에 달하기 전, <br> 향이 가장 순수한 순간의 기록.</p>
+                  <p class="pick-author-v2"><span class="dot" aria-hidden="true"></span>Sora Lee · Field Editor</p>
+                  <span class="btn-v2 btn-ghost">READ ARTICLE</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 03 -->
+            <article class="pick-card-v2 journal-item-v2" data-topic="scent">
+              <a href="detail.html" class="journal-card-link" aria-label="향과 기억 기사 읽기">
+                <div class="pick-media-v2">
+                  <img src="./images/common/personal-scent.jpg" alt="Memory" loading="lazy">
+                  <span class="pick-badge-v2" data-cat="scent">SCENT</span>
+                </div>
+                <div class="pick-body-v2">
+                  <p class="pick-eyebrow-v2"><time datetime="2026-03-20">MARCH 20</time> · 6m READ</p>
+                  <h3 class="pick-title-v2">향이 기억이 되는 방식</h3>
+                  <p class="pick-desc-v2">후각은 감정의 언어. <br> 향이 어떻게 우리의 정체성을 형성하는지에 대하여.</p>
+                  <p class="pick-author-v2"><span class="dot" aria-hidden="true"></span>Joon Park · Cultural Critic</p>
+                  <span class="btn-v2 btn-ghost">READ ARTICLE</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 04 -->
+            <article class="pick-card-v2 journal-item-v2" data-topic="craft">
+              <a href="detail.html" class="journal-card-link" aria-label="배치 코드 기사 읽기">
+                <div class="pick-media-v2">
+                  <img src="./images/common/manufacturing-process.jpg" alt="Batch Process" loading="lazy">
+                  <span class="pick-badge-v2" data-cat="craft">CRAFT</span>
+                </div>
+                <div class="pick-body-v2">
+                  <p class="pick-eyebrow-v2"><time datetime="2026-03-12">MARCH 12</time> · 9m READ</p>
+                  <h3 class="pick-title-v2">배치 코드가 말해주는 향의 정직함</h3>
+                  <p class="pick-desc-v2">7자리 코드 안에 산지 · 연도 · 연구자가 <br> 모두 담긴 르라보의 추적 시스템.</p>
+                  <p class="pick-author-v2"><span class="dot" aria-hidden="true"></span>Hana Kim · Senior Perfumer</p>
+                  <span class="btn-v2 btn-ghost">READ ARTICLE</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 05 -->
+            <article class="pick-card-v2 journal-item-v2" data-topic="lab">
+              <a href="detail.html" class="journal-card-link" aria-label="조향 노트 기사 읽기">
+                <div class="pick-media-v2">
+                  <img src="./images/common/raw2.jpg" alt="Lab Notebook" loading="lazy">
+                  <span class="pick-badge-v2" data-cat="lab">LAB</span>
+                </div>
+                <div class="pick-body-v2">
+                  <p class="pick-eyebrow-v2"><time datetime="2026-03-05">MARCH 05</time> · 4m READ</p>
+                  <h3 class="pick-title-v2">조향사의 노트 , 봄을 기록하다</h3>
+                  <p class="pick-desc-v2">3월 마지막 주, 그라스의 공방에서 채집된 <br> 9가지 노트의 즉흥 기록.</p>
+                  <p class="pick-author-v2"><span class="dot" aria-hidden="true"></span>Lab Editor · Forest Lab</p>
+                  <span class="btn-v2 btn-ghost">READ ARTICLE</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 06 -->
+            <article class="pick-card-v2 journal-item-v2" data-topic="ingredient">
+              <a href="detail.html" class="journal-card-link" aria-label="시더우드 기사 읽기">
+                <div class="pick-media-v2">
+                  <img src="./images/common/woody.png" alt="Cedarwood" loading="lazy">
+                  <span class="pick-badge-v2" data-cat="ingredient">INGREDIENT</span>
+                </div>
+                <div class="pick-body-v2">
+                  <p class="pick-eyebrow-v2"><time datetime="2026-02-22">FEBRUARY 22</time> · 5m READ</p>
+                  <h3 class="pick-title-v2">시더우드 , 견고한 베이스의 미학</h3>
+                  <p class="pick-desc-v2">아틀라스 산맥의 시더우드가 모든 <br> 우디 향의 골격을 이루는 이유.</p>
+                  <p class="pick-author-v2"><span class="dot" aria-hidden="true"></span>Sora Lee · Field Editor</p>
+                  <span class="btn-v2 btn-ghost">READ ARTICLE</span>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="archive-actions-v2 is-center">
+            <p class="archive-progress-v2"><strong>6</strong> of 85 stories shown</p>
+            <button type="button" class="btn-v2 btn-ghost is-wide">LOAD MORE RECORDS</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 06: FULL BLEED MOMENT V2 ============ -->
+      <section class="full-bleed-v2">
+        <div class="full-bleed-bg-v2">
+          <img src="./images/common/labeling.png" alt="Editorial Moment">
+          <div class="full-bleed-overlay-v2"></div>
+        </div>
+        <div class="container">
+          <div class="full-bleed-content-v2">
+            <p class="eyebrow-v2">EDITORIAL MOMENT</p>
+            <h2 class="full-bleed-title-v2">"향은 선택하는 것이 아니라,<br>자신이 어떤 장면에 놓이고 싶은지를 기록하는 일이다."</h2>
+            <p class="full-bleed-cite-v2">Editorial Lead, LE LABO Journal</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 07: READING PATH V2 ============ -->
+      <section class="reading-path-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">CURATION</p>
+            <h2 class="section-title-v2">추천 읽기 순서</h2>
+          </div>
+
+          <div class="service-grid-v2">
+            <a href="ingredient.html" class="service-item-v2">
+              <div class="service-icon-v2">01</div>
+              <h3 class="service-title-v2">원료 이해부터</h3>
+              <p class="service-desc-v2">산지와 수확의 기록을 먼저 읽으면 향의 기준점이 생깁니다.</p>
+            </a>
+            <a href="finder.html" class="service-item-v2">
+              <div class="service-icon-v2">02</div>
+              <h3 class="service-title-v2">취향 좌표 세팅</h3>
+              <p class="service-desc-v2">Finder를 통해 당신의 감정과 무드를 데이터로 확인하세요.</p>
+            </a>
+            <a href="shop.html" class="service-item-v2">
+              <div class="service-icon-v2">03</div>
+              <h3 class="service-title-v2">컬렉션 비교</h3>
+              <p class="service-desc-v2">마지막으로 실제 제품군을 탐색하며 여정을 마무리하세요.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 08: EDITOR NOTE V2 ============ -->
+      <section class="editor-note-v2">
+        <div class="container">
+          <div class="editorial-split-v2">
+            <div class="split-media-v2">
+              <img src="./images/common/labeling.png" alt="Editor Note">
+            </div>
+            <div class="split-body-v2">
+              <p class="eyebrow-v2">EDITOR'S NOTE</p>
+              <h2 class="split-title-v2">이번 호 편집 기준</h2>
+              <p class="split-desc-v2">이번 시즌은 향 자체보다 '향이 쓰이는 장면과 맥락'에 초점을 맞췄습니다. <br> 르라보 저널은 단순한 기록을 넘어 당신의 의사결정을 돕는
+                도구가 되길 바랍니다.</p>
+
+              <div class="split-meta-v2">
+                <div class="meta-item-v2">
+                  <span class="meta-lab-v2">예상 읽기</span>
+                  <span class="meta-val-v2">55m</span>
+                </div>
+                <div class="meta-item-v2">
+                  <span class="meta-lab-v2">수록 편수</span>
+                  <span class="meta-val-v2">11편</span>
+                </div>
+              </div>
+
+              <div class="split-sign-v2">
+                <span class="sign-name-v2">Hana Kim</span>
+                <span class="sign-role-v2">Editor-in-Chief</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 09: SUBSCRIBE V2 ============ -->
+      <section class="final-cta-v2" aria-labelledby="subscribe-title">
+        <div class="container narrow-v2 is-center">
+          <p class="eyebrow-v2">STAY SUBSCRIBED</p>
+          <h2 class="final-title-v2" id="subscribe-title">새로운 기록을<br>가장 먼저 받아보세요</h2>
+          <p class="final-desc-v2">매월 1일, 계절의 향과 연구소의 이야기를 이메일로 전해드립니다. 12,000여 명의 독자가 함께 읽고 있습니다.</p>
+          <form class="subscribe-form-v2" novalidate>
+            <label for="journal-subscribe-email" class="sr-only">이메일 주소</label>
+            <input id="journal-subscribe-email" type="email" placeholder="EMAIL ADDRESS" autocomplete="email" required>
+            <button type="submit" class="btn-v2 btn-solid">SUBSCRIBE</button>
+          </form>
+          <p class="subscribe-note-v2">언제든 한 번의 클릭으로 구독 해제할 수 있습니다.</p>
+          <ul class="subscribe-benefits-v2" aria-label="구독 혜택">
+            <li>월 1회 큐레이션 이메일</li>
+            <li>구독자 한정 에세이</li>
+            <li>신상 향 사전 알림</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer site-footer site-shell" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS"
+                  autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="footer-news-status" id="footer-news-status" role="status" aria-live="polite"></p>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights
+              reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector" aria-label="현재 지역 및 통화 정보">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+              <ul class="footer-social" aria-label="소셜 링크">
+                <li>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                      aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                      aria-hidden="true">
+                      <rect x="2.5" y="5" width="19" height="14" rx="3"></rect>
+                      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"></path>
+                    </svg>
+                    <span class="sr-only">YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

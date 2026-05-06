@@ -1,0 +1,16 @@
+{
+  "name": "@lelabo/layout-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Layout primitives aligned with lelabo main page (common.css + reset.css + index.css class contract)",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.6.0"
+  }
+}

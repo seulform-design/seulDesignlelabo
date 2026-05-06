@@ -1,0 +1,530 @@
+/* =============================================================================
+   LE LABO · Checkout V2 Editorial System
+   Namespace: .checkout-flow-v2
+   Inherits: subpage-layout.css unified system. Page-specific layouts here.
+   ============================================================================= */
+
+.checkout-flow-v2 {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* =============================================================================
+   01. Checkout Hero — handled by subpage-layout.css `.cinematic-hero`
+   ============================================================================= */
+
+/* =============================================================================
+   02. Checkout Main Layout (Form + Sidebar)
+   ============================================================================= */
+.checkout-main-v2 {
+  padding-block: clamp(56px, 7vw, 88px) clamp(72px, 8vw, 112px);
+}
+
+.checkout-layout-v2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+}
+
+/* --- Express Tray (Apple/Kakao Pay) --------------------- */
+.express-tray-v2 {
+  padding: clamp(28px, 3vw, 40px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  margin-bottom: clamp(40px, 5vw, 56px);
+  text-align: center;
+  position: relative;
+}
+
+.express-tray-v2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.express-eyebrow-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-20);
+  text-transform: uppercase;
+  padding: 0;
+  position: relative;
+}
+
+.express-btns-v2 {
+  display: flex;
+  gap: var(--space-12);
+}
+
+.express-btns-v2 .btn {
+  flex: 1;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.express-btns-v2 .btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn.is-kakao { background: #fee500; color: #000; }
+.btn.is-apple { background: #000; color: #fff; }
+
+/* --- Auth Divider Between Express + Manual --- */
+.checkout-form-area-v2 .auth-divider-v2 {
+  position: relative;
+  text-align: center;
+  margin: clamp(32px, 4vw, 48px) 0;
+}
+
+.checkout-form-area-v2 .auth-divider-v2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: var(--color-line);
+  z-index: 1;
+}
+
+.checkout-form-area-v2 .auth-divider-v2 span {
+  position: relative;
+  z-index: 2;
+  background: var(--color-bg);
+  padding: 0 var(--space-16);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* --- Form Groups ---------------------------------------- */
+.checkout-group-v2 {
+  margin-bottom: clamp(40px, 5vw, 56px);
+}
+
+.checkout-group-v2:last-of-type {
+  margin-bottom: var(--space-32);
+}
+
+.group-title-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  margin: 0 0 var(--space-24);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.group-title-v2::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.grid-2-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+}
+
+.field-v2 {
+  margin-bottom: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+}
+
+.field-v2:last-child {
+  margin-bottom: 0;
+}
+
+.field-v2 .input-v2 {
+  width: 100%;
+  height: 48px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 1px;
+  padding: 0 var(--space-16);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-body);
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.field-v2 .input-v2::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.field-v2 .input-v2:hover:not(:focus) {
+  border-color: var(--color-primary);
+}
+
+.field-v2 .input-v2:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 36, 33, 0.08);
+}
+
+.field-label-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6, 6px);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.input-with-btn-v2 {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.input-with-btn-v2 .input-v2 {
+  flex: 1;
+}
+
+.field-link-v2 {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 1px;
+  padding: 0 var(--space-16);
+  height: 48px;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-white);
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.field-link-v2:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* --- Submit Button (Complete Transaction) --- */
+.checkout-form-v2 .btn.btn-primary,
+.checkout-form-v2 .btn-v2.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  width: 100%;
+  min-height: 56px;
+  margin-top: var(--space-16);
+  padding: 0 var(--space-24);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.checkout-form-v2 .btn.btn-primary::after {
+  content: "→";
+  font-family: var(--font-family-sans);
+  transition: transform 0.25s ease;
+}
+
+.checkout-form-v2 .btn.btn-primary:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+}
+
+.checkout-form-v2 .btn.btn-primary:hover::after {
+  transform: translateX(3px);
+}
+
+.checkout-legal-v2 {
+  margin: var(--space-20) 0 0;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.checkout-legal-v2 a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.checkout-legal-v2 a:hover {
+  color: var(--color-primary);
+}
+
+/* =============================================================================
+   03. Order Summary Sidebar (sticky)
+   ============================================================================= */
+.checkout-sidebar-v2 {
+  position: sticky;
+  top: calc(var(--header-height, 72px) + var(--space-24));
+}
+
+.order-summary-v2 {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  padding: clamp(28px, 3vw, 40px);
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+.order-summary-v2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.summary-title-v2 {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  margin: 0 0 var(--space-24);
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.order-items-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+  padding-bottom: var(--space-24);
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.order-item-v2 {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.order-item-v2 img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  padding: var(--space-6, 6px);
+  mix-blend-mode: multiply;
+}
+
+.order-item-info-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.order-item-name-v2 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-body);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-primary);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.order-item-meta-v2 {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.order-item-price-v2 {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-caption);
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.summary-calc-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.summary-row-v2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: var(--font-body);
+}
+
+.summary-row-v2 span:first-child {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.summary-row-v2 span:last-child {
+  font-family: var(--font-family-sans);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.summary-row-v2 .is-accent {
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  text-transform: uppercase;
+}
+
+.summary-total-v2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: var(--space-16);
+  padding-top: var(--space-16);
+  border-top: 2px solid var(--color-primary);
+}
+
+.summary-total-v2 span:first-child {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.summary-total-v2 span:last-child {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.35rem, 1.8vw, 1.6rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.checkout-trust-v2 {
+  list-style: none;
+  padding: var(--space-24) 0 0;
+  margin: var(--space-24) 0 0;
+  border-top: 1px dashed var(--color-line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10, 10px);
+}
+
+.checkout-trust-v2 li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* =============================================================================
+   Responsive
+   ============================================================================= */
+@media (max-width: 1100px) {
+  .checkout-layout-v2 {
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 5vw, 64px);
+  }
+  .checkout-sidebar-v2 {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-2-v2 {
+    grid-template-columns: 1fr;
+  }
+  .express-btns-v2 {
+    flex-direction: column;
+  }
+  .input-with-btn-v2 {
+    flex-direction: column;
+  }
+  .field-link-v2 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,834 @@
+/* =============================================================================
+   LE LABO · Card system normalization
+   Load immediately after common.css. Depends on :root tokens (--card-stack-gap,
+   --space-16, --grid-gap, --color-surface-soft, etc.).
+   Scope: product tiles, list/process steps, recommendation rows, legacy
+   .image-wrap / .text-wrap inside .card.
+   ============================================================================= */
+
+/* --- Core .card column: equal row height in grids --- */
+.card-grid>.card,
+.card-grid>article.card,
+.shop-grid>.ed-card.product-card,
+.shop-grid>article.product-card {
+  height: 100%;
+  min-height: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.ed-card,
+.product-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ed-card::after,
+.product-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.ed-card:hover,
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(201, 138, 83, 0.2);
+}
+
+.ed-card:hover::after,
+.product-card:hover::after {
+  opacity: 0.15;
+}
+
+/* Direct media + body (no inner link): 16px rhythm between blocks */
+.ed-card.product-card:not(:has(.card-link)) {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* Handled by padding/margin */
+}
+
+/* Legacy split: first image column mirrors .card-media */
+.card>.image-wrap:first-of-type {
+  flex-shrink: 0;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+}
+
+.card>.image-wrap:first-of-type img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Legacy text column mirrors .card-body */
+.card>.text-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+/* Title / description rhythm */
+.card .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 0;
+}
+
+.card .card-desc {
+  min-height: 40px;
+}
+
+.card-media.card-media-note+.card-body .card-desc {
+  min-height: 0;
+}
+
+/* Primary product / tile image: fill square frame from .card-media */
+.card .card-media:not(.card-media-note)>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Quick / trending: pin rating row to card foot */
+.quick-card .card-body .quick-stars {
+  margin-top: auto;
+}
+
+/* --- Index · Why ledger cards (card-media, not .image-wrap) --- */
+.why .why-card>.card-media,
+.why .why-card>.image-wrap {
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.why .why-card>.card-body {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap);
+}
+
+/* --- Index · Cross-category (wins over index.css / reset) --- */
+body.page-index #cross-category .mix-card .mix-card-image.card-media,
+body.page-index #cross-category .mix-card>.mix-card-image {
+  aspect-ratio: 1 / 1;
+}
+
+body.page-index #cross-category .mix-card .mix-card-text.card-body {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+body.page-index #cross-category .mix-card .card-action {
+  margin-top: auto;
+}
+
+@media (max-width: 1080px) {
+
+  body.page-index #cross-category .mix-card .mix-card-image,
+  body.page-index #cross-category .mix-card .mix-card-image.card-media {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Non-index pages that reuse .mix + .mix-card pattern */
+.section.mix .mix-card .mix-card-image.card-media,
+.section.mix .mix-card>.mix-card-image {
+  aspect-ratio: 1 / 1;
+}
+
+.section.mix .mix-card .mix-card-text.card-body {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+.section.mix .mix-card .card-action {
+  margin-top: auto;
+}
+
+@media (max-width: 1080px) {
+
+  .section.mix .mix-card .mix-card-image,
+  .section.mix .mix-card .mix-card-image.card-media {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* --- Index · Personalization recommendation grid --- */
+body.page-index #personalization .personal-grid {
+  gap: var(--grid-gap, 24px);
+}
+
+body.page-index #personalization .personal-card-image.card-media,
+body.page-index #personalization .personal-card>.personal-card-image {
+  aspect-ratio: 1 / 1;
+}
+
+body.page-index #personalization .personal-card-text.card-body,
+body.page-index #personalization .personal-card>.personal-card-text.card-body {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+body.page-index #personalization .personal-card-foot.card-action {
+  margin-top: auto;
+}
+
+.personal .personal-grid {
+  gap: var(--grid-gap, 24px);
+}
+
+.personal-card-image.card-media,
+.personal .personal-card>.personal-card-image {
+  aspect-ratio: 1 / 1;
+}
+
+.personal-card-text.card-body,
+.personal .personal-card>.personal-card-text.card-body {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+.personal-card-foot.card-action {
+  margin-top: auto;
+}
+
+/* --- Process timeline (lab + gift flow) --- */
+.process .process-card,
+.process-timeline>.process-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.process .process-card>.process-card-image,
+.process-timeline>.process-card>.process-card-image {
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+.process .process-card-image img {
+  object-fit: cover;
+  padding: 0;
+}
+
+/* Index lab: full illustration in frame (existing design contract) */
+body.page-index .process .process-card-image img {
+  object-fit: contain;
+  padding: 8px;
+  max-width: calc(100% - 28px);
+  max-height: calc(100% - 28px);
+}
+
+.process .process-card>.process-card-text.card-body,
+.process-timeline>.process-card>.process-card-text.card-body {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+.process .process-card .process-card-meta {
+  margin-top: auto;
+}
+
+@media (max-width: 1080px) {
+  .process .process-card-image {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Gift page · 4-step process (ed-card) */
+.ed-card.process-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ed-card.process-card>.card-media,
+.ed-card.process-card>.image-wrap {
+  flex-shrink: 0;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+}
+
+.ed-card.process-card>.card-media img,
+.ed-card.process-card>.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ed-card.process-card>.card-body,
+.ed-card.process-card>.text-wrap {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+/* Bestsellers strip (legacy section — kept in sync if used) */
+.bestsellers .body-wrap>.card .image-wrap {
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  display: block;
+}
+
+.bestsellers .body-wrap>.card .image-wrap img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.bestsellers .body-wrap>.card .text-wrap {
+  gap: var(--card-stack-gap);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+/* --- Shared body padding (16–20px) for all card chrome --- */
+.card-body,
+.product-card .card-body,
+.product-card .card-link .card-body,
+.ed-card.card>.card-body {
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+/* --- Shop pick tiles (.pick-card-v2) — same column contract as .card / .product-card --- */
+.pick-card-v2.card.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.pick-card-v2 .card-link {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16, 16px);
+  min-height: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.pick-card-v2 .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-stack-gap, 8px);
+}
+
+.pick-card-v2 .product-lab-tag {
+  margin: 0;
+}
+
+.pick-card-v2 .product-price {
+  margin: 0;
+}
+
+/* Finder step copy column — alias .text-wrap to .card-body rhythm */
+.ed-card.finder-step>.text-wrap.card-body,
+.ed-card.finder-step>.text-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  flex-grow: 1;
+  min-height: 0;
+  gap: var(--card-stack-gap, 8px);
+  padding: clamp(16px, 1.1vw, 20px);
+}
+
+.ed-card.finder-step>.text-wrap .finder-step-heading {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 0;
+}
+
+.ed-card.finder-step>.text-wrap .finder-step-lead {
+  min-height: 40px;
+  margin: 0;
+}
+
+/* =============================================================================
+   CARD DETAIL ENHANCEMENTS — refined hover, badge, action, lab-tag, rating
+   ============================================================================= */
+
+/* Subtle accent corner mark on hover (top-right) */
+.ed-card,
+.product-card {
+  border-radius: 2px;
+}
+
+.product-card .card-media,
+.ed-card .card-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+}
+
+.product-card .card-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.04) 100%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-card:hover .card-media::before {
+  opacity: 1;
+}
+
+.product-card .card-media > img,
+.ed-card .card-media > img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .card-media > img,
+.ed-card:hover .card-media > img {
+  transform: scale(1.04);
+}
+
+/* Card badge — refined typography + position */
+.card-badge {
+  position: absolute;
+  top: var(--space-12);
+  left: var(--space-12);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--space-8);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 1px;
+}
+
+.card-badge[data-badge="new"],
+.card-badge.is-new {
+  background: var(--color-accent);
+}
+
+/* Lab tag — uppercase mono caption with accent dot */
+.product-lab-tag.card-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6, 6px);
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.product-lab-tag.card-meta::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Product title — refined hierarchy */
+.product-card .product-title.card-title {
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+/* Notes line — italic accent for olfactory description */
+.product-card .product-notes.card-desc {
+  font-style: italic;
+  color: var(--color-text-sub);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Price — emphasis tier */
+.product-card .product-price {
+  font-size: var(--font-card);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Rating row — compact star line */
+.product-card .product-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6, 6px);
+  margin-top: var(--space-12);
+  padding-top: var(--space-12);
+  border-top: 1px dashed var(--color-line);
+}
+
+.product-card .rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6, 6px);
+  font-size: var(--font-caption);
+}
+
+.product-card .rating .stars {
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.product-card .rating .count {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  letter-spacing: 0.04em;
+}
+
+.product-card .product-best-for.card-meta {
+  font-size: var(--font-caption);
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-sans);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Card body padding — tighter rhythm */
+.pick-card-v2.card.product-card .card-body {
+  padding: var(--space-20) var(--space-20) var(--space-16);
+  gap: var(--space-8);
+}
+
+.pick-card-v2 .product-info {
+  gap: var(--space-6, 6px);
+}
+
+/* Card footer — line above, button cluster */
+.pick-card-v2 .card-footer.card-action {
+  display: flex;
+  gap: var(--space-8);
+  padding: 0 var(--space-20) var(--space-20);
+  margin: 0;
+  border-top: none;
+}
+
+.pick-card-v2 .card-footer.card-action .btn-v2 {
+  flex: 1;
+  height: 40px;
+  padding: 0 var(--space-12);
+  font-size: var(--font-label);
+  letter-spacing: 0.18em;
+}
+
+/* Reveal action footer on hover (subtle slide) */
+.pick-card-v2 .card-footer.card-action {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pick-card-v2:not(:hover) .card-footer.card-action .btn-v2.btn-ghost {
+    background: transparent;
+  }
+  .pick-card-v2:hover .card-footer.card-action .btn-v2.btn-solid {
+    background: var(--color-primary-hover, var(--color-primary));
+  }
+}
+
+/* =============================================================================
+   GRID RHYTHM — uniform card grid gaps across all subpages
+   ============================================================================= */
+
+.product-grid,
+.shop-grid,
+.lab-picks-grid,
+.picks-grid-v2,
+.main-grid-v2,
+.expert-grid-v2,
+.card-grid-v2,
+.service-grid-v2,
+.matrix-grid-v2,
+.aftercare-grid-v2,
+.expansion-grid-v2,
+.similar-grid-v2,
+.finder-step-grid-v2,
+.reason-grid-v2 {
+  display: grid;
+  gap: clamp(20px, 2vw, 28px);
+}
+
+.product-grid,
+.shop-grid,
+.lab-picks-grid,
+.picks-grid-v2,
+.main-grid-v2 {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+@media (max-width: 1080px) {
+  .shop-grid,
+  .product-grid,
+  .lab-picks-grid,
+  .picks-grid-v2,
+  .main-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-grid,
+  .product-grid,
+  .lab-picks-grid,
+  .picks-grid-v2,
+  .main-grid-v2,
+  .expert-grid-v2,
+  .card-grid-v2,
+  .service-grid-v2,
+  .matrix-grid-v2,
+  .aftercare-grid-v2,
+  .similar-grid-v2,
+  .finder-step-grid-v2,
+  .reason-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================================================
+   Bare .pick-card-v2 (cart cross-sell, gift curated, journal archive,
+   detail recommendations) — shared lift, media zoom, footer rhythm
+   ============================================================================= */
+
+.pick-card-v2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+}
+
+.pick-card-v2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px -32px rgba(0, 0, 0, 0.18);
+  border-color: var(--color-line-strong);
+}
+
+.pick-card-v2 .pick-media-v2 {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+}
+
+.pick-card-v2 .pick-media-v2 img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pick-card-v2:hover .pick-media-v2 img {
+  transform: scale(1.05);
+}
+
+.pick-card-v2 .pick-media-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.06) 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pick-card-v2:hover .pick-media-v2::after {
+  opacity: 1;
+}
+
+.pick-card-v2 .pick-body-v2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: var(--space-8);
+}
+
+.pick-card-v2 .pick-body-v2 .btn-v2,
+.pick-card-v2 .pick-actions-v2 {
+  margin-top: auto;
+}
+
+/* =============================================================================
+   Expert / Service / Aftercare cards — uniform hover, accent, rhythm
+   ============================================================================= */
+
+.expert-card-v2,
+.service-card-v2,
+.aftercare-item-v2,
+.matrix-item-v2,
+.reason-box-v2,
+.finder-card-v2 {
+  position: relative;
+  border-radius: 2px;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+
+.expert-card-v2:hover,
+.service-card-v2:hover,
+.aftercare-item-v2:hover,
+.matrix-item-v2:hover,
+.reason-box-v2:hover,
+.finder-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.14);
+}
+
+/* Top accent line on hover */
+.expert-card-v2::before,
+.service-card-v2::before,
+.aftercare-item-v2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expert-card-v2:hover::before,
+.service-card-v2:hover::before,
+.aftercare-item-v2:hover::before {
+  transform: scaleX(1);
+}
+
+/* Image-bearing cards — zoom on hover */
+.expert-card-v2 .expert-media-v2 img,
+.expert-card-v2 .card-media-v2 img,
+.finder-card-v2 .card-media-v2 img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expert-card-v2:hover .expert-media-v2 img,
+.expert-card-v2:hover .card-media-v2 img,
+.finder-card-v2:hover .card-media-v2 img {
+  transform: scale(1.04);
+}
+
+/* =============================================================================
+   Cart line items — tighter rhythm, refined separators
+   ============================================================================= */
+
+.cart-item-v2 {
+  position: relative;
+  padding-block: var(--space-32);
+  transition: background 0.3s ease;
+}
+
+.cart-item-v2:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-line);
+}
+
+.cart-item-v2:hover {
+  background: linear-gradient(90deg, transparent 0%, var(--color-surface-soft) 50%, transparent 100%);
+}
+
+/* =============================================================================
+   Order-complete batch / aftercare grids — uniform rhythm
+   ============================================================================= */
+
+.aftercare-grid-v2 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aftercare-item-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.matrix-grid-v2 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .aftercare-grid-v2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .matrix-grid-v2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* =============================================================================
+   Page header (hero) → first section gap
+   ============================================================================= */
+
+body:not(.page-index) .page-header.cinematic-hero + .breadcrumb,
+body:not(.page-index) .page-header.cinematic-hero + section,
+body:not(.page-index) .commerce-breadcrumb + .page-header {
+  margin-top: 0;
+}

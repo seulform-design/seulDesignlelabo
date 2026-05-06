@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko" class="ed" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="르라보 기프트 - 세상에 단 하나뿐인 커스텀 라벨링과 수작업으로 완성되는 시그니처 기프트 서비스.">
+  <meta name="theme-color" content="#1a2421">
+  <meta property="og:title" content="Gift · LE LABO · Forest Laboratory">
+  <meta property="og:description" content="르라보 기프트 - 세상에 단 하나뿐인 커스텀 라벨링과 수작업으로 완성되는 시그니처 기프트 서비스.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LE LABO">
+  <title>Gift | LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/subpage-layout.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/gift.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/gift.js" defer></script>
+  <script src="./scripts/editorial.js" defer></script>
+</head>
+<body class="page-gift">
+  <div id="wrap">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH" autocomplete="off" aria-label="프래그런스·기프트 검색" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false" aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false" aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html#shop-grid-title">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="v2-editorial-flow">
+
+      <!-- ============ SECTION 01: GIFT HERO ============ -->
+      <nav class="breadcrumb container commerce-breadcrumb" aria-label="경로 탐색">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Gift</li>
+        </ol>
+      </nav>
+      <header class="page-header commerce-page-header cinematic-hero">
+        <div class="hero-overlay-v2"></div>
+        <div class="container">
+          <div class="hero-content-card fade-up">
+            <p class="section-eyebrow">THE ART OF GIVING</p>
+            <h1 class="page-title">가장 사적인<br>선물의 완성</h1>
+            <p class="section-desc">연구소에서 수작업으로 완성되는 맞춤형 기프트와 <br> 시그니처 각인 서비스로 당신의 마음을 향기에 담으세요.</p>
+            <div class="subpage-hero-actions">
+              <a href="#signature-services" class="btn btn-primary">SIGNATURE SERVICES</a>
+              <a href="#curated-sets" class="btn btn-secondary">EXPLORE SETS</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ SECTION 02: SIGNATURE SERVICES V2 ============ -->
+      <section class="signature-services-v2" id="signature-services">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">OUR PHILOSOPHY</p>
+            <h2 class="section-title-v2">디테일에 집착하는 이유</h2>
+            <p class="section-lead-v2">모든 선물은 고유해야 하기에, 우리는 세 가지 핵심 가치에 집중합니다.</p>
+          </div>
+
+          <div class="expert-grid-v2">
+            <article class="expert-card-v2">
+              <div class="expert-media-v2">
+                <img src="./images/common/labeling.png" alt="Custom Labeling">
+                <span class="expert-tag-v2">01</span>
+              </div>
+              <div class="expert-body-v2">
+                <p class="expert-eyebrow-v2">PERSONALIZATION</p>
+                <h3 class="expert-title-v2">Custom Labeling</h3>
+                <p class="expert-desc-v2">최대 24자의 메시지를 라벨에 프린트해 <br> 세상에 단 하나뿐인 향수를 완성합니다.</p>
+                <div class="expert-meta-v2">
+                  <span>Authentic</span>
+                  <span>Hand-stamped</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="expert-card-v2">
+              <div class="expert-media-v2">
+                <img src="./images/common/gift-box.png" alt="Vintage Wrapping">
+                <span class="expert-tag-v2">02</span>
+              </div>
+              <div class="expert-body-v2">
+                <p class="expert-eyebrow-v2">PRESENTATION</p>
+                <h3 class="expert-title-v2">Vintage Wrapping</h3>
+                <p class="expert-desc-v2">재생지 크라프트 박스와 면 리본으로 <br> 르라보 특유의 거칠고 아름다운 포장을 제공합니다.</p>
+                <div class="expert-meta-v2">
+                  <span>Sustainable</span>
+                  <span>Signature Craft</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="expert-card-v2">
+              <div class="expert-media-v2">
+                <img src="./images/common/record.png" alt="Handwritten Note">
+                <span class="expert-tag-v2">03</span>
+              </div>
+              <div class="expert-body-v2">
+                <p class="expert-eyebrow-v2">EMOTION</p>
+                <h3 class="expert-title-v2">Handwritten Note</h3>
+                <p class="expert-desc-v2">조향사가 직접 손으로 적은 <br> 메시지 카드가 동봉되어 진심을 더합니다.</p>
+                <div class="expert-meta-v2">
+                  <span>Personal</span>
+                  <span>Poetic</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03: CURATED SETS V2 ============ -->
+      <section class="curated-sets-v2" id="curated-sets">
+        <div class="container">
+          <div class="section-head-v2">
+            <p class="eyebrow-v2">GIFT CURATION</p>
+            <h2 class="section-title-v2">Curated Gift Sets</h2>
+            <p class="section-lead-v2">취향을 탐색하거나 선물하기에 완벽한 르라보의 베스트 큐레이션입니다.</p>
+          </div>
+
+          <div class="card-grid-v2">
+            <!-- Set 01 -->
+            <article class="pick-card-v2">
+              <div class="pick-media-v2">
+                <img src="./images/common/gift-product.png" alt="Discovery Set">
+                <span class="pick-badge-v2">BEST SELLER</span>
+              </div>
+              <div class="pick-body-v2">
+                <h3 class="pick-title-v2">Discovery Set</h3>
+                <p class="pick-desc-v2">르라보의 가장 사랑받는 6가지 향을 5ml 배럴에 담았습니다.</p>
+                <p class="pick-price-v2">₩120,000</p>
+                <div class="pick-actions-v2">
+                  <a href="shop.html" class="btn-v2 btn-solid">SHOP NOW</a>
+                  <button type="button" class="btn-v2 btn-ghost">ADD TO CART</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Set 02 -->
+            <article class="pick-card-v2">
+              <div class="pick-media-v2">
+                <img src="./images/common/body-cream-1.jpg" alt="Santal 33 Duo">
+                <span class="pick-badge-v2">NEW BUNDLE</span>
+              </div>
+              <div class="pick-body-v2">
+                <h3 class="pick-title-v2">Santal 33 Body Duo</h3>
+                <p class="pick-desc-v2">샤워 젤과 바디 로션의 완벽한 조화를 담은 시그니처 세트.</p>
+                <p class="pick-price-v2">₩145,000</p>
+                <div class="pick-actions-v2">
+                  <a href="shop.html" class="btn-v2 btn-solid">SHOP NOW</a>
+                  <button type="button" class="btn-v2 btn-ghost">ADD TO CART</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Set 03 -->
+            <article class="pick-card-v2">
+              <div class="pick-media-v2">
+                <img src="./images/common/cade-26-1.jpg" alt="Home Creation">
+                <span class="pick-badge-v2">LIMITED</span>
+              </div>
+              <div class="pick-body-v2">
+                <h3 class="pick-title-v2">Home Creation Set</h3>
+                <p class="pick-desc-v2">공간을 향기로 채우는 룸 스프레이와 클래식 캔들 구성.</p>
+                <p class="pick-price-v2">₩180,000</p>
+                <div class="pick-actions-v2">
+                  <a href="shop.html" class="btn-v2 btn-solid">SHOP NOW</a>
+                  <button type="button" class="btn-v2 btn-ghost">ADD TO CART</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 04: LABELING EXPERIENCE V2 ============ -->
+      <section class="labeling-v2">
+        <div class="container">
+          <div class="label-box-v2">
+            <div class="label-visual-v2">
+              <div class="label-preview-v2" id="gift-preview">LE LABO / YOUR NAME</div>
+              <img src="./images/common/gift.png" alt="Label Preview">
+            </div>
+            <div class="label-form-v2">
+              <p class="eyebrow-v2">PERSONALIZE</p>
+              <h2 class="label-title-v2">라벨 워크샵</h2>
+              <p class="label-desc-v2">당신의 이름 또는 메시지를 각인하여 <br> 향수 한 병에 특별한 서사를 부여하세요.</p>
+              
+              <div class="input-group-v2">
+                <input type="text" id="gift-label-input" maxlength="24" placeholder="ENTER MESSAGE" autocomplete="off">
+                <button type="button" id="gift-clear-btn" class="clear-btn-v2">×</button>
+              </div>
+              
+              <div class="label-meta-v2">
+                <span id="gift-label-hint">영문, 숫자, 하이픈(-)만 허용</span>
+                <span id="gift-label-counter"><span id="gift-label-count">0</span>/24</span>
+              </div>
+              
+              <button type="button" id="gift-create-btn" class="btn-v2 btn-solid is-wide">CREATE CUSTOM LABEL</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 05: GIFT FLOW V2 ============ -->
+      <section class="gift-flow-v2">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">PROCESS</p>
+            <h2 class="section-title-v2">선물 제작 프로세스</h2>
+          </div>
+          
+          <div class="service-grid-v2">
+            <div class="service-item-v2">
+              <div class="service-icon-v2">01</div>
+              <h3 class="service-title-v2">Select</h3>
+              <p class="service-desc-v2">수령인의 취향과 무드에 맞는 제품을 선택합니다.</p>
+            </div>
+            <div class="service-item-v2">
+              <div class="service-icon-v2">02</div>
+              <h3 class="service-title-v2">Personalize</h3>
+              <p class="service-desc-v2">이름 또는 메시지를 각인하여 고유한 라벨을 만듭니다.</p>
+            </div>
+            <div class="service-item-v2">
+              <div class="service-icon-v2">03</div>
+              <h3 class="service-title-v2">Wrap</h3>
+              <p class="service-desc-v2">크라프트 박스와 면 리본으로 정성스럽게 포장합니다.</p>
+            </div>
+            <div class="service-item-v2">
+              <div class="service-icon-v2">04</div>
+              <h3 class="service-title-v2">Deliver</h3>
+              <p class="service-desc-v2">최종 QA를 거쳐 안전하게 목적지까지 배송합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 06: CORPORATE V2 ============ -->
+      <section class="corporate-v2">
+        <div class="container">
+          <div class="corporate-layout-v2">
+            <div class="corporate-info-v2">
+              <p class="eyebrow-v2">B2B SERVICE</p>
+              <h2 class="corporate-title-v2">Corporate Gifting</h2>
+              <p class="corporate-desc-v2">기업 고객을 위한 맞춤형 큐레이션. <br> 전담 컨시어지가 브리프부터 배송까지 모든 과정을 설계합니다.</p>
+              
+              <div class="trust-matrix-v2">
+                <div class="trust-item-v2">
+                  <span class="trust-val-v2">200+</span>
+                  <span class="trust-lab-v2">Projects</span>
+                </div>
+                <div class="trust-item-v2">
+                  <span class="trust-val-v2">40+</span>
+                  <span class="trust-lab-v2">Hotels</span>
+                </div>
+                <div class="trust-item-v2">
+                  <span class="trust-val-v2">98%</span>
+                  <span class="trust-lab-v2">Retention</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="corporate-cards-v2">
+              <article class="expert-card-v2 is-horizontal">
+                <div class="expert-media-v2">
+                  <img src="./images/common/manufacturing-process.jpg" alt="Bulk Order">
+                </div>
+                <div class="expert-body-v2">
+                  <h3 class="expert-title-v2">Bulk Custom Order</h3>
+                  <p class="expert-desc-v2">로고 각인, 전용 패키징 등 대량 주문을 위한 솔루션입니다.</p>
+                  <a href="mailto:concierge@lelabo.com" class="btn-v2 btn-ghost">INQUIRE NOW</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 07: FAQ V2 ============ -->
+      <section class="faq-v2">
+        <div class="container narrow-v2">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">SUPPORT</p>
+            <h2 class="section-title-v2">Gift FAQ</h2>
+          </div>
+          
+          <div class="faq-list-v2">
+            <details class="faq-item-v2" open>
+              <summary>라벨 수정이 가능한가요? <span class="faq-icon-v2"></span></summary>
+              <div class="faq-content-v2">
+                <p>결제 후 제작 시작 전까지는 수정이 가능합니다. 단, 각인이 시작된 이후에는 커스텀 상품 특성상 수정이 제한됩니다.</p>
+              </div>
+            </details>
+            <details class="faq-item-v2">
+              <summary>대량 주문의 리드타임은 어떻게 되나요? <span class="faq-icon-v2"></span></summary>
+              <div class="faq-content-v2">
+                <p>기본 4주를 권장하며, 각인 및 패키징 사양에 따라 일정이 조정될 수 있습니다.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 08: FINAL CTA V2 ============ -->
+      <section class="final-cta-v2">
+        <div class="container narrow-v2 is-center">
+          <p class="eyebrow-v2">CONCIERGE</p>
+          <h2 class="final-title-v2">특별한 순간을<br>함께 설계하세요</h2>
+          <div class="final-actions-v2">
+            <a href="mailto:gift@lelabo.com" class="btn-v2 btn-solid">START A BRIEF</a>
+            <a href="tel:02-000-0000" class="btn-v2 btn-ghost">02-000-0000</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer site-footer site-shell" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS" autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="footer-news-status" id="footer-news-status" role="status" aria-live="polite"></p>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector" aria-label="현재 지역 및 통화 정보">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+              <ul class="footer-social" aria-label="소셜 링크">
+                <li>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"></rect><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"></path></svg>
+                    <span class="sr-only">YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

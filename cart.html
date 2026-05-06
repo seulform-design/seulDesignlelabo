@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko" class="ed" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="르라보 장바구니 - 선택한 향과 구성을 확인하고 결제 단계로 이동하세요.">
+  <meta name="theme-color" content="#1a2421">
+  <title>Cart | LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/subpage-layout.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/cart.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/cart.js" defer></script>
+</head>
+<body class="page-cart">
+  <div id="wrap">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH" autocomplete="off" aria-label="프래그런스·기프트 검색" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false" aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false" aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html#shop-grid-title">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="v2-editorial-flow cart-flow-v2">
+
+      <!-- ============ SECTION 01: COMMERCE HERO (Image 3 Standard) ============ -->
+      <nav class="breadcrumb container commerce-breadcrumb" aria-label="경로 탐색">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Cart</li>
+        </ol>
+      </nav>
+      <header class="page-header commerce-page-header cinematic-hero">
+        <div class="hero-overlay-v2"></div>
+        <div class="container">
+          <div class="hero-content-card fade-up">
+            <p class="section-eyebrow">YOUR COLLECTION</p>
+            <h1 class="page-title">Shopping Bag</h1>
+            <p class="section-desc">선택하신 향기들은 조제실에서 당신의 이름을 기다리고 있습니다.</p>
+
+            <div class="cart-shipping-v2">
+              <p class="shipping-tip-v2"><strong>₩43,000</strong> 추가 시 무료 배송이 적용됩니다.</p>
+              <div class="shipping-bar-v2">
+                <div class="shipping-fill-v2 shipping-fill-v2--70"></div>
+              </div>
+            </div>
+            
+            <ol class="commerce-steps-v2">
+              <li class="step is-active"><span class="step-num">1</span> <span class="step-label">CART</span></li>
+              <li class="step"><span class="step-num">2</span> <span class="step-label">SHIPPING</span></li>
+              <li class="step"><span class="step-num">3</span> <span class="step-label">PAYMENT</span></li>
+              <li class="step"><span class="step-num">4</span> <span class="step-label">DONE</span></li>
+            </ol>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ SECTION 02: CART CONTENT V2 ============ -->
+      <section class="cart-content-v2">
+        <div class="container">
+          <div class="cart-layout-v2">
+            
+            <!-- Left: Items -->
+            <div class="cart-items-v2">
+              <h2 class="cart-sub-title-v2">YOUR SELECTION (2)</h2>
+              
+              <article class="cart-item-v2">
+                <div class="item-media-v2">
+                  <img src="./images/common/baie.jpg" alt="Bergamot 22">
+                </div>
+                <div class="item-body-v2">
+                  <div class="item-head-v2">
+                    <div class="item-info-v2">
+                      <h3 class="item-title-v2">Bergamot 22</h3>
+                      <p class="item-meta-v2">EAU DE PARFUM / 50ml / FRESH CITRUS</p>
+                    </div>
+                    <span class="item-price-v2">₩198,000</span>
+                  </div>
+                  <div class="item-actions-v2">
+                    <div class="qty-control-v2">
+                      <button type="button">−</button>
+                      <span class="qty-val-v2">1</span>
+                      <button type="button">+</button>
+                    </div>
+                    <button type="button" class="remove-btn-v2">REMOVE</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="cart-item-v2">
+                <div class="item-media-v2">
+                  <img src="./images/common/woody-scent.jpg" alt="Cedar 11">
+                </div>
+                <div class="item-body-v2">
+                  <div class="item-head-v2">
+                    <div class="item-info-v2">
+                      <h3 class="item-title-v2">Cedar 11</h3>
+                      <p class="item-meta-v2">CANDLE / 245g / SMOKY WOOD</p>
+                    </div>
+                    <span class="item-price-v2">₩218,000</span>
+                  </div>
+                  <div class="item-actions-v2">
+                    <div class="qty-control-v2">
+                      <button type="button">−</button>
+                      <span class="qty-val-v2">1</span>
+                      <button type="button">+</button>
+                    </div>
+                    <button type="button" class="remove-btn-v2">REMOVE</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Right: Summary (Sticky) -->
+            <aside class="cart-summary-v2">
+              <div class="summary-card-v2">
+                <h2 class="summary-title-v2">ORDER SUMMARY</h2>
+                
+                <!-- Lab Service Options (Director Level Detail) -->
+                <div class="summary-services-v2">
+                  <p class="service-eyebrow-v2">SIGNATURE SERVICES</p>
+                  <label class="service-option-v2">
+                    <input type="checkbox" checked>
+                    <div class="service-info-v2">
+                      <span class="service-name-v2">Signature Lab Wrapping</span>
+                      <span class="service-price-v2">COMPLIMENTARY</span>
+                    </div>
+                  </label>
+                  <label class="service-option-v2">
+                    <input type="checkbox">
+                    <div class="service-info-v2">
+                      <span class="service-name-v2">Environment-friendly Packaging</span>
+                      <span class="service-price-v2">COMPLIMENTARY</span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="summary-rows-v2">
+                  <div class="summary-row-v2">
+                    <span>SUBTOTAL</span>
+                    <span>₩416,000</span>
+                  </div>
+                  <div class="summary-row-v2">
+                    <span>SHIPPING</span>
+                    <span class="is-accent">COMPLIMENTARY</span>
+                  </div>
+                  <div class="summary-row-v2">
+                    <span>TAX (10%)</span>
+                    <span>₩41,600</span>
+                  </div>
+                </div>
+                
+                <div class="summary-total-v2">
+                  <span>ESTIMATED TOTAL</span>
+                  <span>₩457,600</span>
+                </div>
+                
+                <p class="summary-eta-v2">예상 수령: 영업일 기준 2-3일 이내</p>
+                
+                <a href="checkout.html" class="btn btn-primary is-wide">PROCEED TO CHECKOUT</a>
+                
+                <ul class="trust-list-v2">
+                  <li><span class="dot-v2">✦</span> 256-BIT SSL SECURE TRANSACTION</li>
+                  <li><span class="dot-v2">✦</span> 30-DAY HASSLE-FREE RETURNS</li>
+                  <li><span class="dot-v2">✦</span> 2 COMPLIMENTARY SAMPLES INCLUDED</li>
+                </ul>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03: CROSS SELL V2 ============ -->
+      <section class="cart-cross-sell-v2">
+        <div class="container">
+          <div class="section-head-v2">
+            <p class="eyebrow-v2">THE SENSORY EXTENSION</p>
+            <h2 class="section-title-v2">당신의 공간을 위한 제안</h2>
+          </div>
+          
+          <div class="card-grid-v2">
+            <article class="pick-card-v2">
+              <div class="pick-media-v2">
+                <img src="./images/common/cade-26-1.jpg" alt="Santal 26 Candle">
+                <span class="pick-badge-v2">HOME</span>
+              </div>
+              <div class="pick-body-v2">
+                <h3 class="pick-title-v2">Santal 26 Candle</h3>
+                <p class="pick-price-v2">₩110,000</p>
+                <a href="detail.html" class="btn-v2 btn-ghost is-wide">ADD TO CART</a>
+              </div>
+            </article>
+
+            <article class="pick-card-v2">
+              <div class="pick-media-v2">
+                <img src="./images/common/body-cream-1.jpg" alt="Body Lotion">
+                <span class="pick-badge-v2">BODY</span>
+              </div>
+              <div class="pick-body-v2">
+                <h3 class="pick-title-v2">Hand & Body Lotion</h3>
+                <p class="pick-price-v2">₩95,000</p>
+                <a href="detail.html" class="btn-v2 btn-ghost is-wide">ADD TO CART</a>
+              </div>
+            </article>
+
+            <article class="pick-card-v2">
+              <div class="pick-media-v2">
+                <img src="./images/common/gift-product.png" alt="Discovery Set">
+                <span class="pick-badge-v2">GIFT</span>
+              </div>
+              <div class="pick-body-v2">
+                <h3 class="pick-title-v2">Discovery Set</h3>
+                <p class="pick-price-v2">₩120,000</p>
+                <a href="detail.html" class="btn-v2 btn-ghost is-wide">ADD TO CART</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html">Body Care</a></li>
+                <li><a href="shop.html">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS" autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="footer-news-status" id="footer-news-status" role="status" aria-live="polite"></p>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector" aria-label="현재 지역 및 통화 정보">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+              <ul class="footer-social" aria-label="소셜 링크">
+                <li>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"></rect><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"></path></svg>
+                    <span class="sr-only">YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

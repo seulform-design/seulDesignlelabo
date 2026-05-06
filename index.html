@@ -1,0 +1,1797 @@
+﻿<!DOCTYPE html>
+<html lang="ko" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="르라보 포레스트 - 향의 탐색, 베스트셀러, 원료 스토리, 기프트 퍼스널레이션을 한 번에 경험하세요.">
+  <meta name="theme-color" content="#1a2421">
+  <meta property="og:title" content="LE LABO · Forest Laboratory">
+  <meta property="og:description" content="향의 탐색, 베스트셀러, 원료 스토리, 기프트 퍼스널레이션을 한 번에 경험하세요.">
+  <meta property="og:type" content="website">
+  <title>LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/site-shell.css">
+  <link rel="stylesheet" href="./styles/swiper-bundle.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/scent-depth.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/editorial.js" defer></script>
+  <script src="./scripts/animation.js" defer></script>
+  <script src="./scripts/interaction.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
+</head>
+
+<body class="page-index">
+  <div id="wrap">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH"
+                  autocomplete="off" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false"
+                aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false"
+              aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html">Body Care</a></li>
+                <li><a href="shop.html">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+    <main id="main-content" class="site-main" aria-label="LE LABO 포레스트 메인 콘텐츠">
+      <!-- ===========================================히어로배너 =================================================================== -->
+      <section class="section site-section hero-section ed-section hero ed-hero has-swiper" id="shop"
+        aria-labelledby="hero-title" data-scroll-reveal>
+        <!-- =========================================히어로배너 스와이퍼=================================================================== -->
+        <div class="hero-swiper swiper" data-swiper="hero">
+          <div class="swiper-wrapper">
+            <!-- ====================================히어로배너 슬라이드1============================================================ -->
+            <article class="swiper-slide hero-slide">
+              <div class="hero-slide-image" aria-hidden="true">
+                <img src="./images/common/herobg1.png" alt="숲과 연구소 분위기의 브랜드 히어로 비주얼" fetchpriority="high">
+              </div>
+              <div class="container">
+                <div class="hero-content-card">
+                  <div class="title-wrap site-text-box">
+                    <p class="section-eyebrow hero-eyebrow-accent">THE LABORATORY</p>
+                    <h1 id="hero-title" class="hero-title-main">From Forest<br>to Fragrance</h1>
+                    <p class="hero-lead-copy">향은 선택하는 것이 아니라 발견되는 것입니다. <br> 숲에서 시작된 원료가 연구소를 거쳐 당신에게 맞는 향으로 완성됩니다.</p>
+                  </div>
+                  <div class="body-wrap hero-body-group">
+                    <div class="cta-row site-button-box hero-cta-group">
+                      <a href="finder.html" class="btn btn-primary">향 찾기 시작</a>
+                      <a href="shop.html" class="btn btn-on-dark">베스트셀러 보기</a>
+                    </div>
+                    <ul class="trust-row hero-trust-row" aria-label="르라보 포레스트 핵심 신뢰 지표">
+                      <li><strong class="hero-trust-value">4.8</strong>실사용자 평균 평점</li>
+                      <li><strong class="hero-trust-value">30일</strong>주문 후 조향·숙성</li>
+                      <li><strong class="hero-trust-value">무료</strong>전 상품 배송 및 반품</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- ====================================히어로배너 슬라이드2============================================================ -->
+            <article class="swiper-slide hero-slide">
+              <div class="hero-slide-image" aria-hidden="true">
+                <img src="./images/common/herobg2.png" alt="소규모 배치로 향을 제조하는 장면" loading="lazy">
+              </div>
+              <div class="container">
+                <div class="hero-content-card">
+                  <div class="title-wrap site-text-box">
+                    <p class="section-eyebrow hero-eyebrow-accent">HAND-BLENDED</p>
+                    <h2 class="hero-title-main">Crafted in<br>Small Batches</h2>
+                    <p class="hero-lead-copy">소규모 배치로 테스트와 숙성, 안정화를 거쳐 정제된 향을 만듭니다. <br> 배치 간 향 편차는 4.7/5 기준으로 관리됩니다.
+                    </p>
+                  </div>
+                  <div class="body-wrap hero-body-group">
+                    <div class="cta-row site-button-box hero-cta-group">
+                      <a href="ingredient.html" class="btn btn-primary">원료 철학 읽기</a>
+                      <a href="journal.html" class="btn btn-on-dark">조향 기록 아카이브</a>
+                    </div>
+                    <ul class="trust-row hero-trust-row" aria-label="배치 운영 지표">
+                      <li><strong class="hero-trust-value">200병</strong>배치당 생산 수량</li>
+                      <li><strong class="hero-trust-value">4.7/5</strong>배치 일관성</li>
+                      <li><strong class="hero-trust-value">14일</strong>평균 숙성</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- ====================================히어로배너 슬라이드3============================================================ -->
+            <article class="swiper-slide hero-slide">
+              <div class="hero-slide-image" aria-hidden="true">
+                <img src="./images/common/herobg3.png" alt="개인화 라벨이 각인되는 과정" loading="lazy">
+              </div>
+              <div class="container">
+                <div class="hero-content-card">
+                  <div class="title-wrap site-text-box">
+                    <p class="section-eyebrow hero-eyebrow-accent">PERSONALIZATION</p>
+                    <h2 class="hero-title-main">Your Name,<br>Your Fragrance</h2>
+                    <p class="hero-lead-copy">이름을 새긴 라벨과 제조일·조향사 사인이 함께 기록됩니다. <br> 받는 순간부터 당신의 기억으로 연결됩니다.</p>
+                  </div>
+                  <div class="body-wrap hero-body-group">
+                    <div class="cta-row site-button-box hero-cta-group">
+                      <a href="gift.html" class="btn btn-primary">기프트 서비스</a>
+                      <a href="shop.html" class="btn btn-on-dark">전체 컬렉션</a>
+                    </div>
+                    <ul class="trust-row hero-trust-row" aria-label="개인화 옵션">
+                      <li><strong class="hero-trust-value">24자</strong>최대 각인</li>
+                      <li><strong class="hero-trust-value">2.4일</strong>평균 출고</li>
+                      <li><strong class="hero-trust-value">핸드</strong>메시지 카드</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- ======================================히어로배너버튼========================================================================  -->
+          <div class="hero-swiper-controls">
+            <div class="swiper-pagination" aria-hidden="true"></div>
+            <div class="hero-nav-group">
+              <button type="button" class="swiper-nav swiper-prev" aria-label="이전 슬라이드">‹</button>
+              <span class="hero-slide-count" aria-live="polite"><span class="current">01</span> / <span
+                  class="total">03</span></span>
+              <button type="button" class="swiper-nav swiper-next" aria-label="다음 슬라이드">›</button>
+            </div>
+          </div>
+        </div>
+        <!-- ===========================================페이지네이션================================================================================ -->
+        <a href="#brand-story" class="scroll-hint" aria-label="다음 섹션으로 스크롤"><span class="sr-only">다음 섹션 보기</span></a>
+      </section>
+      <!-- ==========================================브랜드스토리========================================================================= -->
+      <section class="section site-section brand-story-section ed-section pillars-row ed-pillars-row" id="brand-story"
+        aria-labelledby="brand-story-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="brand-story-title">향은 기억 속에서 발견됩니다</h2>
+              <p class="lead">감정과 정체성을 탐색하는 경험. <br>숲에서 수확된 원료가 연구소를 거쳐 당신의 이름으로 완성됩니다.</p>
+            </div>
+            <ol class="brand-pillars" aria-label="브랜드 3 단계">
+              <li class="brand-pillar site-group">
+                <div class="brand-pillar-text site-text-box">
+                  <h3 class="brand-pillar-title">숲에서<br>수확하다</h3>
+                  <p class="brand-pillar-desc">검증된 산지에서 최소 가공으로 <br>수확된 원료만 채택합니다.</p>
+                  <a href="#ingredient" class="brand-pillar-cta">원료 보기 <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="brand-pillar-image site-image-box">
+                  <img src="./images/common/lelabo_105.png" alt="숲에서 원료를 수확하는 장면" loading="lazy">
+                </div>
+              </li>
+              <li class="brand-pillar site-group">
+                <div class="brand-pillar-text site-text-box">
+                  <h3 class="brand-pillar-title">연구소에서<br>조향하다</h3>
+                  <p class="brand-pillar-desc">소규모 배치로 테스트·숙성 <br> 안정화를 거쳐 정제합니다.</p>
+                  <a href="#lab" class="brand-pillar-cta">조향 공정 보기 <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="brand-pillar-image site-image-box">
+                  <img src="./images/common/steering.png" alt="연구소에서 조향하는 장면" loading="lazy">
+                </div>
+              </li>
+              <li class="brand-pillar site-group">
+                <div class="brand-pillar-text site-text-box">
+                  <h3 class="brand-pillar-title">당신에게<br>닿다</h3>
+                  <p class="brand-pillar-desc">이름을 새긴 라벨이 받는 순간부터 <br> 당신의 기억과 연결됩니다.</p>
+                  <a href="#gift" class="brand-pillar-cta">라벨 각인하기 <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="brand-pillar-image site-image-box">
+                  <img src="./images/common/labeling.png" alt="이름이 각인된 라벨" loading="lazy">
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <!-- ===========================================가장 쉬운 시작 ==================================================================== -->
+      <section class="section site-section quick-entry-section ed-section quick ed-quick has-swiper" id="quick-entry"
+        aria-labelledby="quick-entry-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="quick-entry-title">가장 쉬운 시작</h2>
+              <p class="lead">지금의 취향에 맞는 향조를 선택해 탐색을 시작하세요</p>
+            </div>
+            <div class="quick-strip">
+              <div class="quick-grid-shell">
+                <div class="quick-grid swiper" data-swiper="quick">
+                  <ul class="swiper-wrapper" role="list">
+                    <!-- ==========================슬라이드1============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="우디 향 5종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge">BEST</span>
+                          <img src="./images/common/DryWoody.png" alt="우디 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">5 SKU · Warm</p>
+                          <h3 class="quick-name card-title">Woody</h3>
+                          <span class="quick-stars" aria-label="밀도 4 / 5">
+                            <i></i><i></i><i></i><i></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드2============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="플로럴 향 4종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-soft">DAILY</span>
+                          <img src="./images/common/lelabo_104.jpg" alt="플로럴 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">4 SKU · Soft</p>
+                          <h3 class="quick-name card-title">Floral</h3>
+                          <span class="quick-stars" aria-label="밀도 3 / 5">
+                            <i></i><i></i><i></i><i class="off"></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드3============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="시트러스 향 3종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-fresh">FRESH</span>
+                          <img src="./images/common/lelabo_093.jpg" alt="시트러스 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">3 SKU · Light</p>
+                          <h3 class="quick-name card-title">Citrus</h3>
+                          <span class="quick-stars" aria-label="밀도 2 / 5">
+                            <i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드4============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="스모키 향 2종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-dark">NEW</span>
+                          <img src="./images/common/lelabo_228.png" alt="스모키 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">2 SKU · Dark</p>
+                          <h3 class="quick-name card-title">Smoky</h3>
+                          <span class="quick-stars" aria-label="밀도 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드5============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="드라이 우디 향 4종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge">PICK</span>
+                          <img src="./images/common/raw1.jpg" alt="드라이 우디 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">4 SKU · Dry</p>
+                          <h3 class="quick-name card-title">Dry Woody</h3>
+                          <span class="quick-stars" aria-label="밀도 4 / 5">
+                            <i></i><i></i><i></i><i></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드6============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="소프트 플로럴 향 3종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-soft">SOFT</span>
+                          <img src="./images/common/lelabo_229.png" alt="소프트 플로럴 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">3 SKU · Calm</p>
+                          <h3 class="quick-name card-title">Soft Floral</h3>
+                          <span class="quick-stars" aria-label="밀도 2 / 5">
+                            <i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드7============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="프레시 시트러스 향 3종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-fresh">COOL</span>
+                          <img src="./images/common/lelabo_124.jpg" alt="프레시 시트러스 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">3 SKU · Bright</p>
+                          <h3 class="quick-name card-title">Fresh Citrus</h3>
+                          <span class="quick-stars" aria-label="밀도 1 / 5">
+                            <i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- ==========================슬라이드8============================================ -->
+                    <li class="quick-card swiper-slide card">
+                      <a href="#finder" class="quick-link card-link" aria-label="앰버 향 2종으로 시작하기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-dark">DEEP</span>
+                          <img src="./images/common/lelabo_179.jpg" alt="앰버 향 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">2 SKU · Deep</p>
+                          <h3 class="quick-name card-title">Amber</h3>
+                          <span class="quick-stars" aria-label="밀도 4 / 5">
+                            <i></i><i></i><i></i><i></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section site-section scent-depth-section ed-section scent-depth scent-section has-swiper"
+        id="scent-depth" aria-labelledby="scent-depth-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <header class="scent-header scent-depth__header">
+              <div class="header-left title-wrap scent-depth__title-grid">
+                <h2 id="scent-depth-title">취향의 좌표</h2>
+                <p class="lead scent-depth__lead">당신의 계절과 감정을 조향합니다</p>
+                <div class="header-right scent-depth__nav-slot">
+                  <div class="swiper-nav" role="group" aria-label="취향 카드 넘기기">
+                    <button type="button" class="scent-depth__nav-btn swiper-nav swiper-button-prev" aria-label="이전 카드"
+                      aria-controls="scent-depth-swiper"></button>
+                    <button type="button" class="scent-depth__nav-btn swiper-nav swiper-button-next" aria-label="다음 카드"
+                      aria-controls="scent-depth-swiper"></button>
+                  </div>
+                </div>
+              </div>
+              <p id="scent-depth-carousel-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true">
+              </p>
+            </header>
+          </div>
+        </div>
+        <div class="scent-depth__track">
+          <div class="scent-swiper-wrap">
+            <div id="scent-depth-swiper" class="scent-depth__swiper scentSwiper swiper" data-swiper="depth"
+              role="region" aria-roledescription="캐러셀" aria-labelledby="scent-depth-title">
+              <div class="swiper-wrapper">
+                <article class="scent-depth__card ed-card swiper-slide" data-density="4">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/raw1.jpg" alt="드라이 우디 계열 카드 이미지" loading="lazy" width="800" height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 4/5</div>
+                    <h3 class="scent-depth__title">Dry Woody</h3>
+                    <p class="scent-depth__desc">건조하고 묵직한 우디</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Cedarwood</span>
+                      <span class="scent-depth__tag">Sandalwood</span>
+                      <span class="scent-depth__tag">Papyrus</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide" data-density="5">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/lelabo_228.png" alt="스모키 우디 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 5/5</div>
+                    <h3 class="scent-depth__title">Smoky Woody</h3>
+                    <p class="scent-depth__desc">연기처럼 깊게 남는 무드</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Incense</span>
+                      <span class="scent-depth__tag">Leather</span>
+                      <span class="scent-depth__tag">Pine</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide" data-density="2">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/lelabo_229.png" alt="소프트 플로럴 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 2/5</div>
+                    <h3 class="scent-depth__title">Soft Floral</h3>
+                    <p class="scent-depth__desc">부드럽고 일상적인 플로럴</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Iris</span>
+                      <span class="scent-depth__tag">Musk</span>
+                      <span class="scent-depth__tag">Rose</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide" data-density="1">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/lelabo_124.jpg" alt="프레시 시트러스 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 1/5</div>
+                    <h3 class="scent-depth__title">Fresh Citrus</h3>
+                    <p class="scent-depth__desc">청량하고 깨끗한 시트러스</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Bergamot</span>
+                      <span class="scent-depth__tag">Lemon</span>
+                      <span class="scent-depth__tag">Petitgrain</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide depth-profile-deep" data-density="4">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/DryWoody.png" alt="딥 우디 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 4/5</div>
+                    <h3 class="scent-depth__title">Deep Woody</h3>
+                    <p class="scent-depth__desc">시간이 지날수록 짙어지는 향</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Agarwood</span>
+                      <span class="scent-depth__tag">Guaiacwood</span>
+                      <span class="scent-depth__tag">Vetiver</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide depth-profile-dark-smoky" data-density="5">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/lelabo_266.jpg" alt="다크 스모키 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 5/5</div>
+                    <h3 class="scent-depth__title">Dark Smoky</h3>
+                    <p class="scent-depth__desc">장작불이 타오르는 밤의 기억</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Birch Tar</span>
+                      <span class="scent-depth__tag">Cistus</span>
+                      <span class="scent-depth__tag">Cade</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide depth-profile-white-floral" data-density="2">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/lelabo_104.jpg" alt="화이트 플로럴 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 2/5</div>
+                    <h3 class="scent-depth__title">White Floral</h3>
+                    <p class="scent-depth__desc">이슬 맺힌 하얀 꽃잎의 싱그러움</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Jasmine</span>
+                      <span class="scent-depth__tag">Gardenia</span>
+                      <span class="scent-depth__tag">Tuberose</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="scent-depth__card ed-card swiper-slide depth-profile-sparkling" data-density="1">
+                  <div class="scent-depth__media">
+                    <img src="./images/common/lelabo_093.jpg" alt="스파클링 시트러스 계열 카드 이미지" loading="lazy" width="800"
+                      height="800">
+                    <div class="scent-depth__hover">
+                      <button type="button" class="scent-depth__discover" aria-label="향 프로필 보기">Profile</button>
+                    </div>
+                  </div>
+                  <div class="scent-depth__body">
+                    <div class="scent-depth__label">DENSITY 1/5</div>
+                    <h3 class="scent-depth__title">Sparkling Citrus</h3>
+                    <p class="scent-depth__desc">햇살을 머금은 상쾌한 아침</p>
+                    <div class="scent-depth__tags">
+                      <span class="scent-depth__tag">Neroli</span>
+                      <span class="scent-depth__tag">Grapefruit</span>
+                      <span class="scent-depth__tag">Amber</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =============================================자유로운 탐색================================================================================== -->
+      <section class="section site-section finder-section tools ed-section finder ed-tools" id="finder"
+        aria-labelledby="tools-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap tools-title-wrap">
+              <h2 id="tools-title">자유로운 탐색</h2>
+              <p class="lead">네 가지 축으로 취향을 고정하면, 같은 조건에서도 추천이 흔들리지 않습니다.</p>
+            </div>
+            <div class="finder-progress-block">
+              <div class="finder-progress-head">
+                <span class="eyebrow">진행</span>
+                <span class="finder-progress-meter" id="finder-progress" aria-live="polite">0 / 4 단계 선택</span>
+              </div>
+              <div class="finder-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0">
+                <span></span>
+              </div>
+              <ol class="finder-progress-steps" aria-label="향 추천 선택 단계">
+                <li data-step-key="scent"><span class="num">01</span><span class="label">향 계열</span></li>
+                <li data-step-key="situation"><span class="num">02</span><span class="label">사용 맥락</span></li>
+                <li data-step-key="season"><span class="num">03</span><span class="label">계절감</span></li>
+                <li data-step-key="mood"><span class="num">04</span><span class="label">무드 톤</span></li>
+              </ol>
+            </div>
+            <div class="body-wrap">
+              <!-- ==========================================필터============================================================= -->
+              <aside class="filter-panel" aria-label="범위 좁히기 패널">
+                <header class="filter-panel-header">
+                  <span class="eyebrow">범위 좁히기</span>
+                </header>
+                <div class="filter-group">
+                  <strong class="eyebrow"><span class="filter-step-label">향 계열</span></strong>
+                  <div class="chip-list">
+                    <button type="button" class="chip" data-filter-step="scent" data-filter-value="woody">우디</button>
+                    <button type="button" class="chip" data-filter-step="scent" data-filter-value="floral">플로럴</button>
+                    <button type="button" class="chip" data-filter-step="scent" data-filter-value="citrus">시트러스</button>
+                    <button type="button" class="chip" data-filter-step="scent" data-filter-value="smoky">스모키</button>
+                  </div>
+                </div>
+                <div class="filter-group">
+                  <strong class="eyebrow"><span class="filter-step-label">사용 맥락</span></strong>
+                  <div class="chip-list">
+                    <button type="button" class="chip" data-filter-step="situation"
+                      data-filter-value="daily">데일리</button>
+                    <button type="button" class="ch숲의 잔향이ip" data-filter-step="situation"
+                      data-filter-value="office">오피스</button>
+                    <button type="button" class="chip" data-filter-step="situation"
+                      data-filter-value="date">데이트</button>
+                    <button type="button" class="chip" data-filter-step="situation"
+                      data-filter-value="night">나이트</button>
+                  </div>
+                </div>
+                <div class="filter-group">
+                  <strong class="eyebrow"><span class="filter-step-label">계절감</span></strong>
+                  <div class="chip-list">
+                    <button type="button" class="chip" data-filter-step="season" data-filter-value="spring">봄</button>
+                    <button type="button" class="chip" data-filter-step="season" data-filter-value="summer">여름</button>
+                    <button type="button" class="chip" data-filter-step="season" data-filter-value="fall">가을</button>
+                    <button type="button" class="chip" data-filter-step="season" data-filter-value="winter">겨울</button>
+                  </div>
+                </div>
+                <div class="filter-group">
+                  <strong class="eyebrow"><span class="filter-step-label">무드 톤</span></strong>
+                  <div class="chip-list">
+                    <button type="button" class="chip" data-filter-step="mood" data-filter-value="warm">따뜻함</button>
+                    <button type="button" class="chip" data-filter-step="mood" data-filter-value="fresh">상쾌함</button>
+                    <button type="button" class="chip" data-filter-step="mood" data-filter-value="deep">깊이감</button>
+                    <button type="button" class="chip" data-filter-step="mood" data-filter-value="calm">차분함</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary filter-reset-cta" id="filter-reset-btn">전체 초기화</button>
+              </aside>
+              <div class="finder-panel finder-wrap" data-state="empty">
+                <p class="finder-progress-hint" id="finder-progress-hint">향 계열을 먼저 선택해주세요.</p>
+                <div class="finder-step-grid">
+                  <article class="ed-card finder-step" data-finder-step="scent"
+                    aria-labelledby="finder-step-title-scent">
+                    <div class="image-wrap card-media finder-step-media">
+                      <span class="finder-step-status" aria-hidden="true"></span>
+                      <img id="finder-step-img-scent" src="./images/common/lelabo_266.jpg"
+                        data-default="./images/common/DryWoody.png" alt="선택된 향 계열 미리보기 이미지" loading="lazy">
+                    </div>
+                    <div class="text-wrap card-body">
+                      <h3 class="finder-step-heading" id="finder-step-title-scent"><span
+                          class="finder-step-title-text">향 계열</span></h3>
+                      <p class="finder-step-lead card-desc">가장 먼저 느끼고 싶은 향의 축을 <br>왼쪽 필터에서 고릅니다.</p>
+                    </div>
+                  </article>
+                  <article class="ed-card finder-step" data-finder-step="situation"
+                    aria-labelledby="finder-step-title-situation">
+                    <div class="image-wrap card-media finder-step-media">
+                      <span class="finder-step-status" aria-hidden="true"></span>
+                      <img id="finder-step-img-situation" src="./images/common/lelabo_232.jpg"
+                        data-default="./images/common/situation1.jpg" alt="선택된 사용 상황 미리보기 이미지" loading="lazy">
+                    </div>
+                    <div class="text-wrap card-body">
+                      <h3 class="finder-step-heading" id="finder-step-title-situation"><span
+                          class="finder-step-title-text">사용 맥락</span></h3>
+                      <p class="finder-step-lead card-desc">데일리·오피스 등 향을 가장 <br> 자주 쓰는 상황을 맞춥니다.</p>
+                    </div>
+                  </article>
+                  <article class="ed-card finder-step" data-finder-step="season"
+                    aria-labelledby="finder-step-title-season">
+                    <div class="image-wrap card-media finder-step-media">
+                      <span class="finder-step-status" aria-hidden="true"></span>
+                      <img id="finder-step-img-season" src="./images/common/lelabo_265.jpg"
+                        data-default="./images/common/Spring.jpg" alt="선택된 계절 미리보기 이미지" loading="lazy">
+                    </div>
+                    <div class="text-wrap card-body">
+                      <h3 class="finder-step-heading" id="finder-step-title-season"><span
+                          class="finder-step-title-text">계절감</span></h3>
+                      <p class="finder-step-lead card-desc">체감 온도와 맞는 계절 톤을 <br> 고정해 발향 밸런스를 맞춥니다.</p>
+                    </div>
+                  </article>
+                  <article class="ed-card finder-step" data-finder-step="mood" aria-labelledby="finder-step-title-mood">
+                    <div class="image-wrap card-media finder-step-media">
+                      <span class="finder-step-status" aria-hidden="true"></span>
+                      <img id="finder-step-img-mood" src="./images/common/lelabo_240.jpg"
+                        data-default="./images/common/mood1.jpg" alt="선택된 무드 미리보기 이미지" loading="lazy">
+                    </div>
+                    <div class="text-wrap card-body">
+                      <h3 class="finder-step-heading" id="finder-step-title-mood"><span
+                          class="finder-step-title-text">무드 톤</span></h3>
+                      <p class="finder-step-lead card-desc">오늘 전달하고 싶은 <br> 감정의 농도를 선택합니다.</p>
+                    </div>
+                  </article>
+                </div>
+                <div class="finder-result">
+                  <div class="finder-state is-empty" data-ui="empty" hidden>
+                    <span class="finder-state-icon" aria-hidden="true">○</span>
+                    <p class="finder-state-title">아직 선택이 없습니다</p>
+                    <p>향·상황·계절·무드 항목이 모두 채워져야 추천 정확도가 확보됩니다.</p>
+                    <button type="button" class="btn btn-secondary" data-action="focus-first">첫 단계부터 시작</button>
+                  </div>
+                  <div class="finder-state is-loading" data-ui="loading" hidden>
+                    <div class="loading-head">
+                      <span class="finder-state-icon is-spin" aria-hidden="true">◐</span>
+                      <div class="loading-head-text">
+                        <p class="finder-state-title">분석 중</p>
+                        <p class="loading-desc">노트 적합도 · 사용 맥락 · 계절 적합도를 통합 계산하고 있습니다.</p>
+                      </div>
+                      <span class="loading-eta" aria-label="예상 소요 시간"><strong>~1.2</strong><small>초</small></span>
+                    </div>
+                    <ul class="loading-axes" aria-label="분석 축 진행 상황">
+                      <li class="loading-axis">
+                        <span class="loading-axis-num" aria-hidden="true">01</span>
+                        <span class="loading-axis-name">노트 적합도</span>
+                        <span class="loading-axis-bar" aria-hidden="true"><span></span></span>
+                        <span class="loading-axis-tag">향</span>
+                      </li>
+                      <li class="loading-axis">
+                        <span class="loading-axis-num" aria-hidden="true">02</span>
+                        <span class="loading-axis-name">사용 맥락</span>
+                        <span class="loading-axis-bar" aria-hidden="true"><span></span></span>
+                        <span class="loading-axis-tag">상황</span>
+                      </li>
+                      <li class="loading-axis">
+                        <span class="loading-axis-num" aria-hidden="true">03</span>
+                        <span class="loading-axis-name">배치 안정성</span>
+                        <span class="loading-axis-bar" aria-hidden="true"><span></span></span>
+                        <span class="loading-axis-tag">계절 · 무드</span>
+                      </li>
+                    </ul>
+                    <p class="loading-foot">12점 가중 매칭 · 탑·미들·베이스, 사용 맥락, 배치 일관성</p>
+                  </div>
+                  <div class="finder-state is-error" data-ui="error" hidden>
+                    <span class="finder-state-icon" aria-hidden="true">!</span>
+                    <p class="finder-state-title">샘플이 부족합니다</p>
+                    <p>현재 조합은 신뢰 가능한 샘플 수가 부족합니다. 계절 또는 무드를 바꿔 재탐색해 주세요.</p>
+                    <button type="button" class="btn btn-secondary" data-action="retry">다시 추천</button>
+                  </div>
+                  <div class="finder-result-list" id="finder-result-list" hidden></div>
+                  <article class="finder-why-fit" id="finder-why-fit" hidden aria-live="polite">
+                    <header class="finder-why-fit-head">
+                      <span class="eyebrow">매칭 요약</span>
+                      <h3>추천 근거</h3>
+                    </header>
+                    <div class="finder-why-fit-body">
+                      <p id="finder-why-fit-copy">선택한 향/상황/계절/무드를 기반으로 노트 적합도, 사용 맥락, 배치 안정성을 종합 분석합니다.</p>
+                      <ul class="finder-why-fit-points" id="finder-why-fit-points">
+                        <li>노트 축 매칭 완료</li>
+                        <li>사용 맥락 적합도 확보</li>
+                        <li>배치 안정성 확인</li>
+                      </ul>
+                    </div>
+                  </article>
+                </div>
+                <div class="finder-control-row">
+                  <p class="finder-control-hint">12점 가중 매칭: 탑·미들·베이스 적합도, 사용 맥락, 배치 일관성을 한 번에 계산합니다.</p>
+                  <div class="finder-control-actions">
+                    <button type="button" class="btn btn-secondary" id="reset-btn">선택 초기화</button>
+                    <button type="button" class="btn btn-primary" id="recommend-btn">추천 결과 보기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==============================================추천의 근거=========================================================================== -->
+      <section class="section site-section why-this-section why ed-section why-this ed-why" id="why-this"
+        aria-labelledby="why-this-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap why-title-wrap">
+              <h2 id="why-this-title">추천의 근거</h2>
+              <p class="lead">탑·미들·베이스 적합도, 사용 맥락, 배치 안정성. <br> 세 축이 한 번에 맞을 때만 추천이 확정됩니다.</p>
+            </div>
+            <div class="body-wrap">
+              <aside class="ledger" aria-labelledby="reasoning-engine-title">
+                <header class="ledger-head">
+                  <span class="eyebrow">분석 엔진</span>
+                  <h3 id="reasoning-engine-title">3축 매칭</h3>
+                </header>
+                <p class="ledger-desc">탑·미들·베이스 노트 적합도, 시간대별 발향, 배치별 향 안정성을 <br> 가중 합산해 신뢰도를 산출합니다.</p>
+                <dl class="ledger-axes" aria-label="가중 매칭 축">
+                  <div class="ledger-axis">
+                    <div class="ledger-axis-body">
+                      <dt>노트 적합도</dt>
+                      <dd>
+                        <span class="ledger-axis-bar" aria-hidden="true"><span></span></span>
+                        <span class="ledger-axis-weight">40%</span>
+                      </dd>
+                    </div>
+                  </div>
+                  <div class="ledger-axis">
+                    <div class="ledger-axis-body">
+                      <dt>사용 맥락</dt>
+                      <dd>
+                        <span class="ledger-axis-bar" aria-hidden="true"><span></span></span>
+                        <span class="ledger-axis-weight">30%</span>
+                      </dd>
+                    </div>
+                  </div>
+                  <div class="ledger-axis">
+                    <div class="ledger-axis-body">
+                      <dt>배치 안정성</dt>
+                      <dd>
+                        <span class="ledger-axis-bar" aria-hidden="true"><span></span></span>
+                        <span class="ledger-axis-weight">30%</span>
+                      </dd>
+                    </div>
+                  </div>
+                </dl>
+                <div class="ledger-confidence" data-state="dormant">
+                  <span class="eyebrow">종합 신뢰도</span>
+                  <p class="ledger-confidence-num"><span id="ledger-confidence-value"></span><span
+                      class="ledger-confidence-unit">%</span></p>
+                  <p class="ledger-confidence-hint" id="ledger-confidence-hint">4단계 선택이 완료되면 신뢰도가 계산됩니다.</p>
+                </div>
+              </aside>
+              <div class="why-grid" id="why-grid">
+                <article class="ed-card card why-card" data-reason="01">
+                  <div class="card-media site-image-box">
+                    <img src="./images/common/Basis1.png" alt="노트 적합도 설명 카드 이미지" loading="lazy">
+                  </div>
+                  <div class="card-body site-text-box">
+                    <h3 class="card-title">노트 적합도</h3>
+                    <p class="card-desc">선택 전에는 해석이 비활성화됩니다. <br> 향 찾기를 완료하면 탑·미들·베이스 매칭을 표시합니다.</p>
+                    <div class="why-score" role="img" aria-label="노트 적합 점수 0%">
+                      <span class="why-score-track"><span class="why-score-fill"></span></span>
+                      <span class="why-score-value">0<small>/100</small></span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ed-card card why-card" data-reason="02">
+                  <div class="card-media site-image-box">
+                    <img src="./images/common/Basis2.png" alt="사용 맥락 설명 카드 이미지" loading="lazy">
+                  </div>
+                  <div class="card-body site-text-box">
+                    <h3 class="card-title">사용 맥락</h3>
+                    <p class="card-desc">사용 상황과 시간대에 따른 <br> 발향 강도 및 잔향 지속 구간을 함께 제안합니다.</p>
+                    <div class="why-score" role="img" aria-label="사용 맥락 점수 0%">
+                      <span class="why-score-track"><span class="why-score-fill"></span></span>
+                      <span class="why-score-value">0<small>/100</small></span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ed-card card why-card" data-reason="03">
+                  <div class="card-media site-image-box">
+                    <img src="./images/common/Basis3.png" alt="배치 특성 설명 카드 이미지" loading="lazy">
+                  </div>
+                  <div class="card-body site-text-box">
+                    <h3 class="card-title">배치 안정성</h3>
+                    <p class="card-desc">계절/무드 선택값에 맞춰 <br> 배치 프로파일과 예상 체감 온도 반응을 업데이트합니다.</p>
+                    <div class="why-score" role="img" aria-label="배치 안정성 점수 0%">
+                      <span class="why-score-track"><span class="why-score-fill"></span></span>
+                      <span class="why-score-value">0<small>/100</small></span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================================================검증된 감각================================================================================== -->
+      <section class="section site-section trending-section ed-section quick trending ed-quick ed-trending has-swiper"
+        id="trending" aria-labelledby="trending-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="trending-title">검증된 감각</h2>
+              <p class="lead">누적 선택과 재구매율로 검증된 시그너처 라인업</p>
+            </div>
+            <div class="quick-strip">
+              <div class="quick-grid-shell">
+                <div class="quick-grid swiper" data-swiper="trending">
+                  <ul class="swiper-wrapper" role="list">
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Santal 33 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge">RANK 01</span>
+                          <img src="./images/common/santal33.png" alt="Santal 33 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Woody · ₩210,000</p>
+                          <h3 class="quick-name card-title">Santal 33</h3>
+                          <span class="quick-stars" aria-label="평점 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Rose 31 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-soft">RANK 02</span>
+                          <img src="./images/common/rose31.png" alt="Rose 31 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Floral · ₩190,000</p>
+                          <h3 class="quick-name card-title">Rose 31</h3>
+                          <span class="quick-stars" aria-label="평점 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Another 13 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-fresh">RANK 03</span>
+                          <img src="./images/common/an13.png" alt="Another 13 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Musk · ₩180,000</p>
+                          <h3 class="quick-name card-title">Another 13</h3>
+                          <span class="quick-stars" aria-label="평점 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Bergamote 22 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-fresh">RANK 04</span>
+                          <img src="./images/common/bergamote22.png" alt="Bergamote 22 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Citrus · ₩220,000</p>
+                          <h3 class="quick-name card-title">Bergamote 22</h3>
+                          <span class="quick-stars" aria-label="평점 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Vetiver 46 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-dark">RANK 05</span>
+                          <img src="./images/common/vetver46.png" alt="Vetiver 46 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Smoky · ₩260,000</p>
+                          <h3 class="quick-name card-title">Vetiver 46</h3>
+                          <span class="quick-stars" aria-label="평점 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Neroli 36 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-soft">RANK 06</span>
+                          <img src="./images/common/neroli36.png" alt="Neroli 36 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Floral · ₩230,000</p>
+                          <h3 class="quick-name card-title">Neroli 36</h3>
+                          <span class="quick-stars" aria-label="평점 4 / 5">
+                            <i></i><i></i><i></i><i></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Iris 39 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge">RANK 07</span>
+                          <img src="./images/common/iris39.png" alt="Iris 39 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Powdery · ₩250,000</p>
+                          <h3 class="quick-name card-title">Iris 39</h3>
+                          <span class="quick-stars" aria-label="평점 5 / 5">
+                            <i></i><i></i><i></i><i></i><i></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="quick-card swiper-slide card">
+                      <a href="detail.html" class="quick-link card-link" aria-label="Vanille 44 제품 상세 보기">
+                        <div class="quick-media card-media">
+                          <span class="quick-badge quick-badge-dark">RANK 08</span>
+                          <img src="./images/common/vanille44.png" alt="Vanille 44 제품 이미지" loading="lazy">
+                        </div>
+                        <div class="quick-info card-body">
+                          <p class="quick-meta card-meta">Sweet · ₩240,000</p>
+                          <h3 class="quick-name card-title">Vanille 44</h3>
+                          <span class="quick-stars" aria-label="평점 4 / 5">
+                            <i></i><i></i><i></i><i></i><i class="off"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =================================================배너============================================================================================= -->
+      <section
+        class="section site-section editorial-section editorial-section--wide ed-section editorial ed-editorial is-flush"
+        aria-labelledby="editorial-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="image-wrap" aria-hidden="true">
+              <img src="./images/common/Logic.jpg" alt="연구소 노트와 배치 기록을 펼쳐 둔 장면">
+            </div>
+            <!-- Main overlay -->
+            <div class="overlay">
+              <div class="title-wrap site-text-box">
+                <h2 id="editorial-title">숲의 잔향이<br>당신의 체온과 만나는 곳</h2>
+                <p>샌달우드는 체온과 만나며 잔향의 밀도를 형성하는 핵심 베이스 <br>산지별 오일 점도 차이를 배치별로 기록해 향 일관성을 관리합니다.</p>
+                <blockquote class="ed-editorial-quote">
+                  <p>“정직한 향은, 시간이 지나서야 비로소 자신의 자리를 찾는다”</p>
+                  <cite>Fabrice Voutsa, Le Labo Perfumer</cite>
+                </blockquote>
+                <div class="ed-editorial-actions">
+                  <a href="#ingredient" class="ed-editorial-cta">원료 로직 보기 <span aria-hidden="true">→</span></a>
+                  <a href="#lab" class="ed-editorial-link">레이어링 가이드</a>
+                </div>
+              </div>
+            </div>
+            <!-- Bottom signature row -->
+            <footer class="ed-editorial-foot" aria-hidden="true">
+              <span class="ed-editorial-sig-line"></span>
+              <span class="ed-editorial-sig-mark">F. VOUTSA · 2025</span>
+              <span class="ed-editorial-sig-meta">BATCH 24W</span>
+            </footer>
+          </div>
+        </div>
+      </section>
+      <!-- ==============================================경험의 확장 =============================================================================================== -->
+      <section class="section site-section cross-category-section mix ed-section cross-category ed-mix"
+        id="cross-category" aria-labelledby="cross-category-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="cross-category-title">경험의 확장</h2>
+              <p class="lead">한 향이 신체·공간·이동 동선까지 일관되게 흐를 때 비로소 ‘당신의 향’이 됩니다.</p>
+            </div>
+            <div class="body-wrap">
+              <article class="mix-card card" data-step="01">
+                <div class="mix-card-image card-media">
+                  <img src="./images/common/body-cream-2.jpg" alt="바디 로션 제품 이미지" loading="lazy">
+                </div>
+                <div class="mix-card-text card-body">
+                  <span class="mix-card-eyebrow eyebrow card-meta">SKIN · BODY · ₩69,000</span>
+                  <h3 class="mix-card-title card-title">Body Cream</h3>
+                  <p class="mix-card-desc card-desc">샤워 후 3분 이내 보습 레이어를 쌓아 향 지속력 +1.5h.</p>
+                  <div class="card-action">
+                    <a href="shop.html?collection=body" class="mix-card-cta">바디 라인 보기 <span
+                        aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </article>
+              <article class="mix-card card" data-step="02">
+                <div class="mix-card-image card-media">
+                  <img src="./images/common/cade-26-1.jpg" alt="홈 프래그런스 제품 이미지" loading="lazy">
+                </div>
+                <div class="mix-card-text card-body">
+                  <span class="mix-card-eyebrow eyebrow card-meta">SPACE · HOME · ₩127,000</span>
+                  <h3 class="mix-card-title card-title">Cade 26</h3>
+                  <p class="mix-card-desc card-desc">20m² 공간을 45분 안에 향으로 통일하는 디퓨저.</p>
+                  <div class="card-action">
+                    <a href="shop.html?collection=home" class="mix-card-cta">홈 라인 보기 <span
+                        aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </article>
+              <article class="mix-card card" data-step="03">
+                <div class="mix-card-image card-media">
+                  <img src="./images/common/neroli-36-1.jpg" alt="트래블 사이즈 제품 이미지" loading="lazy">
+                </div>
+                <div class="mix-card-text card-body">
+                  <span class="mix-card-eyebrow eyebrow card-meta">MOTION · TRAVEL · ₩261,000</span>
+                  <h3 class="mix-card-title card-title">Neroli 36 Travel Tube</h3>
+                  <p class="mix-card-desc card-desc">10ml 포맷으로 이동 중 온도 변화에도 안정된 발향.</p>
+                  <div class="card-action">
+                    <a href="shop.html?collection=travel" class="mix-card-cta">트래블 라인 보기 <span
+                        aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================================선명한 확신 ============================================================================================== -->
+      <section class="section site-section comparison-section compare ed-section comparison ed-compare" id="comparison"
+        aria-labelledby="comparison-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="comparison-title">선명한 확신</h2>
+              <p class="lead">두 향의 미세한 차이를 6개 축으로 비교해 선택을 명확히 합니다.</p>
+            </div>
+            <div class="body-wrap" id="comparison-grid">
+              <article class="compare-card compare-card-primary" data-side="left">
+                <header class="compare-card-head">
+                  <span class="compare-card-tag">YOUR PICK · 87% MATCH</span>
+                  <h3 class="compare-card-title" id="compare-left-title">Santal 33</h3>
+                  <p class="compare-card-desc" id="compare-left-desc">Woody · Deep · Warm</p>
+                </header>
+                <div class="compare-card-image">
+                  <img src="./images/common/santal33.png" alt="현재 선택 향 비교 이미지" loading="lazy">
+                </div>
+                <footer class="compare-card-foot">
+                  <ul class="compare-card-chips" aria-label="향 노트">
+                    <li>Sandalwood</li>
+                    <li>Cedar</li>
+                    <li>Leather</li>
+                  </ul>
+                  <div class="compare-card-pricing">
+                    <span class="compare-card-price">₩210,000</span>
+                    <span class="compare-card-meta" id="compare-left-meta">Night · Winter</span>
+                  </div>
+                  <button type="button" class="compare-card-cta" id="set-left-current">이 향으로 확정</button>
+                </footer>
+              </article>
+
+              <div class="compare-axes" role="group" aria-label="6축 비교 패널">
+                <div class="compare-axes-head">
+                  <div class="compare-axes-side compare-axes-side-left">
+                    <span class="compare-axes-side-label">YOUR PICK</span>
+                    <span class="compare-axes-side-name" id="compare-axes-left-name">Another 13</span>
+                  </div>
+                  <span class="compare-axes-vs" aria-hidden="true">VS</span>
+                  <div class="compare-axes-side compare-axes-side-right">
+                    <span class="compare-axes-side-label">ALTERNATIVE</span>
+                    <span class="compare-axes-side-name" id="compare-axes-right-name">Santal 33</span>
+                  </div>
+                </div>
+                <p class="compare-axes-hint">6 AXES · NORMALIZED 0–10</p>
+                <ol class="compare-axis-list">
+                  <li class="compare-axis is-left-win">
+                    <span class="compare-axis-bar compare-axis-bar-left"><span></span></span>
+                    <span class="compare-axis-name">Density</span>
+                    <span class="compare-axis-bar compare-axis-bar-right"><span></span></span>
+                  </li>
+                  <li class="compare-axis is-left-win">
+                    <span class="compare-axis-bar compare-axis-bar-left"><span></span></span>
+                    <span class="compare-axis-name">Longevity</span>
+                    <span class="compare-axis-bar compare-axis-bar-right"><span></span></span>
+                  </li>
+                  <li class="compare-axis is-left-win">
+                    <span class="compare-axis-bar compare-axis-bar-left"><span></span></span>
+                    <span class="compare-axis-name">Sillage</span>
+                    <span class="compare-axis-bar compare-axis-bar-right"><span></span></span>
+                  </li>
+                  <li class="compare-axis is-left-win">
+                    <span class="compare-axis-bar compare-axis-bar-left"><span></span></span>
+                    <span class="compare-axis-name">Warmth</span>
+                    <span class="compare-axis-bar compare-axis-bar-right"><span></span></span>
+                  </li>
+                  <li class="compare-axis is-right-win">
+                    <span class="compare-axis-bar compare-axis-bar-left"><span></span></span>
+                    <span class="compare-axis-name">Sweetness</span>
+                    <span class="compare-axis-bar compare-axis-bar-right"><span></span></span>
+                  </li>
+                  <li class="compare-axis is-right-win">
+                    <span class="compare-axis-bar compare-axis-bar-left"><span></span></span>
+                    <span class="compare-axis-name">Freshness</span>
+                    <span class="compare-axis-bar compare-axis-bar-right"><span></span></span>
+                  </li>
+                </ol>
+                <div class="compare-axes-summary">
+                  <div class="compare-axes-summary-row is-left-win">
+                    <span class="compare-axes-summary-side">YOUR PICK</span>
+                    <span class="compare-axes-summary-score">4 / 6</span>
+                  </div>
+                  <div class="compare-axes-summary-row">
+                    <span class="compare-axes-summary-side">ALTERNATIVE</span>
+                    <span class="compare-axes-summary-score">2 / 6</span>
+                  </div>
+                </div>
+                <button type="button" class="compare-swap-btn" id="swap-compare">
+                  <span class="compare-swap-btn__text">좌우 바꾸기</span>
+                  <svg class="compare-swap-btn__icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M10 6H3M3 6L6 3M3 6L6 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M12 6h7M19 6l-3-3M19 6l-3 3" stroke="currentColor" stroke-width="1.4"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+
+              <article class="compare-card compare-card-alt" data-side="right">
+                <header class="compare-card-head">
+                  <span class="compare-card-tag">ALTERNATIVE · 78% MATCH</span>
+                  <h3 class="compare-card-title" id="compare-right-title">Rose 31</h3>
+                  <p class="compare-card-desc" id="compare-right-desc">Floral · Soft · Calm</p>
+                </header>
+                <div class="compare-card-image">
+                  <img src="./images/common/rose31.png" alt="대안 향 비교 이미지" loading="lazy">
+                </div>
+                <footer class="compare-card-foot">
+                  <ul class="compare-card-chips" aria-label="향 노트">
+                    <li>Rose</li>
+                    <li>Cumin</li>
+                    <li>Musk</li>
+                  </ul>
+                  <div class="compare-card-pricing">
+                    <span class="compare-card-price">₩190,000</span>
+                    <span class="compare-card-meta" id="compare-right-meta">Daily · Spring</span>
+                  </div>
+                  <a href="detail.html" class="compare-card-cta is-secondary">샘플 신청 <span
+                      aria-hidden="true">→</span></a>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================================숲의 잔향 ======================================================================================== -->
+      <section class="section site-section ingredient-section ed-section ingredient ed-ingredient" id="ingredient"
+        aria-labelledby="ingredient-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="ingredient-title">숲의 잔향</h2>
+              <p class="lead">르라보를 완성하는 핵심 원료</p>
+            </div>
+            <div class="body-wrap">
+              <article class="ingredient-banner ingredient-banner-cream">
+                <div class="ingredient-banner-text">
+                  <span class="ingredient-banner-eyebrow">SANDALWOOD · S-241</span>
+                  <h3 class="ingredient-banner-title">Ingredient<br>Logic</h3>
+                  <p class="ingredient-banner-desc">샌달우드는 체온과 만나며 잔향의 밀도를 형성하는 핵심 베이스입니다.</p>
+                  <a class="ingredient-banner-cta" href="#cross-category">연계 제품 보기</a>
+                </div>
+                <div class="ingredient-banner-image">
+                  <img src="./images/common/Logic.jpg" alt="샌달우드 원료 이미지" loading="lazy">
+                </div>
+              </article>
+              <article class="ingredient-banner ingredient-banner-sage">
+                <div class="ingredient-banner-text">
+                  <span class="ingredient-banner-eyebrow">△ NOTE PYRAMID</span>
+                  <h3 class="ingredient-banner-title">Top · Middle<br>Base</h3>
+                  <p class="ingredient-banner-desc">Violet Accord → Cedar → Sandalwood &amp; Leather로 전개되는 노트 피라미드.</p>
+                  <a class="ingredient-banner-cta" href="#lab">레이어링 가이드</a>
+                </div>
+                <div class="ingredient-banner-image">
+                  <img src="./images/common/manufacturing.jpeg" alt="노트 피라미드 설명 이미지" loading="lazy">
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================================실험실의 기록=========================================================================================================== -->
+      <section class="section site-section lab-process-section ed-section process ed-process" id="lab"
+        aria-labelledby="process-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap is-center lab-process-head">
+              <h2 id="process-title">실험실의 기록</h2>
+              <p class="lead">원료가 예술이 되는 공정</p>
+            </div>
+            <ol class="process-timeline" aria-label="조향 4단계 공정">
+              <li class="process-card" data-step="01">
+                <div class="process-card-image">
+                  <img src="./images/common/bg1.png" alt="원료 수확 공정" loading="lazy">
+                </div>
+                <div class="process-card-text card-body">
+                  <span class="process-card-tag eyebrow card-meta">HARVEST</span>
+                  <h3 class="process-card-title card-title">Harvest</h3>
+                  <p class="process-card-desc card-desc">토양·수분·수확 시점을 검증해 배치 오차 최소화.</p>
+                  <dl class="process-card-meta">
+                    <div>
+                      <dt>Lead</dt>
+                      <dd>~14d</dd>
+                    </div>
+                    <div>
+                      <dt>QC</dt>
+                      <dd>Audit</dd>
+                    </div>
+                  </dl>
+                </div>
+              </li>
+              <li class="process-card" data-step="02">
+                <div class="process-card-image">
+                  <img src="./images/common/bg2.png" alt="블렌딩 공정" loading="lazy">
+                </div>
+                <div class="process-card-text card-body">
+                  <span class="process-card-tag eyebrow card-meta">BLEND</span>
+                  <h3 class="process-card-title card-title">Blend</h3>
+                  <p class="process-card-desc card-desc">Top/Middle/Base 노트 1:1 테스트, 패널 피드백 반영.</p>
+                  <dl class="process-card-meta">
+                    <div>
+                      <dt>Trials</dt>
+                      <dd>40+</dd>
+                    </div>
+                    <div>
+                      <dt>Panel</dt>
+                      <dd>12명</dd>
+                    </div>
+                  </dl>
+                </div>
+              </li>
+              <li class="process-card" data-step="03">
+                <div class="process-card-image">
+                  <img src="./images/common/bg3.png" alt="숙성 공정" loading="lazy">
+                </div>
+                <div class="process-card-text card-body">
+                  <span class="process-card-tag eyebrow card-meta">AGE</span>
+                  <h3 class="process-card-title card-title">Age</h3>
+                  <p class="process-card-desc card-desc">온·습도 제어와 알코올 자극 ↓, 잔향 연결감 안정화.</p>
+                  <dl class="process-card-meta">
+                    <div>
+                      <dt>Aging</dt>
+                      <dd>14d</dd>
+                    </div>
+                    <div>
+                      <dt>Temp</dt>
+                      <dd>18°C</dd>
+                    </div>
+                  </dl>
+                </div>
+              </li>
+              <li class="process-card" data-step="04">
+                <div class="process-card-image">
+                  <img src="./images/common/bg4.png" alt="보틀링 공정" loading="lazy">
+                </div>
+                <div class="process-card-text card-body">
+                  <span class="process-card-tag eyebrow card-meta">BOTTLE</span>
+                  <h3 class="process-card-title card-title">Bottle</h3>
+                  <p class="process-card-desc card-desc">배치 코드 + 커스텀 라벨로 추적성·개인화 동시 달성.</p>
+                  <dl class="process-card-meta">
+                    <div>
+                      <dt>Batch</dt>
+                      <dd>200병</dd>
+                    </div>
+                    <div>
+                      <dt>QC</dt>
+                      <dd>Final</dd>
+                    </div>
+                  </dl>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <!-- ==============================================마지막 마침표============================================================================================== -->
+      <section class="section site-section gift-section ed-section gift ed-gift" id="gift" aria-labelledby="gift-title"
+        data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="gift-title">마지막 마침표</h2>
+              <p class="lead">당신의 이름을 라벨에 각인하세요. 받는 순간부터 당신의 기억과 연결됩니다.</p>
+            </div>
+            <div class="body-wrap">
+              <article class="gift-label-card" aria-label="라벨 실시간 미리보기">
+                <header class="gift-label-head">
+                  <span class="gift-label-mark">LE LABO</span>
+                  <span class="gift-label-issue">EAU DE PARFUM · 50ml</span>
+                </header>
+                <div class="gift-label-body">
+                  <span class="gift-label-product">SANTAL 33</span>
+                  <p class="gift-label-name" id="gift-preview" aria-live="polite">YOUR NAME</p>
+                  <span class="gift-label-line" aria-hidden="true"></span>
+                  <p class="gift-label-handwritten">handcrafted for you</p>
+                </div>
+                <footer class="gift-label-foot">
+                  <div><span class="gift-label-key">DATE</span><span class="gift-label-value">2026.04.29</span></div>
+                  <div><span class="gift-label-key">BATCH</span><span class="gift-label-value">24W · S-241</span></div>
+                  <div><span class="gift-label-key">PERFUMER</span><span class="gift-label-value">F. Voutsa</span></div>
+                </footer>
+              </article>
+              <div class="gift-form-wrap">
+                <span class="eyebrow">PERSONALIZE</span>
+                <h3 class="gift-form-title">당신의 이름을<br>라벨에 새깁니다</h3>
+                <p class="gift-form-desc">입력 즉시 좌측 라벨 미리보기에 반영됩니다. 영문 권장 · 최대 24자.</p>
+                <div class="gift-form">
+                  <label class="sr-only" for="gift-label-input">라벨 이름 입력</label>
+                  <div class="gift-input-wrap">
+                    <input id="gift-label-input" type="text" maxlength="24" placeholder="YOUR NAME"
+                      aria-label="라벨 이름 입력" autocomplete="name">
+                    <span class="gift-input-counter" id="gift-input-counter"
+                      aria-live="polite"><strong>0</strong>/24</span>
+                  </div>
+                  <button type="button" class="btn btn-on-dark gift-create-btn" id="gift-create-btn">라벨 만들기</button>
+                </div>
+                <ul class="gift-next-steps" aria-label="이어지는 단계">
+                  <li><span class="gift-step-dot" aria-hidden="true"></span>장바구니 담기</li>
+                  <li><span class="gift-step-dot" aria-hidden="true"></span>핸드 패킹 및 사인 라벨링 (24시간 내)</li>
+                  <li><span class="gift-step-dot" aria-hidden="true"></span>무료 익스프레스 배송 (평균 2.4일 출고)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================================조향의 기록=================================================================================== -->
+      <section class="section site-section journal-section ed-section journal ed-split" id="journal"
+        aria-labelledby="journal-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="body-wrap">
+              <div class="image-wrap">
+                <img src="./images/common/record0.png" alt="조향의 기록 대표 이미지" loading="lazy">
+                <div class="journal-cover" aria-hidden="true">
+                  <div class="journal-cover-top">
+                    <span class="journal-issue">ISSUE №42</span>
+                    <span class="journal-issue-date">2026 · APRIL</span>
+                  </div>
+                  <ul class="journal-vert-tags">
+                    <li>SCENT</li>
+                    <li>RAW</li>
+                    <li>CRAFT</li>
+                  </ul>
+                  <div class="journal-cover-bottom">
+                    <p class="journal-photo-credit">Photographed by<br><strong>Le Labo Studio · Seoul</strong></p>
+                    <span class="journal-cover-mark">LE LABO<br>JOURNAL</span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-wrap">
+                <div class="journal-meta-row">
+                  <span class="journal-latest">LATEST · 2026.04</span>
+                  <a href="#ingredient" class="journal-index-link">에디토리얼 인덱스 →</a>
+                </div>
+                <div class="story-headline">
+                  <span class="headline-mark" aria-hidden="true"></span>
+                  <h2 id="journal-title">조향의 기록</h2>
+                </div>
+                <p class="lead has-dropcap">원료와 사람, 향기에 얽힌 깊은 서사. 탑 노트의 첫인상부터 베이스의 잔향까지, 향이 기억으로 저장되는 메커니즘을 매 호 기록합니다.
+                </p>
+
+                <article class="journal-feature">
+                  <header class="journal-feature-head">
+                    <span class="journal-feature-tag">FEATURED · ISSUE №42</span>
+                    <span class="journal-feature-time">5 min read</span>
+                  </header>
+                  <h4 class="journal-feature-title">향이 기억으로 저장되는 순간</h4>
+                  <p class="journal-feature-desc">탑 노트의 첫인상부터 베이스의 잔향까지, 향이 후각 피질을 거쳐 장기 기억으로 안착되는 감각 메커니즘을 해설합니다.</p>
+                  <ul class="pillar-chips" aria-label="향 키워드">
+                    <li>Top</li>
+                    <li>Middle</li>
+                    <li>Base</li>
+                    <li>Olfactory Memory</li>
+                  </ul>
+                  <a href="#ingredient" class="journal-feature-cta link-arrow">전체 스토리 읽기</a>
+                </article>
+
+                <ol class="journal-more" aria-label="더 읽어볼 저널">
+                  <li>
+                    <span class="journal-more-num" aria-hidden="true">02</span>
+                    <div class="journal-more-body">
+                      <span class="journal-more-tag">RAW · 4 min</span>
+                      <h5>원료 이야기 산지에서 시작되는 향</h5>
+                      <p>산지, 추출, 배치 기록까지 원료 데이터가 실제 발향 품질에 미치는 영향을 정리합니다.</p>
+                    </div>
+                    <a href="#lab" class="journal-more-cta" aria-label="원료 이야기 읽기">→</a>
+                  </li>
+                  <li>
+                    <span class="journal-more-num" aria-hidden="true">03</span>
+                    <div class="journal-more-body">
+                      <span class="journal-more-tag">CRAFT · 8 min</span>
+                      <h5>조향 이야기 무드를 포뮬러로</h5>
+                      <p>조향사가 의도한 무드와 사용 상황이 어떻게 포뮬러 의사결정으로<br>연결되는지 사례 중심으로 다룹니다.</p>
+                    </div>
+                    <a href="#gift" class="journal-more-cta" aria-label="조향 이야기 읽기">→</a>
+                  </li>
+                </ol>
+
+                <div class="story-signature">
+                  <div class="signature-meta">
+                    <span class="signature-line" aria-hidden="true"></span>
+                    <span class="signature-label">SIGNED · LE LABO EDITORIAL</span>
+                  </div>
+                  <a href="#ingredient" class="story-cta link-arrow">전체 에디토리얼 보기</a>
+                </div>
+
+                <span class="journal-scroll-hint" aria-hidden="true">SCROLL FOR MORE ↓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===========================================당신의 기록이 만든 추천====================================================================================== -->
+      <section class="section site-section personalization-section ed-section personal ed-personal" id="personalization"
+        aria-labelledby="personal-title" data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="personal-title">당신의 기록이 만든 추천</h2>
+              <p class="lead">최근 검색·필터·찜 기록을 분석해 도출한 오직 당신만의 향.</p>
+              <ul class="personal-meta" aria-label="활동 메트릭">
+                <li><strong>30일</strong><span>분석 기간</span></li>
+                <li><strong>12회</strong><span>검색 세션</span></li>
+                <li><strong>87%</strong><span>매치 정확도</span></li>
+              </ul>
+            </div>
+            <div class="body-wrap personal-grid">
+              <article class="personal-card card is-featured" data-rec="01">
+                <div class="personal-card-image card-media">
+                  <span class="personal-card-badge">TOP MATCH</span>
+                  <img src="./images/common/santal33.png" alt="우디 추천 카드 이미지" loading="lazy">
+                </div>
+                <div class="personal-card-text card-body">
+                  <header class="personal-card-head">
+                    <span class="personal-card-tag">WOODY</span>
+                    <span class="personal-card-score"><strong>87</strong><small>%</small></span>
+                  </header>
+                  <h3 class="personal-card-title card-title">Santal 33</h3>
+                  <p class="personal-card-desc card-desc">최근 7일간 우디 계열 4회 탐색 재구매 매력이 강한 시그니처.</p>
+                  <ul class="personal-card-chips" aria-label="매치 근거">
+                    <li>우디</li>
+                    <li>스모키</li>
+                    <li>가죽</li>
+                  </ul>
+                  <footer class="personal-card-foot card-action">
+                    <span class="personal-card-price">₩210,000</span>
+                    <a href="detail.html" class="personal-card-cta">쇼핑 <span aria-hidden="true">→</span></a>
+                  </footer>
+                </div>
+              </article>
+              <article class="personal-card card" data-rec="02">
+                <div class="personal-card-image card-media">
+                  <img src="./images/common/rose31.png" alt="플로럴 추천 카드 이미지" loading="lazy">
+                </div>
+                <div class="personal-card-text card-body">
+                  <header class="personal-card-head">
+                    <span class="personal-card-tag">FLORAL</span>
+                    <span class="personal-card-score"><strong>78</strong><small>%</small></span>
+                  </header>
+                  <h3 class="personal-card-title card-title">Rose 31</h3>
+                  <p class="personal-card-desc card-desc">Daily · Spring 정향 매치 + 신체 체온 ↓ 안정 조합.</p>
+                  <ul class="personal-card-chips" aria-label="매치 근거">
+                    <li>플로럴</li>
+                    <li>머스크</li>
+                  </ul>
+                  <footer class="personal-card-foot card-action">
+                    <span class="personal-card-price">₩190,000</span>
+                    <a href="detail.html" class="personal-card-cta">제품 보기 <span aria-hidden="true">→</span></a>
+                  </footer>
+                </div>
+              </article>
+              <article class="personal-card card" data-rec="03">
+                <div class="personal-card-image card-media">
+                  <img src="./images/common/an13.png" alt="데일리 무드 추천 카드 이미지" loading="lazy">
+                </div>
+                <div class="personal-card-text card-body">
+                  <header class="personal-card-head">
+                    <span class="personal-card-tag">DAILY</span>
+                    <span class="personal-card-score"><strong>72</strong><small>%</small></span>
+                  </header>
+                  <h3 class="personal-card-title card-title">Another 13</h3>
+                  <p class="personal-card-desc card-desc">평일 루틴 패턴 분석 강도·지속 균형이 가장 안정적.</p>
+                  <ul class="personal-card-chips" aria-label="매치 근거">
+                    <li>우디</li>
+                    <li>머스크</li>
+                  </ul>
+                  <footer class="personal-card-foot card-action">
+                    <span class="personal-card-price">₩180,000</span>
+                    <a href="detail.html" class="personal-card-cta">위시리스트 추가 <span aria-hidden="true">→</span></a>
+                  </footer>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================당신의 향을 정의하세요====================================================================================================== -->
+      <section class="section site-section cta-section ed-section cta ed-cta" id="final" aria-labelledby="final-title"
+        data-scroll-reveal>
+        <div class="container">
+          <div class="content">
+            <div class="title-wrap site-text-box is-center">
+              <h2 id="final-title">당신의 향을<br>정의하세요</h2>
+              <p>숲에서 길어 올린 원료가 <br> 당신의 이름으로 완성되는 시간 1분이면 충분합니다.</p>
+            </div>
+            <div class="cta-rule" aria-hidden="true">
+              <span class="cta-rule-line"></span>
+              <span class="cta-rule-mark">04</span>
+              <span class="cta-rule-line"></span>
+            </div>
+            <div class="cta-actions">
+              <a href="#finder" class="cta-action-primary">
+                <span class="cta-action-primary-label">향 찾기 시작</span>
+                <span class="cta-action-primary-arrow" aria-hidden="true">→</span>
+              </a>
+              <p class="cta-action-secondary-row">
+                <span>또는</span>
+                <a href="#trending" class="cta-link">베스트셀러 보기</a>
+                <span class="cta-link-dot" aria-hidden="true">·</span>
+                <a href="shop.html" class="cta-link">전체 제품 보기</a>
+              </p>
+            </div>
+            <form class="cta-newsletter" novalidate aria-label="뉴스레터 구독" id="cta-newsletter-form">
+              <span class="cta-newsletter-eyebrow">MEMBER PERKS · 멤버 혜택</span>
+              <div class="cta-newsletter-row">
+                <label class="sr-only" for="cta-email">이메일 입력</label>
+                <input id="cta-email" type="email" placeholder="EMAIL ADDRESS" autocomplete="email" required>
+                <button type="submit" class="cta-newsletter-btn">Subscribe</button>
+              </div>
+              <p class="cta-newsletter-hint">신상 배치 알림 · 멤버 한정 샘플 2종 · 무료 리필 기회 첫 구독 시 즉시 적용.</p>
+              <p class="cta-newsletter-status" id="cta-newsletter-status" role="status" aria-live="polite"></p>
+            </form>
+            <ul class="cta-trust" aria-label="르라보 포레스트 서비스 보장">
+              <li>
+                <svg class="cta-trust-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 20h14V8H3zM17 12h7l4 4v4h-11z" />
+                  <circle cx="9" cy="23" r="2.4" />
+                  <circle cx="22" cy="23" r="2.4" />
+                </svg>
+                <span class="cta-trust-label">무료 배송<small>전 상품 · 단품 30일</small></span>
+              </li>
+              <li>
+                <svg class="cta-trust-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="12" width="22" height="16" />
+                  <path d="M5 12h22M16 12v16" />
+                  <path d="M16 12c-2-3-6-4-7-2s2 4 7 2zM16 12c2-3 6-4 7-2s-2 4-7 2z" />
+                </svg>
+                <span class="cta-trust-label">시그니처 포장<small>핸드 픽업</small></span>
+              </li>
+              <li>
+                <svg class="cta-trust-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4l12 12-12 12L4 16z" />
+                  <circle cx="11" cy="11" r="1.6" />
+                  <path d="M14 18h6M14 22h4" />
+                </svg>
+                <span class="cta-trust-label">라벨 커스텀<small>최대 24자 각인</small></span>
+              </li>
+              <li>
+                <svg class="cta-trust-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 4h6v8l6 12a2 2 0 01-2 3H9a2 2 0 01-2-3l6-12z" />
+                  <path d="M11 20h10" />
+                </svg>
+                <span class="cta-trust-label">랩 블렌딩<small>주문 즉시 · 배치 추적</small></span>
+              </li>
+              <li>
+                <svg class="cta-trust-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 4h6v4h-6zM12 8h8v4l2 4v12H10V16l2-4z" />
+                  <path d="M14 22h4" />
+                </svg>
+                <span class="cta-trust-label">샘플 동봉<small>동일 계열 2종</small></span>
+              </li>
+              <li>
+                <svg class="cta-trust-icon" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4l11 4v8c0 7-5 11-11 13-6-2-11-6-11-13V8z" />
+                  <path d="M11 16l3.5 3.5L21 13" />
+                </svg>
+                <span class="cta-trust-label">256-bit SSL<small>표준화 결제</small></span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer site-footer site-shell" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html">Body Care</a></li>
+                <li><a href="shop.html">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS"
+                  autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="footer-news-status" id="footer-news-status" role="status" aria-live="polite"></p>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights
+              reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector" aria-label="현재 지역 및 통화 정보">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+              <ul class="footer-social" aria-label="소셜 링크">
+                <li>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                      aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                      aria-hidden="true">
+                      <rect x="2.5" y="5" width="19" height="14" rx="3"></rect>
+                      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"></path>
+                    </svg>
+                    <span class="sr-only">YouTube</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- STICKY CTA -->
+    <div class="sticky" data-visible="false" id="sticky-buy" aria-label="현재 픽 구매 고정 바" role="region">
+      <div class="sticky-content">
+        <div class="sticky-info">
+          <span class="sticky-eyebrow">CURRENT PICK · 50ML</span>
+          <span class="sticky-product" id="sticky-product">Santal 33</span>
+          <span class="sticky-price" id="sticky-price">₩210,000 · ★ 4.8</span>
+        </div>
+        <div class="sticky-actions">
+          <button type="button" class="sticky-save" id="sticky-save" aria-label="현재 픽을 위시리스트에 저장"
+            aria-pressed="false">저장</button>
+          <a href="detail.html" class="sticky-button" aria-label="선택된 향 상세 페이지로 이동">지금 구매</a>
+          <button type="button" class="sticky-close" id="sticky-close" aria-label="고정 바 닫기">×</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

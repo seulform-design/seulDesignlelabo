@@ -1,0 +1,28 @@
+/* ==========================================================================
+   LE LABO — page-shell.css
+   App-wide structural guardrails used with reset.css + common.css.
+   Keeps horizontal overflow from sticky grids, negative margins, or wide media.
+   ========================================================================== */
+
+body {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+#wrap,
+.mega-menu,
+.footer {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+#wrap,
+main#main-content {
+  overflow-x: clip;
+}
+
+/* Premium mall frame: cap ultra-wide viewports without changing tokens */
+#wrap {
+  max-width: 1920px;
+  margin-inline: auto;
+}

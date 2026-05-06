@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko" class="ed" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="르라보 향기 탐색기 - 무드·상황·계절·밀도 4단계 질문으로 당신의 시그니처 향을 추천합니다.">
+  <meta name="theme-color" content="#1a2421">
+  <meta property="og:title" content="Scent Finder · LE LABO · Forest Laboratory">
+  <meta property="og:description" content="르라보 향기 탐색기 - 무드·상황·계절·밀도 4단계 질문으로 당신의 시그니처 향을 추천합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LE LABO">
+  <title>Finder | LE LABO · Forest Laboratory</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/page-shell.css">
+  <link rel="stylesheet" href="./styles/subpage-layout.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/finder.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="./styles/card-system.css">
+  <script src="./scripts/layout-system.js" defer></script>
+  <script src="./scripts/global.js" defer></script>
+  <script src="./scripts/finder.js" defer></script>
+  <script src="./scripts/editorial.js" defer></script>
+</head>
+
+<body class="page-finder">
+  <div id="wrap">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <header class="header site-header site-shell" id="top" role="banner">
+      <div class="announcement-bar" id="announcement-bar" role="status" aria-live="polite">
+        <div class="container">
+          <div class="announcement-content">
+            <p>무료 배송 · 무료 반품 · 시그니처 샘플 2종 증정</p>
+            <button type="button" class="announcement-close" aria-label="공지 닫기">×</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <p class="logo"><a href="index.html" aria-label="LE LABO 메인으로 이동">LE LABO</a></p>
+          <nav class="gnb" aria-label="메인 메뉴">
+            <ul class="gnb-list">
+              <li class="gnb-item"><a href="shop.html">SHOP</a></li>
+              <li class="gnb-item"><a href="finder.html">SCENT FINDER</a></li>
+              <li class="gnb-item"><a href="ingredient.html">INGREDIENT</a></li>
+              <li class="gnb-item"><a href="journal.html">JOURNAL</a></li>
+              <li class="gnb-item"><a href="gift.html">GIFT</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="header-search-wrap">
+              <form class="header-search" id="header-search-form" role="search" action="shop.html" method="get">
+                <label for="global-search" class="sr-only">검색어 입력</label>
+                <input type="search" id="global-search" name="q" class="search-input" placeholder="SEARCH"
+                  autocomplete="off" aria-label="프래그런스·기프트 검색" aria-hidden="true" tabindex="-1" disabled>
+              </form>
+              <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-expanded="false"
+                aria-controls="header-search-form" aria-label="검색 열기">
+                <span class="search-toggle-label" aria-hidden="true">SEARCH</span>
+              </button>
+            </div>
+            <a href="cart.html" class="icon-btn" aria-label="장바구니 이동">CART</a>
+            <button type="button" class="icon-btn mega-toggle" id="mega-toggle" aria-expanded="false"
+              aria-controls="mega-menu-panel" aria-label="메가 메뉴 열기">
+              <span class="mega-toggle-label-open" aria-hidden="true">MENU</span>
+              <span class="mega-toggle-label-close" aria-hidden="true">CLOSE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="mega-menu" id="mega-menu-panel" aria-hidden="true" aria-label="전체 메뉴">
+        <div class="container">
+          <div class="mega-menu-content">
+            <div class="mega-primary" role="group" aria-labelledby="mega-primary-heading">
+              <p class="mega-primary-title" id="mega-primary-heading">Navigate</p>
+              <ul class="mega-primary-list">
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="finder.html">SCENT FINDER</a></li>
+                <li><a href="ingredient.html">INGREDIENT</a></li>
+                <li><a href="journal.html">JOURNAL</a></li>
+                <li><a href="gift.html">GIFT</a></li>
+              </ul>
+            </div>
+            <section class="mega-col" aria-labelledby="mega-shop-title">
+              <h2 class="mega-title" id="mega-shop-title">SHOP</h2>
+              <ul class="mega-list">
+                <li><a href="shop.html#shop-grid-title">Fragrance</a></li>
+                <li><a href="shop.html#cross-category">Body Care</a></li>
+                <li><a href="shop.html#cross-category">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-discover-title">
+              <h2 class="mega-title" id="mega-discover-title">DISCOVER</h2>
+              <ul class="mega-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="mega-col" aria-labelledby="mega-service-title">
+              <h2 class="mega-title" id="mega-service-title">SERVICE</h2>
+              <ul class="mega-list">
+                <li><a href="index.html#gift">라벨 각인 서비스</a></li>
+                <li><a href="index.html#final">멤버십 혜택</a></li>
+                <li><a href="gift.html">기프트 서비스</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+      <div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main-content" class="v2-editorial-flow">
+
+      <!-- ============ SECTION 01: FINDER HERO (Image 3 Standard) ============ -->
+      <nav class="breadcrumb container commerce-breadcrumb" aria-label="경로 탐색">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Scent Finder</li>
+        </ol>
+      </nav>
+      <header class="page-header commerce-page-header cinematic-hero">
+        <div class="hero-overlay-v2"></div>
+        <div class="container">
+          <div class="hero-content-card fade-up">
+            <p class="section-eyebrow">SCENT DISCOVERY</p>
+            <h1 class="page-title">당신만의 향기를<br>찾는 여정</h1>
+            <p class="section-desc">감정, 공간, 그리고 계절. 르라보의 조향 철학을 담은 <br> 4단계 알고리즘이 당신의 내면과 가장 닮은 향을 제안합니다.</p>
+            <div class="subpage-hero-actions">
+              <button type="button" class="btn btn-primary">START ANALYSIS</button>
+              <a href="shop.html" class="btn btn-secondary">EXPLORE ALL</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ============ SECTION 02: GUIDED SELECTION V2 ============ -->
+      <section class="guided-selection-v2" id="finder-start">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">METHODOLOGY</p>
+            <h2 class="section-title-v2">향기 탐색 프로세스</h2>
+            <p class="section-lead-v2">조향사의 관점에서 설계된 4가지 핵심 질문에 답해 보세요.</p>
+          </div>
+
+          <div class="finder-progress-v2">
+            <div class="progress-info-v2">
+              <span class="progress-label-v2">DISCOVERY PROGRESS</span>
+              <span class="progress-status-v2" id="finder-progress-text">0 / 4 COMPLETED</span>
+            </div>
+            <div class="progress-bar-v2" id="finder-progress-bar">
+              <div class="progress-fill-v2" id="finder-progress-fill"></div>
+            </div>
+            <p class="progress-hint-v2" id="finder-progress-hint">향 계열부터 순서대로 선택해 주세요.</p>
+            <p class="progress-summary-v2" id="finder-selection-summary">현재 선택: <span class="summary-value">아직 없음 · 향
+                계열부터 시작하세요</span></p>
+          </div>
+
+          <div class="finder-step-grid-v2">
+            <article class="finder-card-v2" data-step="scent">
+              <div class="card-media-v2">
+                <img src="./images/common/DryWoody.png" alt="Scent" id="step-img-scent">
+                <div class="card-num-v2">01</div>
+              </div>
+              <div class="card-body-v2">
+                <p class="card-eyebrow-v2">CORE ACCORD</p>
+                <h3 class="card-title-v2">향의 중심</h3>
+                <p class="card-desc-v2">기억되길 원하는 첫 번째 인상을 선택하세요.</p>
+                <div class="option-grid-v2">
+                  <button type="button" class="option-btn-v2" data-value="woody">Woody</button>
+                  <button type="button" class="option-btn-v2" data-value="floral">Floral</button>
+                  <button type="button" class="option-btn-v2" data-value="citrus">Citrus</button>
+                  <button type="button" class="option-btn-v2" data-value="smoky">Smoky</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="finder-card-v2" data-step="situation">
+              <div class="card-media-v2">
+                <img src="./images/common/situation1.jpg" alt="Situation" id="step-img-situation">
+                <div class="card-num-v2">02</div>
+              </div>
+              <div class="card-body-v2">
+                <p class="card-eyebrow-v2">CONTEXT</p>
+                <h3 class="card-title-v2">사용 상황</h3>
+                <p class="card-desc-v2">향이 가장 자주 머무를 장면을 선택하세요.</p>
+                <div class="option-grid-v2">
+                  <button type="button" class="option-btn-v2" data-value="daily">Daily</button>
+                  <button type="button" class="option-btn-v2" data-value="office">Office</button>
+                  <button type="button" class="option-btn-v2" data-value="date">Date</button>
+                  <button type="button" class="option-btn-v2" data-value="night">Night</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="finder-card-v2" data-step="season">
+              <div class="card-media-v2">
+                <img src="./images/common/Spring.jpg" alt="Season" id="step-img-season">
+                <div class="card-num-v2">03</div>
+              </div>
+              <div class="card-body-v2">
+                <p class="card-eyebrow-v2">ATMOSPHERE</p>
+                <h3 class="card-title-v2">계절감</h3>
+                <p class="card-desc-v2">지금 이 순간, 공기의 온도와 습도입니다.</p>
+                <div class="option-grid-v2">
+                  <button type="button" class="option-btn-v2" data-value="spring">Spring</button>
+                  <button type="button" class="option-btn-v2" data-value="summer">Summer</button>
+                  <button type="button" class="option-btn-v2" data-value="fall">Fall</button>
+                  <button type="button" class="option-btn-v2" data-value="winter">Winter</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="finder-card-v2" data-step="mood">
+              <div class="card-media-v2">
+                <img src="./images/common/mood1.jpg" alt="Mood" id="step-img-mood">
+                <div class="card-num-v2">04</div>
+              </div>
+              <div class="card-body-v2">
+                <p class="card-eyebrow-v2">EMOTION</p>
+                <h3 class="card-title-v2">감정 톤</h3>
+                <p class="card-desc-v2">오늘 전달하고 싶은 인상의 결입니다.</p>
+                <div class="option-grid-v2">
+                  <button type="button" class="option-btn-v2" data-value="warm">Warm</button>
+                  <button type="button" class="option-btn-v2" data-value="fresh">Fresh</button>
+                  <button type="button" class="option-btn-v2" data-value="calm">Calm</button>
+                  <button type="button" class="option-btn-v2" data-value="deep">Deep</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="finder-actions-v2">
+            <button type="button" class="btn-v2 btn-solid" id="recommend-btn">추천 결과 생성</button>
+            <button type="button" class="btn-v2 btn-ghost" id="reset-btn">초기화</button>
+          </div>
+          <p class="finder-feedback-v2" id="finder-feedback" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 03: LIVE INTERPRETATION V2 ============ -->
+      <section class="interpretation-v2" id="section-live-preview">
+        <div class="container">
+          <div class="interpretation-card-v2">
+            <div class="interpretation-left-v2">
+              <p class="live-label-v2" id="live-state-label">REAL-TIME ANALYSIS</p>
+              <h2 class="interpretation-title-v2" id="live-summary">아직 선택된 정보가 없습니다.</h2>
+              <p class="interpretation-desc-v2" id="live-direction">향 계열부터 선택하면 예상 향 방향을 즉시 해석해 드립니다.</p>
+              <p class="interpretation-best-v2" id="live-best-for">Best Moment: Pending</p>
+            </div>
+            <div class="interpretation-right-v2">
+              <p class="live-chip-label-v2">YOUR SELECTIONS</p>
+              <div class="live-chip-container-v2" id="live-chip-wrap" aria-live="polite"></div>
+              <dl class="interpretation-stats-v2">
+                <div class="stat-row-v2">
+                  <dt>Estimated Accord</dt>
+                  <dd id="live-accord">Awaiting input</dd>
+                </div>
+                <div class="stat-row-v2">
+                  <dt>Projected Density</dt>
+                  <dd id="live-density">Awaiting input</dd>
+                </div>
+                <div class="stat-row-v2">
+                  <dt>Confidence</dt>
+                  <dd id="live-confidence-value">0%</dd>
+                </div>
+              </dl>
+              <div class="confidence-bar-v2" aria-label="신뢰도 진행바">
+                <div class="confidence-fill-v2" id="live-confidence-track-fill"></div>
+              </div>
+              <p class="live-confidence-hint-v2">4개 답변을 모두 완료하면 신뢰도가 100%에 도달합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 04: DENSITY REFINEMENT V2 ============ -->
+      <section class="density-v2" id="section-density">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">CHARACTER SCALE</p>
+            <h2 class="section-title-v2">Density Refinement</h2>
+            <p class="section-lead-v2">잔향의 무게를 미세 조정하여 고유한 향기 프로필을 완성하세요.</p>
+          </div>
+          <div class="density-scale-v2">
+            <button type="button" class="density-node-v2" data-value="light" data-step="density">
+              <span class="node-label">Light</span>
+              <span class="node-dot"></span>
+            </button>
+            <button type="button" class="density-node-v2" data-value="soft" data-step="density">
+              <span class="node-label">Soft</span>
+              <span class="node-dot"></span>
+            </button>
+            <button type="button" class="density-node-v2" data-value="balanced" data-step="density">
+              <span class="node-label">Balanced</span>
+              <span class="node-dot"></span>
+            </button>
+            <button type="button" class="density-node-v2" data-value="deep" data-step="density">
+              <span class="node-label">Deep</span>
+              <span class="node-dot"></span>
+            </button>
+            <button type="button" class="density-node-v2" data-value="intense" data-step="density">
+              <span class="node-label">Intense</span>
+              <span class="node-dot"></span>
+            </button>
+          </div>
+          <div class="density-info-v2">
+            <span id="density-count">LEVEL: NOT SELECTED</span>
+            <button type="button" id="density-reset">RESET</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 05: FINAL RECOMMENDATION V2 ============ -->
+      <section class="recommendation-v2" id="section-result">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">THE RESULT</p>
+            <h2 class="section-title-v2">Your Signature Profile</h2>
+          </div>
+          <article class="result-card-v2" id="result-primary">
+            <div class="result-layout-v2">
+              <div class="result-visual-v2">
+                <img id="result-primary-img" src="./images/common/awaits.png" alt="추천 향 미리보기">
+                <div class="result-caption-v2" id="result-primary-caption">Atmosphere · Awaiting your selection</div>
+              </div>
+              <div class="result-info-v2">
+                <div class="result-header-v2">
+                  <span class="result-badge-v2" id="result-badge">CRAFTED FOR YOU</span>
+                  <span class="result-score-v2" id="result-fit-score">FIT 00%</span>
+                </div>
+                <h3 class="result-name-v2" id="result-name">Your Signature Awaits</h3>
+                <p class="result-meta-v2"><span id="result-family">Family</span> <span aria-hidden="true">·</span> <span
+                    id="result-density">Density</span></p>
+                <div class="result-editorial-v2">
+                  <p id="result-editorial">4가지 질문에 답하시면 르라보 조향사의 큐레이션 노트가 이곳에 공개됩니다. <br> 당신만을 위한 향의 첫 문장이 시작될 자리입니다.
+                  </p>
+                </div>
+                <div class="result-why-v2">
+                  <p class="why-label-v2">WHY THIS SCENT</p>
+                  <p id="result-why-this">선택하신 향 계열, 사용 상황, 계절감, 감정 톤을 종합해 가장 닮은 시그니처를 안내해 드립니다.</p>
+                </div>
+                <div class="result-notes-v2">
+                  <p class="notes-label-v2">KEY NOTES</p>
+                  <p id="result-notes">Top · Middle · Base 결과 생성 후 표시</p>
+                </div>
+                <div class="result-actions-v2">
+                  <a href="shop.html" class="btn-v2 btn-solid is-disabled" id="result-shop-link">SHOP PROFILE</a>
+                  <a href="detail.html" class="btn-v2 btn-ghost is-disabled" id="result-detail-link">VIEW DETAIL</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <div class="reason-grid-v2">
+            <div class="reason-box-v2">
+              <h4>Note Fit</h4>
+              <p id="note-fit-text">선택하신 향 계열과 결과 향의 노트 매칭 점수가 표시됩니다.</p>
+            </div>
+            <div class="reason-box-v2">
+              <h4>Usage Fit</h4>
+              <p id="usage-fit-text">사용 상황과 잔향 강도의 적합성을 평가합니다.</p>
+            </div>
+            <div class="reason-box-v2">
+              <h4>Batch Stability</h4>
+              <p id="batch-fit-text">최근 배치의 향료 균일도와 신선도를 확인합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 06: SCENT STORY V2 ============ -->
+      <section class="story-v2" id="section-scent-story">
+        <div class="container">
+          <div class="story-card-v2">
+            <div class="story-visual-v2">
+              <img id="story-figure-img" src="./images/common/note.png" alt="Story">
+              <div class="story-tag-v2" id="story-visual-tag">EDITORIAL</div>
+            </div>
+            <div class="story-content-v2">
+              <p class="story-kicker-v2" id="story-kicker">THE PERFUMER'S NOTE</p>
+              <h2 class="story-title-v2" id="story-title">향기에 담긴 서사</h2>
+              <div class="story-body-v2">
+                <p id="story-atmosphere">조향사 Frank Voelkl은 르라보의 모든 향에 한 장면을 기록합니다. <br> 당신이 선택을 완료하면 가장 닮은 시그니처의
+                  산지·계절·시간이 한 편의 서사로 펼쳐집니다.</p>
+              </div>
+              <dl class="story-details-v2">
+                <div>
+                  <dt>First Impression</dt>
+                  <dd id="story-first">결과 생성 후 표시</dd>
+                </div>
+                <div>
+                  <dt>Dry Down</dt>
+                  <dd id="story-dry">결과 생성 후 표시</dd>
+                </div>
+                <div>
+                  <dt>Best Moment</dt>
+                  <dd id="story-best">결과 생성 후 표시</dd>
+                </div>
+                <div>
+                  <dt>Lab Comment</dt>
+                  <dd id="story-lab">결과 생성 후 표시</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 07: ALTERNATIVES V2 ============ -->
+      <section class="alternatives-v2" id="section-similar">
+        <div class="container">
+          <div class="section-head-v2 is-center">
+            <p class="eyebrow-v2">RELATED PROFILES</p>
+            <h2 class="section-title-v2">Similar Scents</h2>
+          </div>
+          <p class="similar-helper-v2">예측 결과 기반 추천 후보입니다. 4가지 답변이 모두 완료되면 자동으로 갱신됩니다.</p>
+          <p class="similar-empty-hint-v2" id="similar-empty-hint" hidden>조건에 맞는 유사 향이 아직 없습니다.</p>
+          <div class="similar-grid-v2" id="similar-scents-grid">
+            <article class="similar-card-v2 pick-card-v2 card product-card">
+              <a href="detail.html" class="card-link">
+                <div class="card-media">
+                  <img src="./images/common/santal33.png" alt="Santal 33">
+                </div>
+                <div class="card-body">
+                  <div class="product-info">
+                    <p class="product-lab-tag card-meta">WOODY · BASE</p>
+                    <h3 class="product-title card-title">Santal 33</h3>
+                    <p class="product-notes card-desc">Cardamom, Iris, Violet, Sandalwood, Cedarwood</p>
+                    <p class="product-price">₩310,000</p>
+                  </div>
+                </div>
+              </a>
+              <footer class="card-footer card-action">
+                <a href="detail.html" class="btn-v2 btn-ghost">VIEW PROFILE</a>
+              </footer>
+            </article>
+            <article class="similar-card-v2 pick-card-v2 card product-card">
+              <a href="detail.html" class="card-link">
+                <div class="card-media">
+                  <img src="./images/common/rose31.png" alt="Rose 31">
+                </div>
+                <div class="card-body">
+                  <div class="product-info">
+                    <p class="product-lab-tag card-meta">FLORAL · MIDDLE</p>
+                    <h3 class="product-title card-title">Rose 31</h3>
+                    <p class="product-notes card-desc">Rose, Cumin, Cedarwood, Olibanum, Amber</p>
+                    <p class="product-price">₩310,000</p>
+                  </div>
+                </div>
+              </a>
+              <footer class="card-footer card-action">
+                <a href="detail.html" class="btn-v2 btn-ghost">VIEW PROFILE</a>
+              </footer>
+            </article>
+            <article class="similar-card-v2 pick-card-v2 card product-card">
+              <a href="detail.html" class="card-link">
+                <div class="card-media">
+                  <img src="./images/common/bergamote22.png" alt="Bergamote 22">
+                </div>
+                <div class="card-body">
+                  <div class="product-info">
+                    <p class="product-lab-tag card-meta">CITRUS · TOP</p>
+                    <h3 class="product-title card-title">Bergamote 22</h3>
+                    <p class="product-notes card-desc">Bergamot, Fig, Bay Leaves, Cedarwood, Musk</p>
+                    <p class="product-price">₩310,000</p>
+                  </div>
+                </div>
+              </a>
+              <footer class="card-footer card-action">
+                <a href="detail.html" class="btn-v2 btn-ghost">VIEW PROFILE</a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 08: FINAL CONCLUSION V2 ============ -->
+      <section class="conclusion-v2">
+        <div class="container narrow-v2">
+          <div class="conclusion-content-v2">
+            <p class="eyebrow-v2">FINAL STEP</p>
+            <h2 class="conclusion-title-v2">당신의 방향을 더 선명하게</h2>
+            <div class="conclusion-badge-v2" id="final-scent-badge">STATUS · IN PROGRESS</div>
+            <p class="conclusion-desc-v2" id="final-summary">탐색이 완료된 향 프로필은 매장 픽업, 24자 라벨 각인,<br>시그니처 패키징과 함께 당신의 일상으로 도착합니다.</p>
+            <ul class="conclusion-trust-v2" aria-label="결과 프로필 혜택">
+              <li>샘플 2종 무료 동봉</li>
+              <li>24자 라벨 각인</li>
+              <li>30일 무료 반품</li>
+            </ul>
+            <div class="conclusion-actions-v2">
+              <a href="shop.html" class="btn-v2 btn-solid">EXPLORE SHOP</a>
+              <a href="gift.html" class="btn-v2 btn-ghost">CREATE GIFT</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">LE LABO</p>
+            <p class="footer-tagline">The Forest Laboratory</p>
+            <p class="footer-copy">숲에서 시작된 원료가 연구소를 거쳐 당신의 향으로 완성됩니다.</p>
+          </div>
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <section class="footer-col" aria-labelledby="footer-shop-title">
+              <h2 class="footer-title" id="footer-shop-title">SHOP</h2>
+              <ul class="footer-list">
+                <li><a href="shop.html">Fragrance</a></li>
+                <li><a href="shop.html">Body Care</a></li>
+                <li><a href="shop.html">Home Fragrance</a></li>
+              </ul>
+            </section>
+            <section class="footer-col" aria-labelledby="footer-discover-title">
+              <h2 class="footer-title" id="footer-discover-title">DISCOVER</h2>
+              <ul class="footer-list">
+                <li><a href="finder.html">Scent Finder</a></li>
+                <li><a href="ingredient.html">Ingredients</a></li>
+                <li><a href="journal.html">Journal</a></li>
+              </ul>
+            </section>
+            <section class="footer-col footer-col-news" aria-labelledby="footer-news-title">
+              <h2 class="footer-title" id="footer-news-title">NEWSLETTER</h2>
+              <form class="footer-news-form" id="footer-news-form" novalidate>
+                <label class="sr-only" for="footer-news-input">이메일 주소</label>
+                <input type="email" id="footer-news-input" class="footer-news-input" placeholder="EMAIL ADDRESS"
+                  autocomplete="email" required>
+                <button type="submit" class="footer-news-submit" aria-label="뉴스레터 구독">
+                  <span class="footer-news-submit-label">Subscribe</span>
+                  <span class="footer-news-submit-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+            </section>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="footer-year">2026</span> LE LABO Forest Laboratory. All rights
+              reserved.</p>
+            <div class="footer-meta">
+              <button type="button" class="region-selector">
+                <span>South Korea (KRW)</span>
+                <span class="region-selector-caret">▾</span>
+              </button>
+              <ul class="footer-legal">
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html#cookies">Cookies</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
