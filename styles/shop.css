@@ -164,8 +164,8 @@
 .page-shop .scent-guide-v2 .panel-label {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0;
@@ -314,8 +314,8 @@
 .page-shop .expert-guidance-v2 .card-idx {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   display: inline-flex;
   align-items: center;
@@ -333,8 +333,8 @@
   margin: 0;
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -368,7 +368,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-text-muted);
   border-top: 1px dashed var(--color-line);
 }
@@ -449,8 +449,8 @@
 .page-shop .trust-matrix-v2 .stat-label {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: var(--track-ui);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -577,7 +577,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   border: 1px solid var(--color-line-strong);
   color: var(--color-primary);
   border-radius: 1px;
@@ -613,7 +613,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-text-muted);
   border-top: 1px dashed var(--color-line);
 }
@@ -670,9 +670,9 @@
   min-height: 48px;
   padding: 0 var(--space-24);
   font-family: var(--font-family-mono);
-  font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   background: var(--color-primary);
   color: var(--color-white);
@@ -750,7 +750,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   padding-top: 3px;
 }
@@ -945,7 +945,7 @@
 .page-shop #shop-hero .subpage-hero-breadcrumb {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--track-caps);
   text-transform: uppercase;
 }
 
@@ -987,7 +987,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-primary);
   text-decoration: none;
@@ -1011,7 +1011,7 @@
 .page-shop #lab-picks .lab-picks-tabs .chip {
   min-height: 40px;
   padding-inline: var(--space-20);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   border-radius: 0;
   transition:
     border-color 0.25s ease,
@@ -1155,7 +1155,7 @@
 }
 
 .page-shop #cross-category .mix-2 .eyebrow {
-  letter-spacing: 0.2em;
+  letter-spacing: var(--track-caps);
   color: var(--color-accent);
 }
 
@@ -1524,11 +1524,12 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0 0 var(--space-16);
   text-align: center;
+  line-height: var(--lh-caption);
 }
 
 .shop-load-more .shop-load-progress {
@@ -1554,7 +1555,7 @@
   background: transparent;
   color: var(--color-text-muted);
   border: 1px solid var(--color-line);
-  letter-spacing: 0.26em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
@@ -1596,8 +1597,10 @@
 
 .community-proof-banner p {
   margin: 0;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+  line-height: var(--lh-relaxed);
+  font-size: var(--font-body);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .community-proof-banner strong {
@@ -1613,18 +1616,19 @@
 }
 
 .community-proof-list li {
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.55;
+  font-size: var(--font-body);
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--lh-body);
+  max-width: var(--prose-width-wide);
 }
 
 .community-proof-list strong {
   color: var(--color-white);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: var(--font-caption);
   margin-right: var(--space-8);
 }
 
@@ -1658,7 +1662,7 @@
   margin: 0;
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.24em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -1809,7 +1813,7 @@
   margin: 0;
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-primary);
 }
@@ -1879,7 +1883,7 @@
 .compare-hint {
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -1901,7 +1905,7 @@
   border: 1px dashed rgba(255, 255, 255, 0.3);
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
 }
 
@@ -2155,7 +2159,7 @@
   margin-right: var(--space-8);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--track-caps);
   color: var(--color-primary);
   text-transform: uppercase;
 }
@@ -2209,7 +2213,7 @@
   padding: 0 var(--space-12);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--track-ui);
   text-transform: uppercase;
   color: var(--color-text-sub);
   background: var(--color-white);
@@ -2302,7 +2306,7 @@
   border: 1px solid var(--color-line-strong);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-sub);
   cursor: pointer;
@@ -2409,7 +2413,7 @@
 .why-this-kicker {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -2460,7 +2464,7 @@
 .community-proof-stats dt {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -3172,9 +3176,9 @@ body.page-shop section.shop-editorial .title-wrap {
 /* Eyebrow inside title-wrap: align with reset.css editorial-eyebrow tone */
 .page-shop .shop-editorial .title-wrap > .eyebrow {
   font-family: var(--font-family-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.32em;
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0;
@@ -3186,11 +3190,12 @@ body.page-shop section.shop-editorial .title-wrap {
 /* Lead — match reset.css `.editorial .title-wrap p` rhythm exactly */
 .page-shop .shop-editorial .shop-editorial-lead {
   margin: 0;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 480px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-body);
+  line-height: var(--lh-relaxed);
+  max-width: min(480px, var(--prose-width-wide));
   word-break: keep-all;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
 }
 
 /* Actions row */
@@ -3207,9 +3212,9 @@ body.page-shop section.shop-editorial .title-wrap {
   min-height: 44px;
   padding: 0 24px;
   font-family: var(--font-family-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   background: var(--color-accent);
   color: #fff;
@@ -3231,9 +3236,9 @@ body.page-shop section.shop-editorial .title-wrap {
   min-height: 44px;
   padding: 0 24px;
   font-family: var(--font-family-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   background: transparent;
   color: #fff;
@@ -3317,7 +3322,7 @@ body.page-shop section.shop-editorial .title-wrap {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--track-caps);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0;
@@ -3383,7 +3388,7 @@ body.page-shop section.shop-editorial .title-wrap {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
   cursor: pointer;
@@ -3484,7 +3489,7 @@ body.page-shop section.shop-editorial .title-wrap {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -3556,8 +3561,7 @@ body.page-shop section.shop-editorial .title-wrap {
    section dividers, card refinements (in-place enhancements only)
    ============================================================================= */
 
-/* --- Eyebrow weight normalization across shop sections (resolve common.css 500
-       vs subpage-layout.css 700 conflict; lock to 700 for editorial tone) --- */
+/* --- Eyebrow normalization — token rhythm (readability > faux-bold mono) --- */
 .page-shop .scent-guide-v2 .eyebrow,
 .page-shop .lab-picks-v2 .eyebrow,
 .page-shop .collection-section .eyebrow,
@@ -3566,8 +3570,8 @@ body.page-shop section.shop-editorial .title-wrap {
 .page-shop .service-assurance-v2 .eyebrow,
 .page-shop .experience-expansion-v2 .eyebrow,
 .page-shop .shop-editorial .title-wrap > .eyebrow {
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
 }
 
 /* --- Section title accent line (under each subsection h2) --- */
@@ -3618,8 +3622,8 @@ body.page-shop section.shop-editorial .title-wrap {
   color: var(--color-white);
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border-radius: 1px;
 }

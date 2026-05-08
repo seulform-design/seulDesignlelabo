@@ -1,0 +1,52 @@
+/* ==========================================================================
+   LE LABO · typography-system.css
+   Global readability + hierarchy polish (loads after page CSS).
+   Tokens: common.css :root (--lh-*, --track-*, --font-*, --prose-*).
+   ========================================================================== */
+
+/* Form fields — placeholder contrast + rhythm (KR + Latin) */
+textarea::placeholder,
+input::placeholder {
+  color: var(--color-text-sub);
+  letter-spacing: 0.01em;
+}
+
+@supports (color: color-mix(in srgb, white, black)) {
+  textarea::placeholder,
+  input::placeholder {
+    color: color-mix(in srgb, var(--color-text-muted) 78%, var(--color-text) 22%);
+  }
+}
+
+textarea {
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0.01em;
+}
+
+select {
+  font-size: var(--font-body);
+  line-height: var(--lh-snug);
+}
+
+/* Pagination / swiper meta — avoid extreme tracking */
+.swiper-pagination,
+.swiper-pagination-fraction {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Shop · load-more control — mono label rhythm */
+.shop-load-more .btn {
+  font-size: var(--font-caption);
+  letter-spacing: var(--track-label);
+}
+
+/* Utility: comfortable reading column */
+.prose-measure {
+  max-width: var(--prose-width);
+}
+
+.prose-measure-wide {
+  max-width: var(--prose-width-wide);
+}

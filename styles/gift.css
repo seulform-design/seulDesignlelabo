@@ -775,12 +775,16 @@
 
 .corporate-v2 .expert-card-v2.is-horizontal {
   display: grid;
-  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1fr);
+  grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1fr);
   background: var(--color-white);
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--card-border);
   border-radius: 2px;
   overflow: hidden;
   position: relative;
+  transition:
+    transform var(--card-duration) var(--card-ease),
+    box-shadow var(--card-duration) var(--card-ease),
+    border-color var(--card-duration) var(--card-ease);
 }
 
 .corporate-v2 .expert-card-v2.is-horizontal::before {
@@ -802,17 +806,74 @@
 }
 
 .corporate-v2 .expert-card-v2.is-horizontal .expert-media-v2 {
+  position: relative;
   aspect-ratio: auto;
   height: 100%;
-  min-height: 200px;
+  min-height: clamp(230px, 24vw, 300px);
   background: var(--color-surface-soft);
+  overflow: hidden;
+}
+
+.corporate-v2 .expert-card-v2.is-horizontal .expert-media-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17, 17, 17, 0.02) 0%, rgba(17, 17, 17, 0.1) 100%),
+    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 44%);
+  pointer-events: none;
+}
+
+.corporate-v2 .expert-card-v2.is-horizontal .expert-media-v2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  transition: transform var(--card-duration) var(--card-ease), filter var(--card-duration) var(--card-ease);
+}
+
+.corporate-v2 .expert-card-v2.is-horizontal .corporate-media-meta-v2 {
+  position: absolute;
+  inset: auto var(--space-16) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  z-index: 1;
+}
+
+.corporate-v2 .expert-card-v2.is-horizontal .corporate-media-chip-v2 {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 var(--space-10);
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  background: rgba(20, 20, 20, 0.36);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(3px);
+}
+
+.corporate-v2 .expert-card-v2.is-horizontal .corporate-media-note-v2 {
+  margin: 0;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.86);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.24);
 }
 
 .corporate-v2 .expert-card-v2.is-horizontal .expert-body-v2 {
-  padding: clamp(24px, 3vw, 32px);
+  padding: clamp(24px, 2.5vw, 34px) clamp(24px, 2.7vw, 36px);
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: var(--space-14);
   justify-content: center;
 }
 
@@ -829,9 +890,10 @@
 
 .corporate-v2 .expert-card-v2.is-horizontal .expert-desc-v2 {
   font-size: var(--font-body);
-  line-height: 1.7;
+  line-height: 1.72;
   color: var(--color-text-sub);
-  margin: 0 0 var(--space-8);
+  margin: 0 0 var(--space-10);
+  max-width: 38ch;
   word-break: keep-all;
 }
 
@@ -872,6 +934,17 @@
   transform: translateX(3px);
 }
 
+.corporate-v2 .expert-card-v2.is-horizontal:hover {
+  transform: translateY(var(--card-lift-y));
+  border-color: var(--card-border-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.corporate-v2 .expert-card-v2.is-horizontal:hover .expert-media-v2 img {
+  transform: scale(var(--card-media-scale-quiet));
+  filter: brightness(1.02) saturate(1.02);
+}
+
 @media (max-width: 900px) {
   .corporate-v2 .corporate-layout-v2 {
     grid-template-columns: 1fr;
@@ -880,8 +953,21 @@
     grid-template-columns: 1fr;
   }
   .corporate-v2 .expert-card-v2.is-horizontal .expert-media-v2 {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .corporate-v2 .expert-card-v2.is-horizontal .corporate-media-meta-v2 {
+    inset: auto var(--space-12) var(--space-12);
+    gap: var(--space-6, 6px);
+  }
+
+  .corporate-v2 .expert-card-v2.is-horizontal .corporate-media-chip-v2 {
+    min-height: 22px;
+    padding-inline: var(--space-8);
+    letter-spacing: 0.1em;
   }
 }
 

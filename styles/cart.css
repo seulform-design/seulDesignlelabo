@@ -334,6 +334,35 @@
   text-transform: uppercase;
 }
 
+.summary-preview-v2 {
+  margin: 0 0 var(--space-24);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+}
+
+.summary-preview-v2 img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.summary-preview-v2 figcaption {
+  margin: 0;
+  padding: var(--space-10) var(--space-12);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.84);
+}
+
 .summary-services-v2 {
   margin-bottom: var(--space-24);
   padding-bottom: var(--space-24);

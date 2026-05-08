@@ -13,14 +13,17 @@
 .shop-grid>article.product-card {
   height: 100%;
   min-height: 0;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  transition:
+    transform var(--card-duration) var(--card-ease),
+    box-shadow var(--card-duration) var(--card-ease);
 }
 
 .ed-card,
 .product-card {
   position: relative;
   background: var(--color-white);
-  border: 1px solid rgba(17, 17, 17, 0.08);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -38,16 +41,11 @@
   z-index: 2;
 }
 
-.ed-card:hover,
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  border-color: rgba(201, 138, 83, 0.2);
-}
+/* Lift / depth: section-scoped rules in reset.css (.section .ed-card:hover …) */
 
 .ed-card:hover::after,
 .product-card:hover::after {
-  opacity: 0.15;
+  opacity: 0.12;
 }
 
 /* Direct media + body (no inner link): 16px rhythm between blocks */
@@ -82,7 +80,7 @@
   flex-grow: 1;
   min-height: 0;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 /* Title / description rhythm */
@@ -143,7 +141,7 @@ body.page-index #cross-category .mix-card .mix-card-text.card-body {
   flex-grow: 1;
   min-height: 0;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 body.page-index #cross-category .mix-card .card-action {
@@ -169,7 +167,7 @@ body.page-index #cross-category .mix-card .card-action {
   flex-grow: 1;
   min-height: 0;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 .section.mix .mix-card .card-action {
@@ -200,7 +198,7 @@ body.page-index #personalization .personal-card>.personal-card-text.card-body {
   flex-grow: 1;
   min-height: 0;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 body.page-index #personalization .personal-card-foot.card-action {
@@ -222,7 +220,7 @@ body.page-index #personalization .personal-card-foot.card-action {
   flex-grow: 1;
   min-height: 0;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 .personal-card-foot.card-action {
@@ -264,7 +262,7 @@ body.page-index .process .process-card-image img {
   display: flex;
   flex-direction: column;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 .process .process-card .process-card-meta {
@@ -309,7 +307,7 @@ body.page-index .process .process-card-image img {
   display: flex;
   flex-direction: column;
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 /* Bestsellers strip (legacy section — kept in sync if used) */
@@ -328,7 +326,7 @@ body.page-index .process .process-card-image img {
 
 .bestsellers .body-wrap>.card .text-wrap {
   gap: var(--card-stack-gap);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 /* --- Shared body padding (16–20px) for all card chrome --- */
@@ -336,7 +334,7 @@ body.page-index .process .process-card-image img {
 .product-card .card-body,
 .product-card .card-link .card-body,
 .ed-card.card>.card-body {
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 /* --- Shop pick tiles (.pick-card-v2) — same column contract as .card / .product-card --- */
@@ -380,7 +378,7 @@ body.page-index .process .process-card-image img {
   flex-grow: 1;
   min-height: 0;
   gap: var(--card-stack-gap, 8px);
-  padding: clamp(16px, 1.1vw, 20px);
+  padding: var(--card-pad-y) var(--card-pad-x);
 }
 
 .ed-card.finder-step>.text-wrap .finder-step-heading {
@@ -435,7 +433,7 @@ body.page-index .process .process-card-image img {
 
 .product-card:hover .card-media > img,
 .ed-card:hover .card-media > img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 /* Card badge — refined typography + position */
@@ -452,8 +450,8 @@ body.page-index .process .process-card-image img {
   color: var(--color-white);
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border-radius: 1px;
 }
@@ -469,8 +467,8 @@ body.page-index .process .process-card-image img {
   align-items: center;
   gap: var(--space-6, 6px);
   font-family: var(--font-family-mono);
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -487,7 +485,7 @@ body.page-index .process .process-card-image img {
 /* Product title — refined hierarchy */
 .product-card .product-title.card-title {
   font-family: var(--font-family-sans);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.005em;
   text-transform: uppercase;
 }
@@ -537,7 +535,10 @@ body.page-index .process .process-card-image img {
 .product-card .rating .count {
   color: var(--color-text-muted);
   font-family: var(--font-family-mono);
-  letter-spacing: 0.04em;
+  font-size: var(--font-caption);
+  line-height: var(--lh-caption);
+  letter-spacing: var(--track-ui);
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .product-card .product-best-for.card-meta {
@@ -572,8 +573,9 @@ body.page-index .process .process-card-image img {
   flex: 1;
   height: 40px;
   padding: 0 var(--space-12);
-  font-size: var(--font-label);
-  letter-spacing: 0.18em;
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
 }
 
 /* Reveal action footer on hover (subtle slide) */
@@ -668,9 +670,9 @@ body.page-index .process .process-card-image img {
 }
 
 .pick-card-v2:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 56px -32px rgba(0, 0, 0, 0.18);
-  border-color: var(--color-line-strong);
+  transform: translateY(var(--card-lift-y));
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--card-border-hover);
 }
 
 .pick-card-v2 .pick-media-v2 {
@@ -684,7 +686,7 @@ body.page-index .process .process-card-image img {
 }
 
 .pick-card-v2:hover .pick-media-v2 img {
-  transform: scale(1.05);
+  transform: scale(var(--card-media-scale));
 }
 
 .pick-card-v2 .pick-media-v2::after {
@@ -737,8 +739,9 @@ body.page-index .process .process-card-image img {
 .matrix-item-v2:hover,
 .reason-box-v2:hover,
 .finder-card-v2:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.14);
+  transform: translateY(var(--card-lift-y));
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--card-border-hover);
 }
 
 /* Top accent line on hover */
@@ -773,7 +776,7 @@ body.page-index .process .process-card-image img {
 .expert-card-v2:hover .expert-media-v2 img,
 .expert-card-v2:hover .card-media-v2 img,
 .finder-card-v2:hover .card-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 /* =============================================================================
@@ -831,4 +834,76 @@ body:not(.page-index) .page-header.cinematic-hero + .breadcrumb,
 body:not(.page-index) .page-header.cinematic-hero + section,
 body:not(.page-index) .commerce-breadcrumb + .page-header {
   margin-top: 0;
+}
+
+/* =============================================================================
+   Reduced motion — calm defaults for card lift / media scale
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .card-grid>.card,
+  .card-grid>article.card,
+  .shop-grid>.ed-card.product-card,
+  .shop-grid>article.product-card,
+  .ed-card,
+  .product-card {
+    transition-duration: 0.01ms;
+  }
+
+  .section .card:hover,
+  .section .ed-card:hover,
+  .section .product-card:hover,
+  .section .quick-card:hover,
+  .section .why-card:hover,
+  .section .mix-card:hover,
+  .section .process-card:hover,
+  .section .personal-card:hover,
+  .section .compare-card:hover,
+  .section .brand-pillar:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .section .card:hover .image-wrap img,
+  .section .card:hover .card-media img,
+  .section .ed-card:hover .card-media img,
+  .section .product-card:hover .card-media img,
+  .section .quick-card:hover .quick-media img,
+  .section .why-card:hover .image-wrap img,
+  .section .why-card:hover .card-media img,
+  .section .mix-card:hover .mix-card-image img,
+  .section .compare-card:hover .compare-card-image img,
+  .section .ingredient-banner:hover .ingredient-banner-image img,
+  .section .process-card:hover .process-card-image img,
+  .section .personal-card:hover .personal-card-image img,
+  .section .brand-pillar:hover .brand-pillar-image img {
+    transform: none;
+  }
+
+  body.page-index #lab .process-card:hover .process-card-image img {
+    transform: none;
+  }
+
+  .ed-card:hover::after,
+  .product-card:hover::after {
+    opacity: 0;
+  }
+
+  .pick-card-v2:hover,
+  .expert-card-v2:hover,
+  .service-card-v2:hover,
+  .aftercare-item-v2:hover,
+  .matrix-item-v2:hover,
+  .reason-box-v2:hover,
+  .finder-card-v2:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .pick-card-v2:hover .pick-media-v2 img,
+  .expert-card-v2:hover .expert-media-v2 img,
+  .expert-card-v2:hover .card-media-v2 img,
+  .finder-card-v2:hover .card-media-v2 img {
+    transform: none;
+  }
 }

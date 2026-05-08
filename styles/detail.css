@@ -118,8 +118,8 @@
   gap: var(--space-8);
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.3em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0 0 var(--space-16);
@@ -178,8 +178,8 @@
   display: block;
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   color: var(--color-text-muted);
   margin-bottom: var(--space-12);
 }
@@ -194,8 +194,8 @@
   min-height: 44px;
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: var(--track-ui);
   text-transform: uppercase;
   border-radius: 1px;
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
@@ -231,8 +231,8 @@
 .detail-qty-label-v2 {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
   color: var(--color-text-muted);
 }
 
@@ -315,8 +315,8 @@
   min-height: 52px;
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border-radius: 1px;
 }
@@ -421,8 +421,8 @@
   gap: var(--space-8);
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.28em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   text-transform: uppercase;
   margin: 0;
@@ -617,8 +617,8 @@
   gap: var(--space-8);
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 600;
+  letter-spacing: var(--track-label);
   color: var(--color-text-muted);
   margin: 0;
   text-transform: uppercase;
@@ -794,8 +794,8 @@
 .recommendations-v2 .spine-head-v2 .eyebrow-v2 {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   text-transform: uppercase;
   margin: 0;

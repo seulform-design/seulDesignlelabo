@@ -49,8 +49,8 @@
 .hero-eyebrow-v2 {
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
-  font-weight: 700;
-  letter-spacing: 0.35em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   margin: 0 0 var(--space-32);
   text-transform: uppercase;
@@ -69,10 +69,11 @@
 
 .hero-desc-v2 {
   font-size: var(--font-sub);
-  line-height: 1.7;
-  color: rgba(255,255,255,0.9);
+  line-height: var(--lh-relaxed);
+  color: rgba(255, 255, 255, 0.92);
   margin: 0 0 var(--space-48);
-  max-width: 50ch;
+  max-width: min(50ch, var(--prose-width-wide));
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
 /* 02. Section 02 · Guided Selection V2 ----------------------- */
@@ -102,14 +103,14 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   color: var(--color-text-muted);
   text-transform: uppercase;
 }
 
 .progress-info-v2 .progress-status-v2 {
   color: var(--color-accent);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
 }
 
 .progress-bar-v2 {
@@ -125,6 +126,43 @@
   background: linear-gradient(90deg, var(--color-accent) 0%, var(--finder-ink) 100%);
   transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 2px;
+}
+
+.progress-hint-v2 {
+  margin: var(--space-12) 0 0;
+  font-size: var(--font-caption);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+.progress-summary-v2 {
+  margin: var(--space-8) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.progress-summary-v2 .summary-value {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-caption);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--finder-ink);
+  background: var(--finder-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  text-transform: none;
 }
 
 .finder-step-grid-v2 {
@@ -144,6 +182,9 @@
   flex-direction: column;
   position: relative;
   height: 100%;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.35s ease;
 }
 
 .finder-card-v2::before {
@@ -162,11 +203,19 @@
 
 .finder-card-v2:hover {
   border-color: var(--finder-ink);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -18px rgba(26, 36, 33, 0.32);
 }
 
 .finder-card-v2:hover::before,
 .finder-card-v2:has(.option-btn-v2.is-active)::before {
   transform: scaleX(1);
+}
+
+.finder-card-v2:has(.option-btn-v2.is-active) {
+  border-color: var(--finder-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -22px rgba(26, 36, 33, 0.42);
 }
 
 .card-media-v2 {
@@ -203,6 +252,22 @@
   backdrop-filter: blur(4px);
   border-radius: 50%;
   z-index: 2;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.finder-card-v2:has(.option-btn-v2.is-active) .card-num-v2 {
+  font-size: 0;
+  color: transparent;
+  background: var(--finder-ink);
+}
+
+.finder-card-v2:has(.option-btn-v2.is-active) .card-num-v2::after {
+  content: "";
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--color-white);
+  border-bottom: 2px solid var(--color-white);
+  transform: rotate(-45deg) translate(1px, -2px);
 }
 
 .card-body-v2 {
@@ -287,9 +352,42 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border-radius: 1px;
+  transition: opacity 0.25s ease, transform 0.2s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.finder-actions-v2 .btn-v2:disabled,
+.finder-actions-v2 .btn-v2[aria-disabled="true"],
+.finder-actions-v2 .btn-v2.is-disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.finder-feedback-v2 {
+  margin: var(--space-24) auto 0;
+  max-width: 560px;
+  padding: var(--space-12) var(--space-16);
+  text-align: center;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  min-height: calc(1.6em + var(--space-12) * 2);
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.finder-feedback-v2:not(:empty) {
+  color: var(--finder-ink);
+  border-top-color: var(--color-line);
+  border-bottom-color: var(--color-line);
+  background: var(--finder-bg-soft);
 }
 
 .finder-actions-v2 .btn-v2.btn-solid {
@@ -344,7 +442,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   margin: 0;
   text-transform: uppercase;
@@ -405,7 +503,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0 0 var(--space-12);
@@ -427,7 +525,7 @@
   content: "Awaiting your selections —";
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-text-muted);
   font-style: italic;
   align-self: center;
@@ -483,7 +581,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -571,7 +669,7 @@
   font-weight: 700;
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   transition: color 0.25s ease;
   order: 2;
 }
@@ -624,7 +722,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-primary);
 }
@@ -635,7 +733,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--color-accent);
   text-decoration: underline;
@@ -696,7 +794,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
 }
 
@@ -724,7 +822,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-accent);
   text-transform: uppercase;
 }
@@ -738,7 +836,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   color: var(--color-text-muted);
   text-transform: uppercase;
 }
@@ -759,7 +857,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0;
@@ -804,7 +902,7 @@
   font-weight: 700;
   margin: 0 0 var(--space-8);
   color: var(--color-primary);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
 }
 
@@ -833,7 +931,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border-radius: 1px;
   text-decoration: none;
@@ -892,7 +990,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   margin: 0 0 var(--space-8);
   color: var(--color-primary);
   text-transform: uppercase;
@@ -955,7 +1053,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 1px;
@@ -987,8 +1085,8 @@
   gap: 10px;
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.32em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0;
@@ -1051,11 +1149,11 @@
   gap: 6px;
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-text-muted);
   margin-bottom: var(--space-6, 6px);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
 }
 
 .story-details-v2 dt::before {
@@ -1093,7 +1191,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0 0 clamp(24px, 3vw, 32px);
@@ -1190,7 +1288,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-label);
   color: var(--color-primary);
   text-transform: uppercase;
   text-decoration: none;
@@ -1256,7 +1354,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.32em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0;
@@ -1322,7 +1420,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -1353,7 +1451,7 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   border-radius: 1px;
   text-decoration: none;

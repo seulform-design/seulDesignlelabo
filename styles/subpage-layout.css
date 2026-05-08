@@ -3,7 +3,7 @@
  * Shared layout + editorial typography for every route except `page-index`.
  *
  * Load order: reset.css → common.css → page-shell.css → subpage-layout.css
- *             → index.css → (page).css → responsive.css
+ *             → index.css → (page).css → responsive.css → card-system.css → typography-system.css
  *
  * Contract (aligned with index editorial sections):
  *   #wrap > main#main-content > section.section(.ed-section …) > .container
@@ -119,8 +119,8 @@ body:not(.page-index) .section .eyebrow,
 body:not(.page-index) .section .eyebrow-v2 {
   font-family: var(--font-family-mono);
   font-size: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin: 0;
@@ -394,188 +394,191 @@ body:not(.page-index) .editorial .overlay .title-wrap > p:not(.eyebrow) {
 }
 
 /* --- Global Cinematic Hero Variant (Image 3 Standard) --- */
-.cinematic-hero {
-  position: relative !important;
-  min-height: 440px !important;
-  height: 50vh !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  background-image: var(--hero-bg) !important;
-  border-bottom: 0 !important;
+header.cinematic-hero {
+  position: relative;
+  min-height: 440px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 0;
 }
 
-.cinematic-hero::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: linear-gradient(90deg, rgba(14, 20, 18, 0.88) 0%, rgba(14, 20, 18, 0.45) 55%, rgba(14, 20, 18, 0.15) 100%) !important;
-  z-index: 1 !important;
+header.cinematic-hero .hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.cinematic-hero .container {
-  position: relative !important;
-  z-index: 2 !important;
-  width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+header.cinematic-hero .hero-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.cinematic-hero .hero-content-card {
-  max-width: 640px !important;
-  padding: var(--space-64) 0 !important;
-  text-align: left !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+header.cinematic-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14, 20, 18, 0.91) 0%, rgba(14, 20, 18, 0.48) 55%, rgba(14, 20, 18, 0.18) 100%);
+  z-index: 1;
 }
 
-.cinematic-hero .section-eyebrow {
-  font-family: var(--font-family-mono) !important;
-  font-size: var(--font-label) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.32em !important;
-  color: var(--color-accent) !important;
-  margin: 0 0 var(--space-16) !important;
-  text-transform: uppercase !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: var(--space-8) !important;
+header.cinematic-hero .container {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cinematic-hero .section-eyebrow::before {
-  content: none !important;
-  display: none !important;
+header.cinematic-hero .hero-content-card {
+  max-width: 640px;
+  padding: var(--space-64) 0;
+  text-align: left;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-.cinematic-hero .page-title {
-  color: var(--color-white) !important;
-  font-family: var(--font-family-display) !important;
-  font-style: italic !important;
-  font-size: clamp(1.75rem, 2.6vw, 2.4rem) !important;
-  font-weight: 400 !important;
-  line-height: 1.25 !important;
-  letter-spacing: -0.015em !important;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35) !important;
-  margin: 0 0 var(--space-16) !important;
-  text-align: left !important;
-  word-break: keep-all !important;
+header.cinematic-hero .section-eyebrow {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--color-accent);
+  margin: 0 0 var(--space-16);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
 }
 
-.cinematic-hero .section-desc {
-  color: rgba(255, 255, 255, 0.82) !important;
-  font-size: var(--font-body) !important;
-  line-height: 1.7 !important;
-  margin: 0 !important;
-  max-width: 46ch !important;
-  font-weight: 400 !important;
-  text-align: left !important;
-  word-break: keep-all !important;
+header.cinematic-hero .section-eyebrow::before {
+  content: none;
+  display: none;
 }
 
-.cinematic-hero .subpage-hero-actions {
-  margin-top: var(--space-32) !important;
-  display: flex !important;
-  gap: var(--space-12) !important;
-  flex-wrap: wrap !important;
+header.cinematic-hero .page-title {
+  color: var(--color-white);
+  font-family: var(--font-family-display);
+  font-style: italic;
+  font-size: clamp(1.75rem, 2.6vw, 2.4rem);
+  font-weight: 400;
+  line-height: var(--lh-heading);
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
+  margin: 0 0 var(--space-16);
+  text-align: left;
+  word-break: keep-all;
+}
+
+header.cinematic-hero .section-desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-body);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+  max-width: min(46ch, var(--prose-width-wide));
+  font-weight: 400;
+  text-align: left;
+  word-break: keep-all;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
+}
+
+header.cinematic-hero .subpage-hero-actions {
+  margin-top: var(--space-32);
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
 }
 
 /* Primary button inside cinematic hero */
-.cinematic-hero .subpage-hero-actions .btn.btn-primary,
-.cinematic-hero .subpage-hero-actions .btn-v2.btn-solid {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 12px 24px !important;
-  font-family: var(--font-family-mono) !important;
-  font-size: var(--font-label) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-  background: var(--color-accent, #c98a53) !important;
-  color: var(--color-white) !important;
-  border: 1px solid var(--color-accent, #c98a53) !important;
-  border-radius: 1px !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18) !important;
-  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease !important;
-  text-decoration: none !important;
-  min-height: 40px !important;
+header.cinematic-hero .subpage-hero-actions .btn.btn-primary,
+header.cinematic-hero .subpage-hero-actions .btn-v2.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  background: var(--color-accent, #c98a53);
+  color: var(--color-white);
+  border: 1px solid var(--color-accent, #c98a53);
+  border-radius: 1px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  text-decoration: none;
+  min-height: 40px;
 }
 
-.cinematic-hero .subpage-hero-actions .btn.btn-primary:hover,
-.cinematic-hero .subpage-hero-actions .btn-v2.btn-solid:hover {
-  background: #a87240 !important;
-  border-color: #a87240 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+header.cinematic-hero .subpage-hero-actions .btn.btn-primary:hover,
+header.cinematic-hero .subpage-hero-actions .btn-v2.btn-solid:hover {
+  background: #a87240;
+  border-color: #a87240;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Secondary / ghost button inside cinematic hero */
-.cinematic-hero .subpage-hero-actions .btn.btn-secondary,
-.cinematic-hero .subpage-hero-actions .btn-v2.btn-ghost {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 12px 24px !important;
-  font-family: var(--font-family-mono) !important;
-  font-size: var(--font-label) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-  background: transparent !important;
-  color: var(--color-white) !important;
-  border: 1px solid rgba(255,255,255,0.45) !important;
-  border-radius: 1px !important;
-  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease !important;
-  text-decoration: none !important;
-  min-height: 40px !important;
+header.cinematic-hero .subpage-hero-actions .btn.btn-secondary,
+header.cinematic-hero .subpage-hero-actions .btn-v2.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 1px;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+  text-decoration: none;
+  min-height: 40px;
 }
 
-.cinematic-hero .subpage-hero-actions .btn.btn-secondary:hover,
-.cinematic-hero .subpage-hero-actions .btn-v2.btn-ghost:hover {
-  background: rgba(255,255,255,0.1) !important;
-  border-color: rgba(255,255,255,0.9) !important;
-  transform: translateY(-2px) !important;
+header.cinematic-hero .subpage-hero-actions .btn.btn-secondary:hover,
+header.cinematic-hero .subpage-hero-actions .btn-v2.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .cinematic-hero {
-    min-height: 360px !important;
-    height: auto !important;
+  header.cinematic-hero {
+    min-height: 360px;
+    height: auto;
   }
 
-  .cinematic-hero .hero-content-card {
-    max-width: 100% !important;
-    padding: var(--space-48) 0 !important;
+  header.cinematic-hero .hero-content-card {
+    max-width: 100%;
+    padding: var(--space-48) 0;
   }
 
-  .cinematic-hero .page-title {
-    font-size: clamp(1.5rem, 5vw, 1.85rem) !important;
+  header.cinematic-hero .page-title {
+    font-size: clamp(1.5rem, 5vw, 1.85rem);
   }
 
-  .cinematic-hero .section-desc {
-    font-size: var(--font-caption) !important;
+  header.cinematic-hero .section-desc {
+    font-size: var(--font-body);
   }
 }
 
-/* Page Specific Hero Backgrounds */
-.page-shop .cinematic-hero { --hero-bg: url("../images/common/shop_hero_bg.png"); }
-.page-finder .cinematic-hero { --hero-bg: url("../images/common/finder_hero_bg.png"); }
-.page-ingredient .cinematic-hero { --hero-bg: url("../images/common/ingredient_hero_bg.png"); }
-.page-journal .cinematic-hero { --hero-bg: url("../images/common/journal_hero_bg.png"); }
-.page-gift .cinematic-hero { --hero-bg: url("../images/common/gift_hero_bg.png"); }
-.page-detail .cinematic-hero { --hero-bg: url("../images/common/SANTAL33-1.jpg"); }
-.page-login .cinematic-hero,
-.page-cart .cinematic-hero,
-.page-checkout .cinematic-hero,
-.page-order-complete .cinematic-hero { --hero-bg: url("../images/common/checkout_hero_bg.png"); }
-.page-login .cinematic-hero { --hero-bg: url("../images/common/login_hero_bg.png"); }
+/* Hero image source is set per-page directly in HTML
+   (.cinematic-hero > .hero-image-wrap > img). */
 
 /* Steps inside cinematic hero (Commerce Progress) */
 .commerce-steps-v2 {

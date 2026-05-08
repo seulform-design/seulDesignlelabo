@@ -62,11 +62,11 @@
   width: 100%;
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: 10px;
+  font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.24em;
+  letter-spacing: var(--track-caps);
   text-transform: uppercase;
-  line-height: 1;
+  line-height: var(--lh-caption);
   transition: max-height 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
@@ -319,17 +319,24 @@ input[type="search"].search-input {
   font-family: var(--font-family-sans);
   font-size: var(--nav-label-size);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--track-ui);
   color: var(--color-primary);
   -webkit-appearance: none;
   appearance: none;
 }
 
 input[type="search"].search-input::placeholder {
-  color: var(--color-text-muted);
+  color: var(--color-text-sub);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-ui);
   font-size: var(--nav-label-size);
+  opacity: 1;
+}
+
+@supports (color: color-mix(in srgb, white, black)) {
+  input[type="search"].search-input::placeholder {
+    color: color-mix(in srgb, var(--color-text-muted) 82%, var(--color-text) 18%);
+  }
 }
 
 input[type="search"].search-input:focus {
@@ -450,9 +457,9 @@ html.is-mega-open .mega-backdrop {
 }
 
 .mega-primary-title {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -485,9 +492,9 @@ html.is-mega-open .mega-backdrop {
 }
 
 .mega-title {
-  font-size: 10px;
+  font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
   border-bottom: 1px solid var(--color-line);
@@ -501,7 +508,8 @@ html.is-mega-open .mega-backdrop {
 }
 
 .mega-list a {
-  font-size: 14px;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   color: var(--color-text-sub);
   letter-spacing: 0.01em;
   transition: color 0.3s ease, padding-left 0.25s ease;
@@ -551,9 +559,9 @@ html.is-mega-open .mega-backdrop {
 }
 
 .footer-logo {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-size: clamp(1.5rem, 1.2vw + 1.2rem, 1.75rem);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-primary);
 }
 
@@ -567,10 +575,10 @@ html.is-mega-open .mega-backdrop {
 }
 
 .footer-copy {
-  font-size: 13px;
+  font-size: var(--font-body);
   color: var(--color-text-muted);
-  max-width: 340px;
-  line-height: 1.8;
+  max-width: var(--prose-width);
+  line-height: var(--lh-relaxed);
 }
 
 .footer-nav {
@@ -594,9 +602,9 @@ html.is-mega-open .mega-backdrop {
 }
 
 .footer-title {
-  font-size: 11px;
+  font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-primary);
 }
@@ -610,7 +618,8 @@ html.is-mega-open .mega-backdrop {
 .footer-list a {
   position: relative;
   display: inline-block;
-  font-size: 13px;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   color: var(--color-text-sub);
   transition: color 0.25s ease, padding-left 0.25s ease;
 }
@@ -1051,17 +1060,38 @@ select {
   --font-family-sans: "Outfit", "Inter", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --font-family-mono: "Space Mono", monospace;
 
-  /* Type Scale — editorial display + dependable body rhythm */
-  --font-hero: clamp(38px, 5.4vw, 60px);
-  --font-h1: clamp(30px, 3.4vw, 40px);
-  --font-h2: 28px;
-  --font-h3: 20px;
-  --font-section: clamp(22px, 2.4vw, 30px);
-  --font-sub: 16px;
-  --font-card: 16px;
-  --font-body: 14px;
-  --font-label: 10px;
-  --font-caption: 11px;
+  /* Type Scale — clamp rem-first; editorial display + readable body */
+  --font-hero: clamp(2.25rem, 4.2vw + 1.1rem, 3.75rem);
+  --font-h1: clamp(1.75rem, 2.8vw + 0.85rem, 2.5rem);
+  --font-h2: clamp(1.375rem, 1.4vw + 1.05rem, 1.75rem);
+  --font-h3: clamp(1.125rem, 0.8vw + 0.95rem, 1.25rem);
+  --font-section: clamp(1.375rem, 1.9vw + 0.95rem, 1.875rem);
+  --font-sub: clamp(0.9375rem, 0.35vw + 0.85rem, 1rem);
+  --font-card: clamp(0.9375rem, 0.25vw + 0.88rem, 1rem);
+  --font-body: clamp(0.8125rem, 0.28vw + 0.76rem, 0.875rem);
+  --font-label: clamp(0.625rem, 0.2vw + 0.55rem, 0.6875rem);
+  --font-caption: clamp(0.6875rem, 0.15vw + 0.62rem, 0.75rem);
+
+  /* Line-height rhythm — hierarchy + breathing */
+  --lh-none: 1;
+  --lh-tight: 1.12;
+  --lh-snug: 1.22;
+  --lh-hero: 1.1;
+  --lh-heading: 1.2;
+  --lh-subhead: 1.35;
+  --lh-body: 1.65;
+  --lh-relaxed: 1.72;
+  --lh-caption: 1.45;
+
+  /* Measure — long-form comfort */
+  --prose-width: min(42rem, 100%);
+  --prose-width-wide: min(48rem, 100%);
+
+  /* Tracking — caps / mono: tight enough for 한글 가독성 */
+  --track-eyebrow: 0.14em;
+  --track-label: 0.1em;
+  --track-caps: 0.12em;
+  --track-ui: 0.08em;
 
   /* Section & Grid Rhythm (desktop defaults — responsive.css overrides per breakpoint) */
   /* Layout `gap` between blocks/cards: use --grid-gap (24px) or --space-32 (32px) only. */
@@ -1124,8 +1154,8 @@ select {
   /* Symmetric side rails in announcement grid (balances close button column) */
   --announcement-end-rail: 40px;
   /* Global nav / utility row — readable next to logo without competing */
-  --nav-label-size: 12px;
-  --nav-label-tracking: 0.16em;
+  --nav-label-size: clamp(0.6875rem, 0.2vw + 0.62rem, 0.75rem);
+  --nav-label-tracking: 0.12em;
   --logo-mark-size: clamp(16px, 0.35vw + 15px, 18px);
 
   /* Effects */
@@ -1134,6 +1164,23 @@ select {
   --radius-md: 0px;
   --radius-pill: 100px;
   --transition-base: var(--duration) cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Editorial card system — calm motion, soft depth, aligned grids */
+  --card-radius: 2px;
+  --card-border: rgba(26, 36, 33, 0.09);
+  --card-border-hover: rgba(26, 36, 33, 0.14);
+  --card-accent-hover: rgba(201, 138, 83, 0.2);
+  --card-lift-y: -0.125rem;
+  --card-shadow-hover:
+    0 1px 0 rgba(255, 255, 255, 0.75) inset,
+    0 26px 52px -34px rgba(26, 36, 33, 0.14),
+    0 12px 24px -16px rgba(26, 36, 33, 0.06);
+  --card-media-scale: 1.03;
+  --card-media-scale-quiet: 1.018;
+  --card-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --card-duration: 0.55s;
+  --card-pad-y: clamp(1rem, 1.15vw, 1.375rem);
+  --card-pad-x: clamp(1rem, 1.35vw, 1.5rem);
 
   /* Subpage commerce polish — card lift, KPI tiles, grids (see subpage-layout.css) */
   --commerce-card-shadow:
@@ -1163,7 +1210,7 @@ body {
   min-width: 320px;
   font-family: var(--font-family-sans);
   font-size: var(--font-body);
-  line-height: 1.6;
+  line-height: var(--lh-body);
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -1241,7 +1288,7 @@ html[lang="ko"] body {
 }
 
 .section-content-narrow {
-  max-width: 800px;
+  max-width: var(--prose-width-wide);
   margin: 0 auto;
 }
 
@@ -1308,7 +1355,7 @@ html[lang="ko"] body {
   font-size: var(--font-caption);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-caps);
 }
 
 .breadcrumb li+li::before {
@@ -1344,50 +1391,51 @@ html[lang="ko"] body {
 .hero-title {
   font-family: var(--font-family-display);
   font-size: var(--font-hero);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  line-height: var(--lh-hero);
+  letter-spacing: -0.02em;
   font-style: italic;
 }
 
 .section-title {
   font-family: var(--font-family-display);
   font-size: var(--font-section);
-  line-height: 1.18;
-  letter-spacing: -0.018em;
+  line-height: var(--lh-heading);
+  letter-spacing: -0.016em;
 }
 
 .card-title {
   font-size: var(--font-card);
-  line-height: 1.22;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  line-height: var(--lh-snug);
+  font-weight: 500;
+  letter-spacing: -0.004em;
   color: var(--color-primary);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin: 0;
-  min-height: calc(1.22em * 2);
+  min-height: 2.44em;
 }
 
 .section-eyebrow,
 .hero-eyebrow {
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
 
 .section-desc {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
+  max-width: var(--prose-width-wide);
   color: var(--color-text-sub);
 }
 
 .card-desc {
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
   color: var(--color-text-sub);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1395,13 +1443,13 @@ html[lang="ko"] body {
   overflow: hidden;
   flex: 0 1 auto;
   margin: 0;
-  min-height: calc(1.45em * 2);
+  min-height: 3.3em;
 }
 
 .card-meta {
   font-size: var(--font-caption);
-  line-height: 1.35;
-  letter-spacing: 0.04em;
+  line-height: var(--lh-caption);
+  letter-spacing: 0.03em;
   color: var(--color-text-muted);
   margin: 0;
 }
@@ -1445,16 +1493,19 @@ html[lang="ko"] body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
   background: var(--color-surface);
   overflow: hidden;
-  transition: box-shadow .45s ease, border-color .45s ease;
+  transition:
+    box-shadow var(--card-duration) var(--card-ease),
+    border-color 0.35s ease,
+    transform var(--card-duration) var(--card-ease);
 }
 
 .card:hover {
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.05);
-  border-color: var(--color-line-strong);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--card-border-hover);
 }
 
 .card-media {
@@ -1476,9 +1527,10 @@ html[lang="ko"] body {
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center center;
   display: block;
   background: #ebe7df;
-  transition: transform .9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform var(--card-duration) var(--card-ease);
 }
 
 .card-media.card-media-note img {
@@ -1488,7 +1540,7 @@ html[lang="ko"] body {
 }
 
 .card:hover .card-media img {
-  transform: scale(1.035);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 .card-media-note {
@@ -1497,7 +1549,7 @@ html[lang="ko"] body {
   justify-content: center;
   font-size: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-primary);
   padding: var(--card-padding);
   background: var(--color-surface-soft);
@@ -1513,7 +1565,7 @@ html[lang="ko"] body {
   flex: 1 1 auto;
   flex-grow: 1;
   gap: var(--card-stack-gap);
-  padding: var(--card-padding);
+  padding: var(--card-pad-y) var(--card-pad-x);
   min-height: 0;
 }
 
@@ -1569,9 +1621,9 @@ html[lang="ko"] body {
   min-height: var(--control-height);
   padding: 0 28px;
   border-radius: var(--radius-pill);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: var(--font-caption);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
 }
 
 .btn-primary,
@@ -1601,7 +1653,7 @@ html[lang="ko"] body {
   align-items: center;
   font-size: var(--font-caption);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-primary);
   transition: color 0.25s ease;
@@ -1628,8 +1680,8 @@ html[lang="ko"] body {
   border-radius: var(--radius-pill);
   background: var(--color-surface);
   font-size: var(--font-caption);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
   text-transform: uppercase;
   color: var(--color-text-sub);
   transition: border-color .2s ease, background-color .2s ease, color .2s ease;
@@ -1705,7 +1757,7 @@ select:focus-visible {
   font-size: var(--font-label);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-text-sub);
 }
 
@@ -1719,8 +1771,9 @@ input[type="password"] {
   border: 1px solid var(--color-line);
   background: var(--color-white);
   font-family: var(--font-family-sans);
-  font-size: 14px;
-  letter-spacing: 0.02em;
+  font-size: var(--font-body);
+  line-height: var(--lh-snug);
+  letter-spacing: 0.01em;
   transition: border-color 0.3s ease;
   border-radius: 0;
 }
@@ -1822,26 +1875,26 @@ input:focus {
 }
 
 .page-header .section-eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.28em;
+  font-size: var(--font-label);
+  letter-spacing: var(--track-eyebrow);
   color: var(--color-text-muted);
 }
 
 .page-title {
   font-family: var(--font-family-display);
-  font-size: clamp(28px, 3.2vw, 40px);
+  font-size: clamp(1.75rem, 2.6vw + 0.9rem, 2.5rem);
   font-style: italic;
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: var(--lh-hero);
+  letter-spacing: -0.018em;
   color: var(--color-primary);
   margin: 0;
 }
 
 .page-header .section-desc {
-  max-width: 620px;
-  font-size: 14px;
-  line-height: 1.7;
+  max-width: var(--prose-width-wide);
+  font-size: var(--font-body);
+  line-height: var(--lh-relaxed);
   color: var(--color-text-sub);
   margin-top: var(--space-4);
 }
@@ -1870,8 +1923,8 @@ input:focus {
   ============================================================ */
 .eyebrow {
   font-family: var(--font-family-mono);
-  font-size: 11px;
-  letter-spacing: .32em;
+  font-size: var(--font-caption);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--color-accent);
   font-weight: 500;
@@ -1886,8 +1939,8 @@ input:focus {
   line-height: var(--control-line-height);
   padding: 15px 32px;
   font-family: var(--font-family-mono);
-  font-size: 11px;
-  letter-spacing: .26em;
+  font-size: var(--font-caption);
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid currentColor;
@@ -1972,8 +2025,8 @@ input:focus {
   color: var(--color-text);
   text-decoration: none;
   font-family: var(--font-family-mono);
-  font-size: 11px;
-  letter-spacing: .28em;
+  font-size: var(--font-caption);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
   padding-bottom: 6px;
