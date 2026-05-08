@@ -456,11 +456,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 46%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .note-structure-v2 .expansion-item-v2:hover .expansion-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .note-tags-v2 {
@@ -555,11 +556,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 44%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .key-ingredients-v2 .expert-card-v2:hover .card-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .key-ingredients-v2 .card-media-v2::after {
@@ -729,11 +731,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 40%;
   transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editorial-banner-v2:hover .banner-media-v2 img {
-  transform: scale(1.05);
+  transform: scale(var(--card-media-scale));
 }
 
 .editorial-banner-v2 .banner-overlay-v2 {
@@ -1650,11 +1653,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 44%;
   transition: transform 0.45s ease;
 }
 
 .ingredient-curation-card:hover .ingredient-curation-media img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .ingredient-curation-body {

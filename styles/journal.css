@@ -246,11 +246,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 43%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .featured-stories-v2 .expert-card-v2:hover .expert-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .expert-media-v2::after {
@@ -742,11 +743,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 44%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .archive-grid-v2 .pick-card-v2:hover .pick-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .pick-badge-v2 {
@@ -902,11 +904,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 40%;
   transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .full-bleed-v2:hover .full-bleed-bg-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .full-bleed-overlay-v2 {
@@ -1127,11 +1130,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 42%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editor-note-v2:hover .split-media-v2 img {
-  transform: scale(1.03);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 .split-body-v2 {

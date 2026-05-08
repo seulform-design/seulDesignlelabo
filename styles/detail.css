@@ -51,11 +51,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 42%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-main-v2:hover img {
-  transform: scale(1.03);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 .gallery-thumbs-v2 {

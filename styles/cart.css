@@ -171,7 +171,7 @@
 }
 
 .cart-item-v2:hover .item-media-v2 img {
-  transform: scale(1.06);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 .item-body-v2 {
@@ -659,7 +659,7 @@
 }
 
 .cart-cross-sell-v2 .pick-card-v2:hover .pick-media-v2 img {
-  transform: scale(1.05);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 .cart-cross-sell-v2 .pick-badge-v2 {

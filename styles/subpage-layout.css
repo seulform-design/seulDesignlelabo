@@ -1350,7 +1350,7 @@ body:not(.page-index):not(.page-login) .expert-card-v2:hover .expert-media-v2 im
 body:not(.page-index):not(.page-login) .expert-card-v2:hover .card-media-v2 img,
 body:not(.page-index):not(.page-login) .finder-card-v2:hover .card-media-v2 img,
 body:not(.page-index):not(.page-login) .expansion-card:hover .card-media img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 /* --- 4. UNIFIED EYEBROW (mono caption + accent dot/hairline) -------------- */

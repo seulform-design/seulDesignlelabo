@@ -166,7 +166,7 @@
 }
 
 .batch-item-v2:hover .batch-item-main-v2 img {
-  transform: scale(1.05);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 .batch-item-info-v2 {

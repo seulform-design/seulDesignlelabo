@@ -2192,7 +2192,7 @@ input:focus {
 }
 
 .card:hover .card-media img {
-  transform: scale(1.05);
+  transform: scale(var(--card-media-scale));
 }
 
 .price,

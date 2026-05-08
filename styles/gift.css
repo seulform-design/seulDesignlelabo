@@ -98,11 +98,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 44%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .signature-services-v2 .expert-card-v2:hover .expert-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .signature-services-v2 .expert-media-v2::after {
@@ -236,11 +237,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 45%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .curated-sets-v2 .pick-card-v2:hover .pick-media-v2 img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .curated-sets-v2 .pick-badge-v2 {

@@ -343,7 +343,7 @@
 }
 
 #ingredient .ingredient-banner:hover .ingredient-banner-image img {
-  transform: scale(1.03);
+  transform: scale(var(--card-media-scale));
 }
 
 #ingredient .ingredient-banner-image img {
@@ -2427,7 +2427,7 @@
 .why-this .card:focus-within .card-media-note img,
 .ingredient .card:focus-within .card-media-note img,
 .personal .card:focus-within .card-media-note img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .scent-depth .card:hover .card-media-note > :not(img),
@@ -2705,7 +2705,7 @@
 
 .brand-statement .pillar-card:hover .card-media-note img,
 .brand-statement .pillar-card:focus-within .card-media-note img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 .brand-statement .pillar-card:hover .card-media-note > :not(img),
@@ -3360,7 +3360,7 @@
 
 .process .card:hover .card-media-note img,
 .process .card:focus-within .card-media-note img {
-  transform: scale(1.03);
+  transform: scale(var(--card-media-scale-quiet));
 }
 
 /* Keep process card body rhythm tighter and more editorial. */
@@ -4365,7 +4365,7 @@
   transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .ingredient-banner:hover .ingredient-banner-image img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
 }
 
 /* 숲의 잔향(#ingredient): 인덱스 전용 — 낮은 배너 안에서 리듬·타이포 정리 */
@@ -4961,7 +4961,7 @@
 }
 
 .tools .finder-step:hover .finder-step-media img {
-  transform: scale(1.04);
+  transform: scale(var(--card-media-scale));
   opacity: 0.96;
 }
 
